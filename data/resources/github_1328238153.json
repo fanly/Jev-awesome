@@ -17,12 +17,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "typesafe-ai/system-one-adapter-python",
-  "summary_zh": "可用 LLM API 作为 TypeSafeClient 替代后端的适配器。",
+  "summary_zh": "官方适配器：用通用 LLM API 充当 TypeSafeClient 替身，便于本地实验。",
   "summary_en": "Drop-in TypeSafeClient replacement backed by LLM APIs",
-  "developer_value": "无官方 Key 时本地实验。",
-  "jev_role": "开发/测试时的客户端替身",
-  "prerequisites": null,
-  "limitations": "结果不等同于 Jev；勿当作生产替代。",
+  "developer_value": "无官方 Key 时仍能联调客户端形状；明确区分「替身」与「真 Jev」。",
+  "jev_role": "开发/测试替身；结果不等同于 System One / Jev。",
+  "prerequisites": "Python + 上游依赖 + 你自己的 LLM API Key。先读仓库 README。",
+  "limitations": "勿当生产替代；概率/校准语义可能完全不同。",
   "published_at": {
     "value": "2026-08-08T22:59:50Z",
     "precision": "datetime",
@@ -30,11 +30,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.047249Z",
   "license_status": "known",
   "license_identifier": "MIT",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -48,10 +48,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.047249Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

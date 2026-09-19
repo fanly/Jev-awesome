@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "id": "github:1345508845",
-  "resource_kind": "official_doc",
+  "resource_kind": "tutorial",
   "primary_category": "official",
   "tags": [
     "seed"
@@ -15,12 +15,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "typesafe-ai/skills",
-  "summary_zh": "官方 Agent Skill：指导如何用 System One / Jev 构建。",
+  "summary_zh": "官方 Agent Skill：教代理如何用 System One / Jev 设计类型化工作流。",
   "summary_en": "Agent skills for building with TypeSafe's System One API",
-  "developer_value": "避免虚构 API；强调读 live docs。",
-  "jev_role": "给编码代理的集成指南",
-  "prerequisites": null,
-  "limitations": "Skill 不是 SDK 本身。",
+  "developer_value": "在 Claude Code / skills.sh 里快速对齐「该问 Choice 还是 Noul」的设计习惯。",
+  "jev_role": "技能文档与提示；不本身调用模型（由宿主代理决定是否调 API）。",
+  "prerequisites": "兼容的 agent 运行时。先读 `skills/typesafe-ai/SKILL.md`。",
+  "limitations": "安装技能≠已配置 API Key；本目录未验证各宿主安装路径。",
   "published_at": {
     "value": "2026-08-24T23:58:39Z",
     "precision": "datetime",
@@ -28,11 +28,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.045874Z",
   "license_status": "known",
   "license_identifier": "MIT",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -46,10 +46,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.045874Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

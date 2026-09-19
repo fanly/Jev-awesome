@@ -17,12 +17,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "typesafe-ai/typesafe-sdk-python",
-  "summary_zh": "官方 Python SDK（PyPI: typesafe-sdk）。",
+  "summary_zh": "官方 Python SDK（PyPI: typesafe-sdk）。用 `TypeSafeClient.system_one` 提交 Choice / Noul / Score，拿到概率化结构化判断，而不是自由生成文本。",
   "summary_en": "The official Python library for the TypeSafe API",
-  "developer_value": "集成官方 API 的首选客户端。",
-  "jev_role": "TYPESAFE_API_KEY + TypeSafeClient.system_one",
-  "prerequisites": null,
-  "limitations": "需有效 API Key；版本以 PyPI 为准。",
+  "developer_value": "把「在候选中做校准判断」接到任意 Python 服务；是接入官方 Jev 的默认客户端。",
+  "jev_role": "对 state 上的 typed questions 返回 choice/noul/score 与概率；不负责写散文。",
+  "prerequisites": "依赖：`typesafe-sdk`（或本仓库已声明版本）。需要 `TYPESAFE_API_KEY`。先读：上游 README Quickstart 与 docs.typesafe.ai/sdk/python/。",
+  "limitations": "无 Key 无法调真实 Jev；Mock/Adapter 结果≠官方模型。本目录未做 live 复现。",
   "published_at": {
     "value": "2026-09-04T21:01:31Z",
     "precision": "datetime",
@@ -30,11 +30,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.031125Z",
   "license_status": "known",
   "license_identifier": "MIT",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -48,10 +48,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.031125Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

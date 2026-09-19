@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373655162",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [
+    "python"
+  ],
+  "canonical_url": "https://github.com/browser-use/jev-ultrafast",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373655162",
+  "author_or_org": "browser-use",
+  "official_status": "community",
+  "jev_relationship": "calls_official_api",
+  "original_title": "browser-use/jev-ultrafast",
+  "summary_zh": "Browser Use × TypeSafe：动态编号动作空间；Jev 选 operation/target，仅 TYPE_TEXT 时才让小 LLM 写字。",
+  "summary_en": "i. am. speed.",
+  "developer_value": "学习「决策与文本生成解耦」的可运行浏览器 Agent；先读 agent 循环比抄提示词更有用。",
+  "jev_role": "一次请求内选出 CLICK/TYPE_TEXT/… 与目标元素索引；不生成页面文案。",
+  "prerequisites": "依赖：uv、Chrome + Browser Harness、TYPESAFE_API_KEY、TEXT_MODEL_API_KEY（示例为 OpenRouter）。先读：`jev_ultrafast/agent.py` 与 README「The action space」。",
+  "limitations": "演示延迟/路径依赖真实页面与 Key；本目录未复现其 7.1s 声明。云端 waitlist 与本地 demo 是不同产品面。",
+  "published_at": {
+    "value": "2026-09-16T21:30:12Z",
+    "precision": "datetime",
+    "raw": "2026-09-16T21:30:12Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.638190Z",
+  "last_material_change_at": "2026-09-19T16:47:14.035105Z",
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "curated",
+  "verification_level": "code_located",
+  "evidence": [
+    {
+      "url": "https://github.com/browser-use/jev-ultrafast",
+      "source_type": "github",
+      "checked_at": "2026-09-20T04:00:00Z",
+      "supports": "README action-space design reviewed; agent loop located",
+      "excerpt": null,
+      "code_location": "jev_ultrafast/agent.py",
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.035105Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.591096Z"
+  },
+  "content_hash": "0542b9b9ca7c99bceb1a4aad59682b563fffbea1b164b55636ca4c6fcd32023a",
+  "github_repo_id": 1373655162,
+  "github_full_name": "browser-use/jev-ultrafast"
+}

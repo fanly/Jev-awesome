@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1372296290",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [
+    "python"
+  ],
+  "canonical_url": "https://github.com/jexp/neo4jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1372296290",
+  "author_or_org": "jexp",
+  "official_status": "community",
+  "jev_relationship": "calls_official_api",
+  "original_title": "jexp/neo4jev",
+  "summary_zh": "Neo4j 图导航演示：每跳把出边做成 Choice，并同请求问 Noul「是否到达目标」。",
+  "summary_en": "Typesafe.ai System One Model Jev navigating a Neo4j graph by using a classifier over neighbouring relationships",
+  "developer_value": "学习如何用概率路径/beam search 做图遍历，而不是让 LLM 编造下一跳。",
+  "jev_role": "单跳 Choice（跟哪条边）+ Noul（是否到达）；应用层做 beam 与可视化。",
+  "prerequisites": "Neo4j（默认可指公共 companies2 demo）、TYPESAFE_API_KEY、Python 环境。先读：`src/neo4jev/navigator.py` 与 README Architecture。无 Key 时上游会显式用占位答案，不伪装成 TypeSafe 输出。",
+  "limitations": "演示图与自建图 schema 不同；本目录未连接 Neo4j/live Jev。",
+  "published_at": {
+    "value": "2026-09-16T00:07:56Z",
+    "precision": "datetime",
+    "raw": "2026-09-16T00:07:56Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.211255Z",
+  "last_material_change_at": "2026-09-19T16:47:14.041649Z",
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "curated",
+  "verification_level": "code_located",
+  "evidence": [
+    {
+      "url": "https://github.com/jexp/neo4jev",
+      "source_type": "github",
+      "checked_at": "2026-09-20T04:00:00Z",
+      "supports": "README architecture reviewed; navigator module located",
+      "excerpt": null,
+      "code_location": "src/neo4jev/navigator.py",
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.041649Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:3"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.659420Z"
+  },
+  "content_hash": "3e2a7db35164e31bccbb9e66c16f2460c9976ce68d3b9f4e9680f1b412f8c35a",
+  "github_repo_id": 1372296290,
+  "github_full_name": "jexp/neo4jev"
+}

@@ -18,12 +18,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "typesafe-ai/typesafe-sdk-js",
-  "summary_zh": "官方 TypeScript/JavaScript SDK。",
+  "summary_zh": "官方 TypeScript/JavaScript SDK，与 Python 客户端同属 System One 调用面。",
   "summary_en": "The official TypeScript/JavaScript library for the TypeSafe API",
-  "developer_value": "JS 生态集成入口。",
-  "jev_role": "浏览器/Node 侧官方客户端",
-  "prerequisites": null,
-  "limitations": "与 Python SDK 能力对齐需查文档。",
+  "developer_value": "在 Node / 浏览器后端侧接入同一套 typed questions，与 Python 团队对齐契约。",
+  "jev_role": "官方客户端：system_one + Choice/Noul/Score；不替代业务编排。",
+  "prerequisites": "依赖官方 JS SDK 包；需要 TYPESAFE_API_KEY。先读仓库 README 与官方 SDK 文档。",
+  "limitations": "需有效 Key；本目录仅 source_checked，未跑通线上调用。",
   "published_at": {
     "value": "2026-09-04T22:16:47Z",
     "precision": "datetime",
@@ -31,11 +31,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.033548Z",
   "license_status": "known",
   "license_identifier": "MIT",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -49,10 +49,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.033548Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {
