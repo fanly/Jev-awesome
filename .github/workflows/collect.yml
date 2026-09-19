@@ -45,6 +45,7 @@ jobs:
       overall: ${{ steps.run.outputs.overall || steps.skipped.outputs.overall || 'unknown' }}
       dry_run: ${{ steps.flags.outputs.dry_run }}
       auto_pr: ${{ steps.flags.outputs.auto_pr }}
+      payload_ready: ${{ steps.run.outputs.payload_ready || 'false' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -60,30 +61,9 @@ jobs:
           INPUT_DRY: ${{ github.event.inputs.dry_run }}
         run: |
           set -euo pipefail
-          collector=false
-          if [[ "${COLLECTOR_ENABLED:-}" == "true" ]]; then collector=true; fi
-          auto_pr=false
-          if [[ "${AUTO_PR_ENABLED:-}" == "true" ]]; then auto_pr=true; fi
-
-          # schedule: never treat missing inputs as write; only collector=true runs write path
-          # workflow_dispatch: dry_run input is boolean → GitHub passes 'true'/'false' strings
-          dry_run=true
-          if [[ "${EVENT_NAME}" == "workflow_dispatch" && "${INPUT_DRY}" == "false" ]]; then
-            dry_run=false
-          fi
-          if [[ "${EVENT_NAME}" == "schedule" && "${collector}" != "true" ]]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          fi
-          # schedule without collector: skip entire collect
-          if [[ "${EVENT_NAME}" == "schedule" && "${collector}" != "true" ]]; then
-            dry_run=true
-          fi
-
-          echo "collector=${collector}" >> "$GITHUB_OUTPUT"
-          echo "auto_pr=${auto_pr}" >> "$GITHUB_OUTPUT"
-          echo "dry_run=${dry_run}" >> "$GITHUB_OUTPUT"
+          while IFS= read -r line; do
+            echo "$line" >> "$GITHUB_OUTPUT"
+          done < <(bash scripts/resolve_collect_flags.sh)
 
       - name: Skip schedule when collector disabled
         id: skipped
@@ -137,12 +117,20 @@ jobs:
           if [[ -n "${MERGE_FROM}" ]]; then
             EXTRA+=(--merge-from "${MERGE_FROM}")
           fi
+          echo "payload_ready=false" >> "$GITHUB_OUTPUT"
           if [[ "${DRY}" == "true" ]]; then
             uv run jev-awesome collect --mode "$MODE" --classifier "$CLASSIFIER" --dry-run --max-pages 2 "${EXTRA[@]}"
           else
             uv run jev-awesome collect --mode "$MODE" --classifier "$CLASSIFIER" --write-local --max-pages 2 "${EXTRA[@]}"
             uv run jev-awesome validate
             uv run jev-awesome render
+            mkdir -p artifacts/catalog-payload
+            uv run jev-awesome payload export --out artifacts/catalog-payload \
+              --repository "${GITHUB_REPOSITORY}" \
+              --source-sha "${GITHUB_SHA}" \
+              --run-id "${GITHUB_RUN_ID}" \
+              --attempt "${GITHUB_RUN_ATTEMPT}"
+            echo "payload_ready=true" >> "$GITHUB_OUTPUT"
           fi
           python - <<'PY'
           import json, pathlib, os
@@ -164,6 +152,7 @@ jobs:
             echo "- dry_run: \`${{ steps.flags.outputs.dry_run }}\`"
             echo "- collector_enabled: \`${{ steps.flags.outputs.collector }}\`"
             echo "- auto_pr: \`${{ steps.flags.outputs.auto_pr }}\`"
+            echo "- payload_ready: \`${{ steps.run.outputs.payload_ready }}\`"
             echo "- overall: \`${{ steps.run.outputs.overall }}\`"
             if [[ -f data/reports/latest.json ]]; then
               echo ""
@@ -180,6 +169,15 @@ jobs:
           name: collect-report
           path: data/reports/
           retention-days: 14
+
+      - name: Upload catalog payload
+        if: steps.flags.outputs.skip != 'true' && steps.flags.outputs.dry_run == 'false'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: catalog-payload
+          path: artifacts/catalog-payload/
+          retention-days: 14
+          if-no-files-found: error
 
   publish-pr:
     needs: collect
@@ -205,6 +203,21 @@ jobs:
         env:
           JEV_ALLOW_FAKE_IP: "0"
           CI: "true"
+
+      - name: Download catalog payload
+        id: payload
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: catalog-payload
+          path: /tmp/catalog-payload
+
+      - name: Require payload artifact
+        run: |
+          set -euo pipefail
+          if [[ ! -f /tmp/catalog-payload/manifest.json ]]; then
+            echo "::error::catalog-payload artifact missing or corrupt (no silent no_diff)"
+            exit 1
+          fi
 
       - name: Merge robot branch data
         id: merge
@@ -232,6 +245,6 @@ jobs:
           if [[ -n "${MERGE_FROM}" ]]; then
             EXTRA+=(--merge-from "${MERGE_FROM}")
           fi
-          # Re-collect is NOT done here; publish uses current tree + merge-from
-          # Validate path/field policy then push robot branch / open PR
-          uv run jev-awesome publish --enabled --remote origin --no-dry-run "${EXTRA[@]}"
+          # Collect job hands off via catalog-payload artifact — never silent no_diff
+          uv run jev-awesome publish --enabled --remote origin --no-dry-run \
+            --payload /tmp/catalog-payload "${EXTRA[@]}"

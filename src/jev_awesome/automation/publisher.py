@@ -10,9 +10,15 @@ import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from jev_awesome.automation.git_workspace import GitError, GitWorkspace, run_git
-from jev_awesome.automation.github_transport import FakeGitHubTransport, GitHubTransport
+from jev_awesome.automation.github_transport import (
+    FakeGitHubTransport,
+    GitHubTransport,
+    pr_is_closed_unmerged,
+    pr_is_merged,
+)
 from jev_awesome.automation.write_policy import (
     WritePolicyError,
     assert_event_allowed,
@@ -29,6 +35,9 @@ from jev_awesome.paths import Paths
 from jev_awesome.rendering.render import Renderer
 from jev_awesome.store import CatalogStore
 
+ROBOT_IDENTITY_REL = "data/automation/robot_identity.json"
+PR_LIST_PAGE_BUDGET = 5
+
 
 @dataclass
 class PublishOptions:
@@ -42,6 +51,7 @@ class PublishOptions:
     expected_repo: str = "fanly/Jev-awesome"
     last_robot_sha: str | None = None
     pause_on_manual: bool = True
+    require_payload: bool = False
 
 
 @dataclass
@@ -76,24 +86,27 @@ class Publisher:
             main_branch=self.opts.main_branch,
             known_robot_shas=set(),
         )
+        # Cache is optional acceleration only — never sole authority (F3).
         self.state_path = state_path or (workspace / "data" / "cache" / "publisher_state.json")
-        self._load_state()
+        self._paused = False
+        self._pause_reason = ""
+        self._load_state_cache()
 
-    def _load_state(self) -> None:
-        if self.state_path.exists():
+    def _load_state_cache(self) -> None:
+        """Optional cache acceleration; identity may still be hydrated from robot tip."""
+        if not self.state_path.exists():
+            return
+        try:
             data = json.loads(self.state_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return
+        if not self.opts.last_robot_sha:
             self.opts.last_robot_sha = data.get("last_robot_sha") or self.opts.last_robot_sha
-            shas = data.get("known_robot_shas") or []
-            self.git.known_robot_shas = set(shas)
-            if data.get("paused"):
-                self._paused = True
-                self._pause_reason = data.get("pause_reason", "paused")
-            else:
-                self._paused = False
-                self._pause_reason = ""
-        else:
-            self._paused = False
-            self._pause_reason = ""
+        shas = data.get("known_robot_shas") or []
+        self.git.known_robot_shas = set(shas) | (self.git.known_robot_shas or set())
+        if data.get("paused"):
+            self._paused = True
+            self._pause_reason = data.get("pause_reason", "paused")
 
     def _save_state(self, **extra: Any) -> None:
         self.state_path.parent.mkdir(parents=True, exist_ok=True)
@@ -106,6 +119,146 @@ class Publisher:
             **extra,
         }
         self.state_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    def _identity_path(self, root: Path) -> Path:
+        return root / ROBOT_IDENTITY_REL
+
+    def _read_identity_file(self, path: Path) -> dict[str, Any] | None:
+        if not path.is_file():
+            return None
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        return data if isinstance(data, dict) else None
+
+    def _apply_identity(self, data: dict[str, Any], *, prefer_sha: str | None = None) -> None:
+        shas = set(data.get("known_robot_shas") or [])
+        recorded = data.get("last_robot_sha")
+        if recorded:
+            shas.add(str(recorded))
+        self.git.known_robot_shas = set(self.git.known_robot_shas or set()) | shas
+        # Trust prefer_sha (remote/recovered tip) only when it is the identity
+        # commit itself (prefer == recorded) or its first parent is recorded.
+        # A human commit on top keeps identity.last from an ancestor → rejected.
+        if prefer_sha and recorded:
+            if prefer_sha == str(recorded) or prefer_sha in shas:
+                self.opts.last_robot_sha = prefer_sha
+                self.git.known_robot_shas.add(prefer_sha)
+            elif self._first_parent_is(prefer_sha, str(recorded)):
+                self.opts.last_robot_sha = prefer_sha
+                self.git.known_robot_shas.add(prefer_sha)
+            elif not self.opts.last_robot_sha:
+                self.opts.last_robot_sha = str(recorded)
+        elif recorded and not self.opts.last_robot_sha:
+            self.opts.last_robot_sha = str(recorded)
+
+    def _first_parent_is(self, tip: str, expected_parent: str) -> bool:
+        try:
+            parent = run_git(self.workspace, "rev-parse", f"{tip}^", check=False).stdout.strip()
+            if parent == expected_parent:
+                return True
+            # Tip may not be local yet — try remote fetch object
+            remote_url = run_git(
+                self.workspace, "remote", "get-url", self.opts.remote_name, check=False
+            ).stdout.strip()
+            if not remote_url:
+                return False
+            run_git(self.workspace, "fetch", "--depth=2", remote_url, tip, check=False)
+            parent = run_git(self.workspace, "rev-parse", f"{tip}^", check=False).stdout.strip()
+            return parent == expected_parent
+        except GitError:
+            return False
+
+    def _hydrate_robot_identity(self, root: Path) -> None:
+        """Load identity without requiring data/cache (F3).
+
+        Order: (1) current worktree, (2) remote robot tip files, (3) recovered PR head.
+        Cache state_path remains optional acceleration via _load_state_cache.
+        """
+        # (1) worktree (includes merge-from already copied into root)
+        local = self._read_identity_file(self._identity_path(root))
+        if local:
+            self._apply_identity(local)
+
+        opts = self.opts
+        remote_sha = None
+        try:
+            remote_sha = self.git.remote_branch_sha(opts.remote_name, opts.robot_branch)
+        except GitError:
+            remote_sha = None
+
+        # (2) remote robot tip
+        if remote_sha:
+            tip_ident = self._identity_from_git_ref(root, remote_sha)
+            if tip_ident:
+                self._apply_identity(tip_ident, prefer_sha=remote_sha)
+            elif remote_sha in (self.git.known_robot_shas or set()):
+                self.opts.last_robot_sha = remote_sha
+
+        # (3) recovered open / closed-unmerged PR head tree
+        if not remote_sha:
+            head_sha = self._latest_recoverable_head_sha()
+            if head_sha:
+                tip_ident = self._identity_from_git_ref(root, head_sha)
+                if tip_ident:
+                    self._apply_identity(tip_ident, prefer_sha=head_sha)
+
+    def _identity_from_git_ref(self, root: Path, sha: str) -> dict[str, Any] | None:
+        import tempfile
+
+        tmp = Path(tempfile.mkdtemp(prefix="jev-ident-"))
+        try:
+            remote_url = run_git(root, "remote", "get-url", self.opts.remote_name).stdout.strip()
+            run_git(tmp, "init", "-b", "ident")
+            GitWorkspace(root=tmp, known_robot_shas=set()).ensure_identity()
+            run_git(tmp, "fetch", "--depth=1", remote_url, sha)
+            run_git(tmp, "checkout", "-f", "FETCH_HEAD")
+            return self._read_identity_file(tmp / ROBOT_IDENTITY_REL)
+        except GitError:
+            return None
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def _write_robot_identity(self, root: Path, *, last_sha: str) -> None:
+        known = set(self.git.known_robot_shas or set())
+        known.add(last_sha)
+        self.git.known_robot_shas = known
+        path = self._identity_path(root)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "last_robot_sha": last_sha,
+            "known_robot_shas": sorted(known),
+            "updated_at": utc_now().isoformat(),
+        }
+        path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    def _finalize_identity_in_commit(self, root: Path, sha: str) -> str:
+        """Second commit: persist durable identity pointing at catalog commit sha.
+
+        Tip T has identity.last_robot_sha == parent(T) == catalog sha. Hydrate
+        trusts tip when parent(tip) == identity.last (rejects human-on-top).
+        """
+        self._write_robot_identity(root, last_sha=sha)
+        rel = ROBOT_IDENTITY_REL
+        assert_path_allowed(rel)
+        self.git.add_paths([rel])
+        ident_sha = self.git.commit(
+            f"chore(catalog): robot identity {utc_now().strftime('%Y-%m-%d')}"
+        )
+        if ident_sha is None:
+            # Nothing to commit (identity unchanged) — keep catalog sha
+            self.opts.last_robot_sha = sha
+            known = set(self.git.known_robot_shas or set())
+            known.add(sha)
+            self.git.known_robot_shas = known
+            return sha
+        known = set(self.git.known_robot_shas or set())
+        known.add(sha)
+        known.add(ident_sha)
+        self.git.known_robot_shas = known
+        self.opts.last_robot_sha = ident_sha
+        return ident_sha
 
     def publish(self, *, catalog_root: Path | None = None) -> PublishResult:
         opts = self.opts
@@ -130,6 +283,8 @@ class Publisher:
 
         root = catalog_root or self.workspace
         store = CatalogStore(Paths(root))
+
+        self._hydrate_robot_identity(root)
 
         recovery = self._prepare_robot_catalog(store, root)
         if recovery == "recovery_gap":
@@ -183,6 +338,7 @@ class Publisher:
 
         # After a merged robot PR (merge or squash), main is authoritative —
         # do not fast-forward from a stale pre-merge robot tip.
+        # CRITICAL (F4): never restart/delete when an OPEN robot PR exists.
         restart_after_merge = False
         if self._robot_pr_merged():
             restart_after_merge = True
@@ -283,6 +439,10 @@ class Publisher:
         if sha is None:
             return PublishResult(status="no_diff", reason="empty_commit_skipped")
 
+        sha = self._finalize_identity_in_commit(root, sha)
+        if ROBOT_IDENTITY_REL not in rels:
+            rels.append(ROBOT_IDENTITY_REL)
+
         # Push race: check remote head first
         latest_remote = self.git.remote_branch_sha(opts.remote_name, opts.robot_branch)
         if latest_remote and opts.last_robot_sha and latest_remote != opts.last_robot_sha:
@@ -302,6 +462,7 @@ class Publisher:
             if restart_after_merge:
                 # Drop stale robot ref after merge/squash so the next tip is based on
                 # main (non-FF rewrite avoided by delete + create). Never force main.
+                # Guarded by _robot_pr_merged which refuses when open PR exists.
                 del_ref = run_git(
                     self.workspace,
                     "push",
@@ -336,19 +497,47 @@ class Publisher:
         pr_result.transport_calls = len(self.transport.calls)
         return pr_result
 
-    def _robot_pr_merged(self) -> bool:
+    def _list_robot_prs(self, *, state: str) -> list[dict[str, Any]]:
+        """List robot PRs via get_json only (head filter + pagination budget)."""
         opts = self.opts
-        has = getattr(self.transport, "has_merged_robot_pr", None)
-        if callable(has):
-            return bool(has(opts.robot_branch))
-        status, data = self.transport.get_json(
-            f"/repos/{opts.owner}/{opts.repo}/pulls?state=closed&per_page=20"
-        )
-        if status != 200 or not isinstance(data, list):
+        head = quote(f"{opts.owner}:{opts.robot_branch}", safe=":")
+        results: list[dict[str, Any]] = []
+        for page in range(1, PR_LIST_PAGE_BUDGET + 1):
+            path = (
+                f"/repos/{opts.owner}/{opts.repo}/pulls"
+                f"?state={state}&head={head}&per_page=20&page={page}"
+            )
+            status, data = self.transport.get_json(path)
+            if status != 200 or not isinstance(data, list):
+                break
+            for p in data:
+                if (p.get("head") or {}).get("ref") == opts.robot_branch:
+                    results.append(p)
+            if len(data) < 20:
+                break
+        return results
+
+    def _robot_pr_merged(self) -> bool:
+        """True only when no open robot PR AND a relevant robot PR was merged.
+
+        Must NOT return True while an open robot PR exists (F4).
+        Uses get_json + pr_is_merged only — never Fake-only helpers.
+        """
+        open_prs = self._list_robot_prs(state="open")
+        if open_prs:
             return False
-        return any(
-            (p.get("head") or {}).get("ref") == opts.robot_branch and p.get("merged") for p in data
-        )
+        closed = self._list_robot_prs(state="closed")
+        return any(pr_is_merged(p) for p in closed)
+
+    def _latest_recoverable_head_sha(self) -> str | None:
+        """Open or closed-unmerged robot PR head via get_json only."""
+        open_prs = self._list_robot_prs(state="open")
+        if open_prs:
+            return (open_prs[0].get("head") or {}).get("sha")
+        for p in self._list_robot_prs(state="closed"):
+            if pr_is_closed_unmerged(p):
+                return (p.get("head") or {}).get("sha")
+        return None
 
     def _prepare_robot_catalog(self, store: CatalogStore, root: Path) -> str:
         """Restore unmerged robot catalog when the branch ref is gone.
@@ -366,31 +555,7 @@ class Publisher:
         if self._robot_pr_merged():
             return "merged"
 
-        head_sha = None
-        getter = getattr(self.transport, "latest_unmerged_head_sha", None)
-        if callable(getter):
-            head_sha = getter(opts.robot_branch)
-        if not head_sha:
-            # Probe closed-unmerged via HTTP API shape
-            st, closed = self.transport.get_json(
-                f"/repos/{opts.owner}/{opts.repo}/pulls?state=closed&per_page=20"
-            )
-            if st == 200 and isinstance(closed, list):
-                for p in closed:
-                    if (p.get("head") or {}).get("ref") == opts.robot_branch and not p.get(
-                        "merged"
-                    ):
-                        head_sha = (p.get("head") or {}).get("sha")
-                        break
-            st2, opened = self.transport.get_json(
-                f"/repos/{opts.owner}/{opts.repo}/pulls?state=open&per_page=20"
-            )
-            if not head_sha and st2 == 200 and isinstance(opened, list):
-                for p in opened:
-                    if (p.get("head") or {}).get("ref") == opts.robot_branch:
-                        head_sha = (p.get("head") or {}).get("sha")
-                        break
-
+        head_sha = self._latest_recoverable_head_sha()
         if head_sha:
             import tempfile
 
@@ -403,6 +568,10 @@ class Publisher:
                 run_git(tmp, "fetch", "--depth=1", remote_url, recover_sha)
                 run_git(tmp, "checkout", "-f", "FETCH_HEAD")
                 store.merge_catalog_from_branch_files(tmp)
+                # Also hydrate identity from recovered tree
+                ident = self._read_identity_file(tmp / ROBOT_IDENTITY_REL)
+                if ident:
+                    self._apply_identity(ident, prefer_sha=recover_sha)
                 return "recovered"
             except GitError:
                 if opts.last_robot_sha:
@@ -437,6 +606,7 @@ class Publisher:
             "data/observations/*.json",
             "data/cache/checkpoints/*.json",
             "data/reports/*.json",
+            "data/automation/*.json",
             "docs/categories/*.md",
             "docs/updates/*.md",
             "README.md",
@@ -480,22 +650,25 @@ class Publisher:
         return written
 
     def _revalidate_inbox_fields(self, root: Path) -> None:
+        """Sanitize inbox against trusted baseline from CatalogStore (inbox+resources)."""
         inbox = root / "data" / "inbox"
         if not inbox.exists():
             return
+        store = CatalogStore(Paths(root))
         for path in inbox.glob("*.json"):
             assert_not_symlink(path)
             data = json.loads(path.read_text(encoding="utf-8"))
-            # Load existing from resources if any
             rid = data.get("id", "")
-            existing = None
-            res_path = (
-                root / "data" / "resources" / f"{rid.replace(':', '_').replace('/', '_')}.json"
+            # F5: load existing via CatalogStore (searches resources then inbox).
+            # Snapshot baseline BEFORE overwrite: if path is the only copy, read it
+            # as existing first, then merge machine fields onto that baseline.
+            existing_model = store.get_resource(str(rid)) if rid else None
+            existing = (
+                json.loads(existing_model.model_dump_json()) if existing_model is not None else None
             )
-            if res_path.exists():
-                existing = json.loads(res_path.read_text(encoding="utf-8"))
+            # If get_resource returned the same inbox file we are about to overwrite,
+            # that IS the trusted baseline (pre-write content still on disk).
             sanitized = filter_machine_resource_update(existing, data)
-            # Validate via model
             Resource.model_validate(sanitized)
             path.write_text(
                 json.dumps(sanitized, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
@@ -510,16 +683,7 @@ class Publisher:
 
     def _ensure_pr(self, head_sha: str) -> PublishResult:
         opts = self.opts
-        # List open PRs for this branch
-        status, data = self.transport.get_json(
-            f"/repos/{opts.owner}/{opts.repo}/pulls?state=open&per_page=20"
-        )
-        open_robot = []
-        if status == 200 and isinstance(data, list):
-            for p in data:
-                head = (p.get("head") or {}).get("ref")
-                if head == opts.robot_branch:
-                    open_robot.append(p)
+        open_robot = self._list_robot_prs(state="open")
 
         title = "chore(catalog): automated discovery update"
         body = self._pr_body(head_sha)
@@ -547,23 +711,18 @@ class Publisher:
             )
 
         # Closed-unmerged: do not auto-reopen
-        st2, closed = self.transport.get_json(
-            f"/repos/{opts.owner}/{opts.repo}/pulls?state=closed&per_page=20"
-        )
-        if st2 == 200 and isinstance(closed, list):
-            for p in closed:
-                head = (p.get("head") or {}).get("ref")
-                if head == opts.robot_branch and not p.get("merged"):
-                    return PublishResult(
-                        status="paused",
-                        reason="previous_pr_closed_unmerged",
-                        notes=[
-                            "branch updated; not auto-reopening identical closed PR",
-                            f"closed_pr={p.get('number')}",
-                        ],
-                        pr_number=p.get("number"),
-                        pr_url=p.get("html_url"),
-                    )
+        for p in self._list_robot_prs(state="closed"):
+            if pr_is_closed_unmerged(p):
+                return PublishResult(
+                    status="paused",
+                    reason="previous_pr_closed_unmerged",
+                    notes=[
+                        "branch updated; not auto-reopening identical closed PR",
+                        f"closed_pr={p.get('number')}",
+                    ],
+                    pr_number=p.get("number"),
+                    pr_url=p.get("html_url"),
+                )
 
         st3, created = self.transport.post_json(
             f"/repos/{opts.owner}/{opts.repo}/pulls",
