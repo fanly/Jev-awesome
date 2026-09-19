@@ -129,9 +129,7 @@ class TypeSafeClassifier:
         relevance_p = float(noul_ans.noul)
         # Do NOT read confidence on Noul
         choice_kind = response.choices.get("kind") or response.answers.get("kind")
-        choice_rel = response.choices.get("relationship") or response.answers.get(
-            "relationship"
-        )
+        choice_rel = response.choices.get("relationship") or response.answers.get("relationship")
         score_pri = response.scores.get("review_priority") or response.answers.get(
             "review_priority"
         )

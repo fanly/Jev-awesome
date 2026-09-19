@@ -43,11 +43,7 @@ class Renderer:
 
     def proposed(self) -> list[Resource]:
         return sorted(
-            [
-                r
-                for r in self.store.all_known()
-                if r.editorial_status == EditorialStatus.PROPOSED
-            ],
+            [r for r in self.store.all_known() if r.editorial_status == EditorialStatus.PROPOSED],
             key=_sort_key,
         )
 
@@ -97,9 +93,7 @@ class Renderer:
                     changed.append(rel)
                 atomic_write_text(path, content)
         if check and mismatched:
-            raise SystemExit(
-                "render --check failed; mismatched files:\n" + "\n".join(mismatched)
-            )
+            raise SystemExit("render --check failed; mismatched files:\n" + "\n".join(mismatched))
         return changed if not check else mismatched
 
 

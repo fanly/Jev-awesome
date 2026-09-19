@@ -111,7 +111,9 @@ def test_t23_approve_reject_flow(store):
         summary_zh="摘要",
         jev_role="角色",
         developer_value="价值",
-        primary_category=__import__("jev_awesome.models", fromlist=["PrimaryCategory"]).PrimaryCategory.SDK_INTEGRATIONS,
+        primary_category=__import__(
+            "jev_awesome.models", fromlist=["PrimaryCategory"]
+        ).PrimaryCategory.SDK_INTEGRATIONS,
     )
     store.save_resource(r, inbox=True)
     approved = svc.approve("github:55", reviewer="auditor-name")

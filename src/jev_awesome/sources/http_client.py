@@ -73,9 +73,7 @@ class SafeHttpClient:
         allowed_domains: set[str] | None = None,
     ) -> HttpResponse:
         domains = allowed_domains if allowed_domains is not None else self.allowed_domains
-        validate_url_for_fetch(
-            url, allowed_domains=domains, allow_http=self.allow_http
-        )
+        validate_url_for_fetch(url, allowed_domains=domains, allow_http=self.allow_http)
         req_headers = self._headers(headers)
         # Never forward Authorization to non-GitHub hosts
         if auth_for_github_only:

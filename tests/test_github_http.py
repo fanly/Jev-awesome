@@ -46,15 +46,15 @@ def test_t05_pagination_and_incomplete():
         ]
     )
     adapter = GitHubDiscoveryAdapter(queries=["topic:jev"], client=client)
-    resources, result = adapter.collect(CollectContext(dry_run=True, write_local=False, max_pages=2))
+    resources, result = adapter.collect(
+        CollectContext(dry_run=True, write_local=False, max_pages=2)
+    )
     assert len(resources) == 1
     assert any("incomplete_results" in g for g in result.coverage_gaps)
 
 
 def test_t06_401_no_blind_retry():
-    client = ScriptedClient(
-        [HttpResponse(401, {}, '{"message":"bad"}', "https://api.github.com")]
-    )
+    client = ScriptedClient([HttpResponse(401, {}, '{"message":"bad"}', "https://api.github.com")])
     adapter = GitHubDiscoveryAdapter(queries=["topic:jev"], client=client)
     resources, result = adapter.collect(CollectContext(dry_run=True, write_local=False))
     assert resources == []

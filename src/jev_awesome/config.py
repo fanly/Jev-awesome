@@ -36,8 +36,16 @@ class AppConfig:
     @classmethod
     def load(cls, root: Path | None = None) -> AppConfig:
         paths = Paths(root) if root else Paths()
-        sources = load_yaml(paths.config / "sources.yaml") if (paths.config / "sources.yaml").exists() else {}
-        policy = load_yaml(paths.config / "policy.yaml") if (paths.config / "policy.yaml").exists() else {}
+        sources = (
+            load_yaml(paths.config / "sources.yaml")
+            if (paths.config / "sources.yaml").exists()
+            else {}
+        )
+        policy = (
+            load_yaml(paths.config / "policy.yaml")
+            if (paths.config / "policy.yaml").exists()
+            else {}
+        )
         raw_runtime = (
             load_yaml(paths.config / "runtime.yaml")
             if (paths.config / "runtime.yaml").exists()

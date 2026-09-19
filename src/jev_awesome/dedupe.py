@@ -29,9 +29,7 @@ def identity_keys(resource: Resource) -> set[str]:
     return keys
 
 
-def find_duplicate(
-    candidate: Resource, existing: list[Resource]
-) -> Resource | None:
+def find_duplicate(candidate: Resource, existing: list[Resource]) -> Resource | None:
     """Return existing resource to merge into, or None.
 
     Different owners with same repo name must NOT merge.

@@ -36,9 +36,7 @@ class RssAtomAdapter:
 
     def collect(self, ctx: CollectContext) -> tuple[list[Resource], SourceResult]:
         if not self.enabled:
-            return [], SourceResult(
-                source_id=self.source_id, status="skipped", error="disabled"
-            )
+            return [], SourceResult(source_id=self.source_id, status="skipped", error="disabled")
         resources: list[Resource] = []
         errors: list[str] = []
         gaps: list[str] = []
@@ -87,9 +85,7 @@ class RssAtomAdapter:
                     continue
                 title = getattr(entry, "title", None) or link_n
                 published_raw = (
-                    getattr(entry, "published", None)
-                    or getattr(entry, "updated", None)
-                    or None
+                    getattr(entry, "published", None) or getattr(entry, "updated", None) or None
                 )
                 published = parse_flexible_date(published_raw, source="rss")
                 # Invalid/garbage dates → unknown, never today

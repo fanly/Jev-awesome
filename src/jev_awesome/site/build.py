@@ -91,18 +91,16 @@ def build_site(
         for r in store.list_resources(status_dir="resources")
         if r.editorial_status == EditorialStatus.CURATED
     ]
-    proposed = [
-        r
-        for r in store.all_known()
-        if r.editorial_status == EditorialStatus.PROPOSED
-    ]
+    proposed = [r for r in store.all_known() if r.editorial_status == EditorialStatus.PROPOSED]
 
     index = {
         "base_path": base_path if base_path.endswith("/") else base_path + "/",
         "resources": [_index_item(r, curated=True) for r in curated],
         "proposed_preview": [_index_item(r, curated=False) for r in proposed],
     }
-    atomic_write_text(out / "search-index.json", json.dumps(index, ensure_ascii=False, indent=2) + "\n")
+    atomic_write_text(
+        out / "search-index.json", json.dumps(index, ensure_ascii=False, indent=2) + "\n"
+    )
     atomic_write_text(out / "styles.css", SITE_CSS)
     atomic_write_text(out / "app.js", _app_js(base_path))
     atomic_write_text(out / "index.html", _index_html(base_path, len(curated), len(proposed)))

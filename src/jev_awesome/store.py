@@ -228,8 +228,7 @@ class CatalogStore:
                             "editorial_status": existing.editorial_status,
                             "summary_zh": existing.summary_zh or incoming.summary_zh,
                             "summary_en": existing.summary_en or incoming.summary_en,
-                            "developer_value": existing.developer_value
-                            or incoming.developer_value,
+                            "developer_value": existing.developer_value or incoming.developer_value,
                             "jev_role": existing.jev_role or incoming.jev_role,
                             "limitations": existing.limitations or incoming.limitations,
                             "verification_level": existing.verification_level,

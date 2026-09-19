@@ -46,9 +46,7 @@ class OfficialMonitorAdapter:
 
     def collect(self, ctx: CollectContext) -> tuple[list[Resource], SourceResult]:
         if not self.enabled:
-            return [], SourceResult(
-                source_id=self.source_id, status="skipped", error="disabled"
-            )
+            return [], SourceResult(source_id=self.source_id, status="skipped", error="disabled")
         resources: list[Resource] = []
         errors: list[str] = []
         gaps: list[str] = []
