@@ -12,7 +12,7 @@
 | P1 模型/CLI/去重/render | 完成 |
 | P2 采集适配器 + 真实只读采集 | 完成 |
 | P3 审核 CLI + TypeSafe 适配器（Mock） | 完成；live TypeSafe 未跑（无 Key） |
-| P4 CI/定时/PR 状态机/运维文档 | 完成（远端未启用） |
+| P4 CI/定时/PR 状态机/运维文档 | ~~完成（远端未启用）~~ → **R1 前为部分实现（publish 占位）**；见 `docs/implementation/r1/` |
 | P5 Seed + 静态站 | 完成（精选=0，待维护者采纳） |
 | P6 验收与本报告 | 完成（本地） |
 

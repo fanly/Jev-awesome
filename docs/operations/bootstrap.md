@@ -1,8 +1,11 @@
-# Bootstrap（空远端 → 首次上线）
+# Bootstrap（R1 更新）
 
-核验时间基线：远端曾为完全空仓库（无 commit / 无 `origin/main`）。**推送前请再次确认远端状态。**
+对照：`docs/implementation/r1/verification-report.md`。  
+**本文件只准备步骤；Gate 2–5 本轮不执行。**
 
-## 1. 本地审阅
+## Gate 1：本地可启动（本轮目标）
+
+已具备：生产 `Publisher`（默认关闭远端写）、路径/字段策略、三轮未合并集成测试、coverage/checkpoint、fake-ip 默认关、47 pytest、validate/render/site 本地通过。
 
 ```bash
 cd /Volumes/T9/code/Jev-awesome
@@ -11,34 +14,11 @@ uv run pytest
 uv run jev-awesome validate
 uv run jev-awesome render --check
 uv run jev-awesome doctor
-# 审阅 docs/implementation/seed-review.md
+uv run jev-awesome site build   # → site/dist，不是部署
+# 审阅 docs/implementation/seed-review.md 与 r1/acceptance-matrix.md
 ```
 
-## 2. 首次推送（需维护者明确授权后执行）
-
-再次检查远端是否仍为空：
-
-```bash
-git ls-remote origin
-gh repo view fanly/Jev-awesome --json isEmpty,defaultBranchRef
-```
-
-若仍为空，在审阅本地历史后：
-
-```bash
-git push -u origin main
-```
-
-若远端已有提交：先 `git fetch` 并对齐，**不要 force push**。
-
-## 3. Actions 权限
-
-- 仓库 Settings → Actions → General：允许 Actions；需要自动 PR 时开启 “Allow GitHub Actions to create and approve pull requests”。
-- Workflow 内已按 job 授予最小权限；保持默认 token 克制。
-
-## 4. 仓库变量 / Secrets
-
-Repository Variables：
+确认变量语义（字符串 `true` 才启用）：
 
 ```text
 COLLECTOR_ENABLED=false
@@ -46,37 +26,46 @@ AUTO_PR_ENABLED=false
 PAGES_ENABLED=false
 ```
 
-Secrets（可选）：
+本地 Clash fake-ip 仅在明确设置 `JEV_ALLOW_FAKE_IP=1` 且非 CI 时允许 allowlist 域名；**不要**在 CI/发布环境打开。
 
-```text
-TYPESAFE_API_KEY=
-```
-
-`GITHUB_TOKEN` 由平台注入，勿写入公开文件。
-
-## 5. 首次 dry-run
-
-```text
-Actions → Collect → Run workflow
-dry_run=true, mode=incremental, classifier=rules
-```
-
-检查日志、coverage gaps、artifact `collect-report`。
-
-## 6. 写入模式（再次明确授权）
-
-将 `COLLECTOR_ENABLED=true`，workflow_dispatch 且 `dry_run=false`。确认后再设 `AUTO_PR_ENABLED=true`。
-
-## 7. 采纳 seed
-
-使用真实 GitHub 登录名作为 `--reviewer`（仅审计字段）：
+## Gate 2：首次推送（未执行）
 
 ```bash
-uv run jev-awesome review list
-uv run jev-awesome review approve <ID> --reviewer YOUR_LOGIN
+git ls-remote origin
+gh repo view fanly/Jev-awesome --json isEmpty,defaultBranchRef
+# 若仍为空且审阅通过：
+# git push -u origin HEAD:main
+# 若远端已有提交：fetch 对齐，禁止 force push
+```
+
+推送前再核验当前分支名与完整 SHA（勿盲推旧说明）。
+
+## Gate 3：远端 dry-run（未执行）
+
+Actions → Collect → `dry_run=true`，classifier=rules。  
+检查 job summary、coverage、artifact `collect-report`。schedule 与 Pages 仍关。
+
+## Gate 4：一次真实机器人 PR（未执行）
+
+独立授权后：workflow_dispatch 且 `dry_run=false`，再设 `AUTO_PR_ENABLED=true`。  
+运行 `jev-awesome publish` 路径（workflow `publish-pr` job）。  
+可保持 `COLLECTOR_ENABLED=false` 避免定时并发。
+
+## Gate 5：内容采纳与持续运行（未执行）
+
+```bash
+uv run jev-awesome review show <ID>
+uv run jev-awesome review approve <ID> --reviewer <YOUR_GITHUB_LOGIN>
 uv run jev-awesome render
 ```
 
-## 8–10. 定时 / TypeSafe / Pages
+`--reviewer` 仅为审计字符串，**不是授权证明**。  
+schedule / Pages / TypeSafe live **分别**授权，不捆绑。
 
-按需开启；默认保持 rules、Pages 关闭。启用 Pages 后检查实际 `page_url` 与 `/Jev-awesome/` 子路径。
+## 发布 CLI（本地 dry 默认）
+
+```bash
+# 默认跳过远端
+uv run jev-awesome publish
+# 显式启用仍受 dry-run / token 约束；勿对真实 origin 试验除非 Gate 4 授权
+```

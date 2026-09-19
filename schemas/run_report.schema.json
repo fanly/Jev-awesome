@@ -9,6 +9,130 @@
       "title": "ClassifierMode",
       "type": "string"
     },
+    "Disposition": {
+      "additionalProperties": false,
+      "properties": {
+        "resource_id": {
+          "title": "Resource Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "created",
+            "updated",
+            "unchanged",
+            "suppressed_rejected",
+            "suppressed_merged",
+            "duplicate_in_round",
+            "security_rejected",
+            "pending_review"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        }
+      },
+      "required": [
+        "resource_id",
+        "disposition"
+      ],
+      "title": "Disposition",
+      "type": "object"
+    },
+    "QueryCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "query_id": {
+          "title": "Query Id",
+          "type": "string"
+        },
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "page_size": {
+          "default": 0,
+          "title": "Page Size",
+          "type": "integer"
+        },
+        "pages_read": {
+          "default": 0,
+          "title": "Pages Read",
+          "type": "integer"
+        },
+        "items_returned": {
+          "default": 0,
+          "title": "Items Returned",
+          "type": "integer"
+        },
+        "total_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Count"
+        },
+        "incomplete_results": {
+          "default": false,
+          "title": "Incomplete Results",
+          "type": "boolean"
+        },
+        "execution_status": {
+          "default": "success",
+          "enum": [
+            "success",
+            "failed",
+            "skipped"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "coverage_status": {
+          "default": "unknown",
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ],
+          "title": "Coverage Status",
+          "type": "string"
+        },
+        "gap_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap Reason"
+        }
+      },
+      "required": [
+        "query_id",
+        "query"
+      ],
+      "title": "QueryCoverage",
+      "type": "object"
+    },
     "SourceResult": {
       "additionalProperties": false,
       "properties": {
@@ -76,6 +200,47 @@
           ],
           "default": null,
           "title": "Time Range"
+        },
+        "execution_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "success",
+                "failed",
+                "skipped"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Execution Status"
+        },
+        "coverage_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "complete",
+                "partial",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage Status"
+        },
+        "queries": {
+          "items": {
+            "$ref": "#/$defs/QueryCoverage"
+          },
+          "title": "Queries",
+          "type": "array"
         }
       },
       "required": [
@@ -153,6 +318,56 @@
       },
       "title": "Notes",
       "type": "array"
+    },
+    "dispositions": {
+      "items": {
+        "$ref": "#/$defs/Disposition"
+      },
+      "title": "Dispositions",
+      "type": "array"
+    },
+    "counts_before": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Counts Before",
+      "type": "object"
+    },
+    "counts_after": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Counts After",
+      "type": "object"
+    },
+    "publish_attempted": {
+      "default": false,
+      "title": "Publish Attempted",
+      "type": "boolean"
+    },
+    "publish_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publish Status"
+    },
+    "publish_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publish Reason"
     }
   },
   "required": [

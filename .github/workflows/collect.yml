@@ -25,7 +25,6 @@ on:
           - auto
           - typesafe
   schedule:
-    # UTC 00:17, 06:17, 12:17, 18:17 → Asia/Shanghai 08:17/14:17/20:17/02:17
     - cron: "17 0,6,12,18 * * *"
 
 permissions:
@@ -43,32 +42,70 @@ jobs:
     permissions:
       contents: read
     outputs:
-      overall: ${{ steps.run.outputs.overall }}
+      overall: ${{ steps.run.outputs.overall || steps.skipped.outputs.overall || 'unknown' }}
+      dry_run: ${{ steps.flags.outputs.dry_run }}
+      auto_pr: ${{ steps.flags.outputs.auto_pr }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Check feature flags
+      - name: Resolve flags (strict string true)
         id: flags
-        run: |
-          echo "collector=${COLLECTOR_ENABLED:-false}" >> "$GITHUB_OUTPUT"
-          echo "auto_pr=${AUTO_PR_ENABLED:-false}" >> "$GITHUB_OUTPUT"
         env:
           COLLECTOR_ENABLED: ${{ vars.COLLECTOR_ENABLED }}
           AUTO_PR_ENABLED: ${{ vars.AUTO_PR_ENABLED }}
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_DRY: ${{ github.event.inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          collector=false
+          if [[ "${COLLECTOR_ENABLED:-}" == "true" ]]; then collector=true; fi
+          auto_pr=false
+          if [[ "${AUTO_PR_ENABLED:-}" == "true" ]]; then auto_pr=true; fi
+
+          # schedule: never treat missing inputs as write; only collector=true runs write path
+          # workflow_dispatch: dry_run input is boolean → GitHub passes 'true'/'false' strings
+          dry_run=true
+          if [[ "${EVENT_NAME}" == "workflow_dispatch" && "${INPUT_DRY}" == "false" ]]; then
+            dry_run=false
+          fi
+          if [[ "${EVENT_NAME}" == "schedule" && "${collector}" != "true" ]]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+          # schedule without collector: skip entire collect
+          if [[ "${EVENT_NAME}" == "schedule" && "${collector}" != "true" ]]; then
+            dry_run=true
+          fi
+
+          echo "collector=${collector}" >> "$GITHUB_OUTPUT"
+          echo "auto_pr=${auto_pr}" >> "$GITHUB_OUTPUT"
+          echo "dry_run=${dry_run}" >> "$GITHUB_OUTPUT"
+
+      - name: Skip schedule when collector disabled
+        id: skipped
+        if: steps.flags.outputs.skip == 'true'
+        run: |
+          echo "schedule skipped: COLLECTOR_ENABLED is not the string 'true'"
+          echo "overall=skipped" >> "$GITHUB_OUTPUT"
 
       - name: Install uv
-        if: steps.flags.outputs.collector == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.flags.outputs.skip != 'true'
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
 
       - name: Sync
-        if: steps.flags.outputs.collector == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.flags.outputs.skip != 'true'
         run: uv sync --frozen
+        env:
+          # CI must not enable local fake-ip
+          JEV_ALLOW_FAKE_IP: "0"
+          CI: "true"
 
       - name: Merge open robot branch data if present
-        if: steps.flags.outputs.collector == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.flags.outputs.skip != 'true'
         id: merge
         run: |
           set -euo pipefail
@@ -84,14 +121,16 @@ jobs:
 
       - name: Run collect
         id: run
-        if: steps.flags.outputs.collector == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.flags.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
           CLASSIFIER: ${{ github.event.inputs.classifier || 'rules' }}
           MODE: ${{ github.event.inputs.mode || 'incremental' }}
-          DRY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'true' }}
+          DRY: ${{ steps.flags.outputs.dry_run }}
           MERGE_FROM: ${{ steps.merge.outputs.path }}
+          JEV_ALLOW_FAKE_IP: "0"
+          CI: "true"
         run: |
           set -euo pipefail
           EXTRA=()
@@ -101,7 +140,6 @@ jobs:
           if [[ "${DRY}" == "true" ]]; then
             uv run jev-awesome collect --mode "$MODE" --classifier "$CLASSIFIER" --dry-run --max-pages 2 "${EXTRA[@]}"
           else
-            # write-local still does not push; publish job is separate and gated
             uv run jev-awesome collect --mode "$MODE" --classifier "$CLASSIFIER" --write-local --max-pages 2 "${EXTRA[@]}"
             uv run jev-awesome validate
             uv run jev-awesome render
@@ -117,8 +155,26 @@ jobs:
               f.write(f"overall={overall}\n")
           PY
 
+      - name: Job summary
+        if: always() && steps.flags.outputs.skip != 'true'
+        run: |
+          {
+            echo "## Collect report"
+            echo ""
+            echo "- dry_run: \`${{ steps.flags.outputs.dry_run }}\`"
+            echo "- collector_enabled: \`${{ steps.flags.outputs.collector }}\`"
+            echo "- auto_pr: \`${{ steps.flags.outputs.auto_pr }}\`"
+            echo "- overall: \`${{ steps.run.outputs.overall }}\`"
+            if [[ -f data/reports/latest.json ]]; then
+              echo ""
+              echo '```json'
+              python -c "import json;print(json.dumps(json.load(open('data/reports/latest.json')),indent=2)[:4000])"
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload report artifact
-        if: always() && (steps.flags.outputs.collector == 'true' || github.event_name == 'workflow_dispatch')
+        if: always() && steps.flags.outputs.skip != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: collect-report
@@ -129,10 +185,10 @@ jobs:
     needs: collect
     if: >-
       github.repository == 'fanly/Jev-awesome' &&
-      github.event_name == 'workflow_dispatch' &&
-      github.event.inputs.dry_run == 'false' &&
-      vars.AUTO_PR_ENABLED == 'true' &&
-      needs.collect.outputs.overall != 'failed'
+      needs.collect.outputs.dry_run == 'false' &&
+      needs.collect.outputs.auto_pr == 'true' &&
+      needs.collect.outputs.overall != 'failed' &&
+      needs.collect.outputs.overall != 'skipped'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -142,9 +198,40 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download report / note
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+
+      - name: Sync
+        run: uv sync --frozen
+        env:
+          JEV_ALLOW_FAKE_IP: "0"
+          CI: "true"
+
+      - name: Merge robot branch data
+        id: merge
         run: |
-          echo "PR publish is gated. Implementer must verify allowed paths before enabling."
-          echo "Default: AUTO_PR_ENABLED=false. Manual enable required after bootstrap."
-          # Placeholder intentionally conservative: do not force-push; do not modify workflows.
-          exit 0
+          set -euo pipefail
+          BRANCH="automation/catalog-update"
+          if git ls-remote --exit-code origin "$BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$BRANCH"
+            rm -rf /tmp/robot-branch
+            git worktree add /tmp/robot-branch "origin/$BRANCH"
+            echo "path=/tmp/robot-branch" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish robot PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_FROM: ${{ steps.merge.outputs.path }}
+          JEV_ALLOW_FAKE_IP: "0"
+          CI: "true"
+        run: |
+          set -euo pipefail
+          EXTRA=()
+          if [[ -n "${MERGE_FROM}" ]]; then
+            EXTRA+=(--merge-from "${MERGE_FROM}")
+          fi
+          # Re-collect is NOT done here; publish uses current tree + merge-from
+          # Validate path/field policy then push robot branch / open PR
+          uv run jev-awesome publish --enabled --remote origin --no-dry-run "${EXTRA[@]}"

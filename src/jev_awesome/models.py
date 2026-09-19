@@ -123,9 +123,7 @@ class ReviewRecord(BaseModel):
     reviewed_at: datetime | None = None
     decision: str | None = None
     reason: str | None = None
-    identity_note: str = (
-        "reviewer is audit metadata only; not an authorization credential"
-    )
+    identity_note: str = "reviewer is audit metadata only; not an authorization credential"
 
 
 class ClassifierSuggestion(BaseModel):
@@ -212,18 +210,12 @@ class Resource(BaseModel):
                     "(code_location or supports mentioning reproduction)"
                 )
         if self.verification_level == VerificationLevel.BENCHMARKED:
-            has_bench = any(
-                e.supports and "benchmark" in e.supports.lower() for e in self.evidence
-            )
+            has_bench = any(e.supports and "benchmark" in e.supports.lower() for e in self.evidence)
             if not has_bench:
-                raise ValueError(
-                    "verification_level=benchmarked requires benchmark evidence"
-                )
+                raise ValueError("verification_level=benchmarked requires benchmark evidence")
         if self.verification_level == VerificationLevel.CODE_LOCATED:
             if not any(e.code_location for e in self.evidence):
-                raise ValueError(
-                    "verification_level=code_located requires evidence.code_location"
-                )
+                raise ValueError("verification_level=code_located requires evidence.code_location")
         return self
 
 
@@ -290,6 +282,38 @@ class CatalogEvent(BaseModel):
     material: bool = True
 
 
+class QueryCoverage(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    query_id: str
+    query: str
+    page_size: int = 0
+    pages_read: int = 0
+    items_returned: int = 0
+    total_count: int | None = None
+    incomplete_results: bool = False
+    execution_status: Literal["success", "failed", "skipped"] = "success"
+    coverage_status: Literal["complete", "partial", "unknown"] = "unknown"
+    gap_reason: str | None = None
+
+
+class Disposition(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    resource_id: str
+    disposition: Literal[
+        "created",
+        "updated",
+        "unchanged",
+        "suppressed_rejected",
+        "suppressed_merged",
+        "duplicate_in_round",
+        "security_rejected",
+        "pending_review",
+    ]
+    source_id: str | None = None
+
+
 class SourceResult(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -302,6 +326,9 @@ class SourceResult(BaseModel):
     coverage_gaps: list[str] = Field(default_factory=list)
     error: str | None = None
     time_range: str | None = None
+    execution_status: Literal["success", "failed", "skipped"] | None = None
+    coverage_status: Literal["complete", "partial", "unknown"] | None = None
+    queries: list[QueryCoverage] = Field(default_factory=list)
 
 
 class RunReport(BaseModel):
@@ -318,6 +345,12 @@ class RunReport(BaseModel):
     model_calls: int = 0
     overall: Literal["success", "degraded", "failed"] = "success"
     notes: list[str] = Field(default_factory=list)
+    dispositions: list[Disposition] = Field(default_factory=list)
+    counts_before: dict[str, int] = Field(default_factory=dict)
+    counts_after: dict[str, int] = Field(default_factory=dict)
+    publish_attempted: bool = False
+    publish_status: str | None = None
+    publish_reason: str | None = None
 
 
 CATEGORY_META: dict[PrimaryCategory, dict[str, str]] = {

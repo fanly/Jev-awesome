@@ -95,9 +95,7 @@ def test_t14_typesafe_error_keeps_candidate_path():
         def system_one(self, **kwargs):
             raise TimeoutError("simulated")
 
-    c = TypeSafeClassifier(
-        mode=ClassifierMode.TYPESAFE, api_key="k", client_factory=BoomClient
-    )
+    c = TypeSafeClassifier(mode=ClassifierMode.TYPESAFE, api_key="k", client_factory=BoomClient)
     s = c.classify(make_resource())
     assert s.error and "TimeoutError" in s.error
 
@@ -131,19 +129,37 @@ def test_t17_block_localhost_and_private():
         )
 
 
-def test_t17b_fake_ip_only_with_allowlist(monkeypatch):
-    """198.18/15 (proxy fake-ip) allowed only for allowlisted hosts."""
+def test_t17b_fake_ip_default_denied_even_with_allowlist(monkeypatch):
+    """Default/CI: fake-ip rejected even for allowlisted hosts."""
     import socket
+
+    monkeypatch.delenv("JEV_ALLOW_FAKE_IP", raising=False)
+    monkeypatch.setenv("CI", "true")
 
     def fake_getaddrinfo(host, port, *a, **k):
         return [(socket.AF_INET, socket.SOCK_STREAM, 0, "", ("198.18.1.1", port))]
 
     monkeypatch.setattr(socket, "getaddrinfo", fake_getaddrinfo)
-    # allowlisted host + fake-ip → ok
+    with pytest.raises(UrlSafetyError):
+        validate_url_for_fetch(
+            "https://api.github.com/x", allowed_domains={"api.github.com", "github.com"}
+        )
+
+
+def test_t17c_fake_ip_only_with_explicit_local_flag(monkeypatch):
+    import socket
+
+    monkeypatch.delenv("CI", raising=False)
+    monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
+    monkeypatch.setenv("JEV_ALLOW_FAKE_IP", "1")
+
+    def fake_getaddrinfo(host, port, *a, **k):
+        return [(socket.AF_INET, socket.SOCK_STREAM, 0, "", ("198.18.1.1", port))]
+
+    monkeypatch.setattr(socket, "getaddrinfo", fake_getaddrinfo)
     validate_url_for_fetch(
         "https://api.github.com/x", allowed_domains={"api.github.com", "github.com"}
     )
-    # non-allowlisted → blocked
     with pytest.raises(UrlSafetyError):
         validate_url_for_fetch("https://evil.test/x", allowed_domains=None)
 

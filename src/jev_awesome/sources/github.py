@@ -11,6 +11,7 @@ from jev_awesome.models import (
     JevRelationship,
     Observation,
     OfficialStatus,
+    QueryCoverage,
     Resource,
     ResourceKind,
     SourceResult,
@@ -50,7 +51,11 @@ class GitHubDiscoveryAdapter:
     def collect(self, ctx: CollectContext) -> tuple[list[Resource], SourceResult]:
         if not self.enabled:
             return [], SourceResult(
-                source_id=self.source_id, status="skipped", error="disabled"
+                source_id=self.source_id,
+                status="skipped",
+                execution_status="skipped",
+                coverage_status="unknown",
+                error="disabled",
             )
         if ctx.token:
             self.client.token = ctx.token
@@ -60,10 +65,19 @@ class GitHubDiscoveryAdapter:
         errors: list[str] = []
         seen_ids: set[int] = set()
         discovered = 0
+        query_coverages: list[QueryCoverage] = []
 
-        for query in self.queries:
+        for qi, query in enumerate(self.queries):
             page = 1
             query_incomplete = False
+            items_returned = 0
+            pages_read = 0
+            total_count: int | None = None
+            exec_status: str = "success"
+            gap_reason: str | None = None
+            coverage_status = "unknown"
+            hit_page_budget = False
+
             while page <= ctx.max_pages:
                 self.client.wait_if_needed()
                 url = (
@@ -78,35 +92,54 @@ class GitHubDiscoveryAdapter:
                 except Exception as e:  # noqa: BLE001
                     errors.append(f"{query} page={page}: {e}")
                     gaps.append(f"query_failed:{query}:page:{page}")
+                    exec_status = "failed"
+                    gap_reason = "timeout_or_client_error"
+                    coverage_status = "unknown"
                     break
 
                 if resp.status_code == 304:
+                    coverage_status = "complete"
                     break
                 if resp.status_code != 200:
                     kind = classify_http_error(resp.status_code)
                     errors.append(f"{query} page={page}: {kind} {resp.status_code}")
+                    exec_status = "failed"
                     if resp.status_code in {401}:
                         gaps.append(f"unauthorized:{query}")
+                        gap_reason = "unauthorized"
                         break
                     if resp.status_code in {403, 429}:
                         gaps.append(f"rate_limited:{query}:page:{page}")
+                        gap_reason = "rate_limited"
+                        coverage_status = "partial"
                         break
                     gaps.append(f"http_error:{query}:page:{page}:{resp.status_code}")
+                    gap_reason = f"http_{resp.status_code}"
+                    coverage_status = "unknown"
                     break
 
                 payload = json.loads(resp.text)
+                pages_read += 1
                 if payload.get("incomplete_results"):
                     query_incomplete = True
                     gaps.append(f"incomplete_results:{query}:page:{page}")
 
                 items = payload.get("items") or []
+                items_returned += len(items)
+                total_count = payload.get("total_count")
+
                 if not items:
+                    coverage_status = "partial" if query_incomplete else "complete"
                     break
 
-                total = payload.get("total_count", 0)
                 # GitHub search hard cap ~1000
-                if page * ctx.per_page >= 1000 and total > 1000:
-                    gaps.append(f"search_cap_1000:{query}:total:{total}")
+                if (
+                    isinstance(total_count, int)
+                    and total_count > 1000
+                    and page * ctx.per_page >= 1000
+                ):
+                    gaps.append(f"search_cap_1000:{query}:total:{total_count}")
+                    gap_reason = "search_cap"
 
                 for item in items:
                     repo_id = item.get("id")
@@ -117,11 +150,51 @@ class GitHubDiscoveryAdapter:
                     resources.append(self._to_resource(item))
 
                 if len(items) < ctx.per_page:
+                    coverage_status = "partial" if query_incomplete else "complete"
+                    break
+                if page >= ctx.max_pages:
+                    # More results may exist
+                    if isinstance(total_count, int) and items_returned < min(total_count, 1000):
+                        hit_page_budget = True
+                        coverage_status = "partial"
+                        gap_reason = gap_reason or "page_budget"
+                        gaps.append(
+                            f"page_budget:{query}:pages={pages_read}:returned={items_returned}:total={total_count}"
+                        )
+                    elif query_incomplete:
+                        coverage_status = "partial"
+                        gap_reason = gap_reason or "upstream_incomplete"
+                    else:
+                        # Exactly filled last page at budget — unknown if more
+                        coverage_status = "partial"
+                        gap_reason = gap_reason or "page_budget"
+                        gaps.append(f"page_budget:{query}:pages={pages_read}")
                     break
                 page += 1
 
-            if query_incomplete:
+            if query_incomplete and coverage_status == "unknown":
+                coverage_status = "partial"
+                gap_reason = gap_reason or "upstream_incomplete"
                 gaps.append(f"coverage_gap:{query}")
+
+            if exec_status == "success" and coverage_status == "unknown" and not hit_page_budget:
+                # Finished naturally without signals of more data
+                coverage_status = "complete"
+
+            query_coverages.append(
+                QueryCoverage(
+                    query_id=f"gh-q{qi}",
+                    query=query,
+                    page_size=ctx.per_page,
+                    pages_read=pages_read,
+                    items_returned=items_returned,
+                    total_count=total_count,
+                    incomplete_results=query_incomplete,
+                    execution_status=exec_status,  # type: ignore[arg-type]
+                    coverage_status=coverage_status,  # type: ignore[arg-type]
+                    gap_reason=gap_reason,
+                )
+            )
 
         status: str
         if errors and resources:
@@ -130,6 +203,14 @@ class GitHubDiscoveryAdapter:
             status = "failed"
         else:
             status = "success"
+
+        overall_coverage = "complete"
+        if any(q.coverage_status == "partial" for q in query_coverages):
+            overall_coverage = "partial"
+        elif any(q.coverage_status == "unknown" for q in query_coverages):
+            overall_coverage = "unknown"
+        if any(q.execution_status == "failed" for q in query_coverages) and not resources:
+            overall_coverage = "unknown"
 
         result = SourceResult(
             source_id=self.source_id,
@@ -140,6 +221,11 @@ class GitHubDiscoveryAdapter:
             coverage_gaps=gaps,
             error="; ".join(errors) if errors else None,
             time_range="search_index_current",
+            execution_status="failed"
+            if status == "failed"
+            else ("skipped" if status == "skipped" else "success"),
+            coverage_status=overall_coverage,  # type: ignore[arg-type]
+            queries=query_coverages,
         )
         return resources, result
 

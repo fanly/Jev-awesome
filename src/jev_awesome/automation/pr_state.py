@@ -80,7 +80,7 @@ class FakeGitHub:
         existing = self.get_open_robot_pr(branch)
         if existing:
             # Update same PR — do not open another
-            existing.head_sha = f"sha-{len(self.actions)+1}"
+            existing.head_sha = f"sha-{len(self.actions) + 1}"
             self.branches[branch] = existing.head_sha
             state.lifecycle = PrLifecycle.OPEN
             state.pr_number = existing.number
@@ -91,9 +91,7 @@ class FakeGitHub:
 
         # If last PR was closed without merge, do not harass by reopening identical
         closed = [
-            p
-            for p in self.pulls
-            if p.head_ref == branch and p.state == "closed" and not p.merged
+            p for p in self.pulls if p.head_ref == branch and p.state == "closed" and not p.merged
         ]
         if closed and state.lifecycle == PrLifecycle.CLOSED:
             state.notes.append("previous PR closed unmerged; pause reopen")

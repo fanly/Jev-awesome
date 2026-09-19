@@ -46,11 +46,22 @@ def doctor() -> None:
         ("config/policy.yaml", "ok" if (paths.config / "policy.yaml").exists() else "MISSING"),
         ("config/runtime.yaml", "ok" if (paths.config / "runtime.yaml").exists() else "MISSING"),
         ("TYPESAFE_API_KEY", "present" if os.environ.get("TYPESAFE_API_KEY") else "absent"),
-        ("GITHUB_TOKEN/GH_TOKEN", "present" if (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")) else "absent"),
+        (
+            "GITHUB_TOKEN/GH_TOKEN",
+            "present"
+            if (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN"))
+            else "absent",
+        ),
         ("classifier_mode_default", config.runtime.classifier_mode),
         ("collector_enabled", str(config.runtime.collector_enabled)),
         ("auto_pr_enabled", str(config.runtime.auto_pr_enabled)),
         ("pages_enabled", str(config.runtime.pages_enabled)),
+        (
+            "JEV_ALLOW_FAKE_IP",
+            "ON"
+            if os.environ.get("JEV_ALLOW_FAKE_IP", "").lower() in {"1", "true", "yes", "on"}
+            else "off(default)",
+        ),
         ("schedule", "; ".join(describe_schedule(config.runtime.timezone))),
     ]
     table = Table(title="jev-awesome doctor")
@@ -94,12 +105,23 @@ def validate() -> None:
 
 
 @main.command()
-@click.option("--mode", default="incremental", type=click.Choice(["incremental", "refresh", "maintenance", "all"]))
+@click.option(
+    "--mode",
+    default="incremental",
+    type=click.Choice(["incremental", "refresh", "maintenance", "all"]),
+)
 @click.option("--classifier", default="rules", type=click.Choice(["rules", "auto", "typesafe"]))
-@click.option("--dry-run/--write-preview-only", default=True, help="Default dry-run; no catalog writes.")
+@click.option(
+    "--dry-run/--write-preview-only", default=True, help="Default dry-run; no catalog writes."
+)
 @click.option("--write-local", is_flag=True, help="Write local catalog files (still no remote).")
 @click.option("--max-pages", default=2, show_default=True)
-@click.option("--merge-from", type=click.Path(path_type=Path), default=None, help="Merge unmerged robot branch checkout.")
+@click.option(
+    "--merge-from",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Merge unmerged robot branch checkout.",
+)
 def collect(
     mode: str,
     classifier: str,
@@ -230,6 +252,53 @@ def site_build() -> None:
     cfg = AppConfig.load()
     out = build_site(base_path=cfg.runtime.site_base_path)
     console.print(f"site → {out}")
+
+
+@main.command("publish")
+@click.option("--enabled/--disabled", default=False, help="Must pass --enabled; default skips.")
+@click.option("--dry-run/--no-dry-run", default=True, help="Default dry-run: no push/PR.")
+@click.option("--remote", default="origin", show_default=True)
+@click.option("--merge-from", type=click.Path(path_type=Path), default=None)
+@click.option("--owner", default="fanly")
+@click.option("--repo", default="Jev-awesome")
+def publish_cmd(
+    enabled: bool,
+    dry_run: bool,
+    remote: str,
+    merge_from: Path | None,
+    owner: str,
+    repo: str,
+) -> None:
+    """Publish allowlisted catalog changes to robot branch and open/update PR."""
+    from jev_awesome.automation.github_transport import HttpxGitHubTransport
+    from jev_awesome.automation.publisher import Publisher, PublishOptions
+    from jev_awesome.store import CatalogStore
+
+    root = _paths().root
+    if merge_from and merge_from.exists():
+        CatalogStore(Paths(root)).merge_catalog_from_branch_files(merge_from)
+
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
+    if enabled and not dry_run and not token:
+        console.print("[red]GITHUB_TOKEN required for non-dry-run publish[/red]")
+        raise SystemExit(2)
+
+    transport = HttpxGitHubTransport(token=token or "dry-run-unused")
+    opts = PublishOptions(
+        enabled=enabled,
+        dry_run=dry_run,
+        remote_name=remote,
+        owner=owner,
+        repo=repo,
+    )
+    from dataclasses import asdict
+
+    result = Publisher(root, transport=transport, opts=opts).publish()
+    console.print_json(data=asdict(result))
+    if result.status == "failed":
+        raise SystemExit(1)
+    if result.status == "paused":
+        raise SystemExit(3)
 
 
 if __name__ == "__main__":

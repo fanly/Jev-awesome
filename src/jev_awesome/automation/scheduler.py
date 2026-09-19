@@ -30,9 +30,7 @@ def describe_schedule(tz_name: str = "Asia/Shanghai") -> list[str]:
     for h in cron_hours_utc():
         utc_dt = datetime(2026, 1, 1, h, 17, tzinfo=UTC)
         local = utc_dt.astimezone(tz)
-        lines.append(
-            f"UTC {h:02d}:17 → {tz_name} {local.strftime('%H:%M')} (cron `{UTC_CRON}`)"
-        )
+        lines.append(f"UTC {h:02d}:17 → {tz_name} {local.strftime('%H:%M')} (cron `{UTC_CRON}`)")
     return lines
 
 
