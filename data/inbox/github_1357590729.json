@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1357590729",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "python"
+  ],
+  "canonical_url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1357590729",
+  "author_or_org": "typesafe-ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "typesafe-ai/typesafe-sdk-python",
+  "summary_zh": "官方 Python SDK（PyPI: typesafe-sdk）。",
+  "summary_en": "The official Python library for the TypeSafe API",
+  "developer_value": "集成官方 API 的首选客户端。",
+  "jev_role": "TYPESAFE_API_KEY + TypeSafeClient.system_one",
+  "prerequisites": null,
+  "limitations": "需有效 API Key；版本以 PyPI 为准。",
+  "published_at": {
+    "value": "2026-09-04T21:01:31Z",
+    "precision": "datetime",
+    "raw": "2026-09-04T21:01:31Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "sdk_integrations",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.621607Z"
+  },
+  "content_hash": "5f06126c9f4f8e21e87089bbaef54113237534edd0f24d852f9fd288f3765c02",
+  "github_repo_id": 1357590729,
+  "github_full_name": "typesafe-ai/typesafe-sdk-python"
+}

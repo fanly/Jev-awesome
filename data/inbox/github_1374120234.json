@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374120234",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/heiwa4126/jev-bun1",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374120234",
+  "author_or_org": "heiwa4126",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "heiwa4126/jev-bun1",
+  "summary_zh": null,
+  "summary_en": "TypeSafe の Jev を TypeScript SDK で使ってみる最初の 1 歩",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T08:00:27Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T08:00:27Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322731Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.643064Z"
+  },
+  "content_hash": "b5dd2b6f6286038e9aa44b8c9cee11d752d18212949d47c7ac8d86d2cf9ef98a",
+  "github_repo_id": 1374120234,
+  "github_full_name": "heiwa4126/jev-bun1"
+}

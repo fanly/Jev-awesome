@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373113030",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/joshmn/typesafe-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373113030",
+  "author_or_org": "joshmn",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "joshmn/typesafe-sdk",
+  "summary_zh": null,
+  "summary_en": "Ruby client for typesafe.ai",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-16T13:53:31Z",
+    "precision": "datetime",
+    "raw": "2026-09-16T13:53:31Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210286Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.652440Z"
+  },
+  "content_hash": "30b89be825d685dc51799d9a958742bd9712cfc0ca98da4b631bd5dc5662ae9b",
+  "github_repo_id": 1373113030,
+  "github_full_name": "joshmn/typesafe-sdk"
+}

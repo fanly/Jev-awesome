@@ -1,0 +1,691 @@
+{
+  "$defs": {
+    "ClassifierMode": {
+      "enum": [
+        "rules",
+        "auto",
+        "typesafe"
+      ],
+      "title": "ClassifierMode",
+      "type": "string"
+    },
+    "ClassifierSuggestion": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "$ref": "#/$defs/ClassifierMode"
+        },
+        "relevant": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relevant"
+        },
+        "relevance_probability": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relevance Probability"
+        },
+        "resource_kind": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ResourceKind"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "jev_relationship": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/JevRelationship"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "primary_category": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PrimaryCategory"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "priority_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority Score"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "model_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Name"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "title": "ClassifierSuggestion",
+      "type": "object"
+    },
+    "EditorialStatus": {
+      "enum": [
+        "pending",
+        "proposed",
+        "curated",
+        "rejected",
+        "archived"
+      ],
+      "title": "EditorialStatus",
+      "type": "string"
+    },
+    "EvidenceItem": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "source_type": {
+          "title": "Source Type",
+          "type": "string"
+        },
+        "checked_at": {
+          "format": "date-time",
+          "title": "Checked At",
+          "type": "string"
+        },
+        "supports": {
+          "title": "Supports",
+          "type": "string"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt"
+        },
+        "code_location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Code Location"
+        },
+        "commit_sha": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Commit Sha"
+        }
+      },
+      "required": [
+        "url",
+        "source_type",
+        "checked_at",
+        "supports"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "FlexibleDate": {
+      "additionalProperties": false,
+      "description": "Date with known precision. Never invent time-of-day.",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "precision": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "year",
+            "month",
+            "day",
+            "datetime"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        }
+      },
+      "title": "FlexibleDate",
+      "type": "object"
+    },
+    "JevRelationship": {
+      "enum": [
+        "official",
+        "calls_official_api",
+        "community_sdk",
+        "inspired_independent",
+        "mention_only",
+        "unclear",
+        "not_related"
+      ],
+      "title": "JevRelationship",
+      "type": "string"
+    },
+    "LicenseStatus": {
+      "enum": [
+        "known",
+        "unknown",
+        "unlicensed"
+      ],
+      "title": "LicenseStatus",
+      "type": "string"
+    },
+    "OfficialStatus": {
+      "enum": [
+        "official",
+        "community",
+        "unknown"
+      ],
+      "title": "OfficialStatus",
+      "type": "string"
+    },
+    "PrimaryCategory": {
+      "enum": [
+        "official",
+        "getting_started",
+        "applications",
+        "sdk_integrations",
+        "evals_limits",
+        "research_alts"
+      ],
+      "title": "PrimaryCategory",
+      "type": "string"
+    },
+    "ResourceKind": {
+      "enum": [
+        "official_doc",
+        "sdk",
+        "tutorial",
+        "application",
+        "evaluation",
+        "research",
+        "alternative",
+        "news",
+        "other",
+        "unrelated",
+        "insufficient_evidence"
+      ],
+      "title": "ResourceKind",
+      "type": "string"
+    },
+    "ReviewRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decision"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "identity_note": {
+          "default": "reviewer is audit metadata only; not an authorization credential",
+          "title": "Identity Note",
+          "type": "string"
+        }
+      },
+      "title": "ReviewRecord",
+      "type": "object"
+    },
+    "VerificationLevel": {
+      "enum": [
+        "discovered",
+        "source_checked",
+        "code_located",
+        "reproduced",
+        "benchmarked"
+      ],
+      "title": "VerificationLevel",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Authoritative catalog entry. Editorial fields are protected from collectors.",
+  "properties": {
+    "schema_version": {
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "resource_kind": {
+      "$ref": "#/$defs/ResourceKind"
+    },
+    "primary_category": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PrimaryCategory"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "languages": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "canonical_url": {
+      "title": "Canonical Url",
+      "type": "string"
+    },
+    "related_links": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Related Links",
+      "type": "array"
+    },
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "source_identity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Identity"
+    },
+    "author_or_org": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Author Or Org"
+    },
+    "official_status": {
+      "$ref": "#/$defs/OfficialStatus",
+      "default": "unknown"
+    },
+    "jev_relationship": {
+      "$ref": "#/$defs/JevRelationship",
+      "default": "unclear"
+    },
+    "original_title": {
+      "title": "Original Title",
+      "type": "string"
+    },
+    "summary_zh": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Summary Zh"
+    },
+    "summary_en": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Summary En"
+    },
+    "developer_value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Developer Value"
+    },
+    "jev_role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Jev Role"
+    },
+    "prerequisites": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prerequisites"
+    },
+    "limitations": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Limitations"
+    },
+    "published_at": {
+      "$ref": "#/$defs/FlexibleDate"
+    },
+    "first_discovered_at": {
+      "format": "date-time",
+      "title": "First Discovered At",
+      "type": "string"
+    },
+    "last_material_change_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Last Material Change At"
+    },
+    "license_status": {
+      "$ref": "#/$defs/LicenseStatus",
+      "default": "unknown"
+    },
+    "license_identifier": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "License Identifier"
+    },
+    "license_evidence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "License Evidence"
+    },
+    "editorial_status": {
+      "$ref": "#/$defs/EditorialStatus",
+      "default": "pending"
+    },
+    "verification_level": {
+      "$ref": "#/$defs/VerificationLevel",
+      "default": "discovered"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "review_record": {
+      "$ref": "#/$defs/ReviewRecord"
+    },
+    "suggestion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ClassifierSuggestion"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "content_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Hash"
+    },
+    "github_repo_id": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Github Repo Id"
+    },
+    "github_full_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Github Full Name"
+    }
+  },
+  "required": [
+    "id",
+    "resource_kind",
+    "canonical_url",
+    "original_title",
+    "first_discovered_at"
+  ],
+  "title": "Resource",
+  "type": "object"
+}

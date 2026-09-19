@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374858514",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/superagents-lab/jev-search",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374858514",
+  "author_or_org": "superagents-lab",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "superagents-lab/jev-search",
+  "summary_zh": null,
+  "summary_en": "Search the web with TypeSafe's Jev: source selection, query understanding and relevance ranking. Built with Search1API.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T18:05:10Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T18:05:10Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.640191Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.607282Z"
+  },
+  "content_hash": "398126ad1ce69729327c9dd9155e26258955e99f7274c3e1b51acdeb519ccec7",
+  "github_repo_id": 1374858514,
+  "github_full_name": "superagents-lab/jev-search"
+}

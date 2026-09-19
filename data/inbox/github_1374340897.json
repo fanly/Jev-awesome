@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374340897",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "debate",
+    "jev",
+    "typesafe",
+    "video-editing",
+    "whisper"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ChetasLua/jevmeter",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374340897",
+  "author_or_org": "ChetasLua",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "ChetasLua/jevmeter",
+  "summary_zh": null,
+  "summary_en": "Put a live Jev (TypeSafe) meter on any video: every sentence scored, rendered as a 16:9 edit",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T11:39:01Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T11:39:01Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.128903Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.667037Z"
+  },
+  "content_hash": "108a42f0ebdbb1ee6fd2abe0fd6f63c3c7c05da037b4a64effc8b0816901a332",
+  "github_repo_id": 1374340897,
+  "github_full_name": "ChetasLua/jevmeter"
+}

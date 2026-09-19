@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:642065600",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "agent-workflows",
+    "ai-api",
+    "ai-automation",
+    "classification",
+    "confidence-aware-ai",
+    "decision-intelligence",
+    "function-calling",
+    "jev",
+    "llm-guardrails",
+    "llm-routing",
+    "machine-native-intelligence",
+    "python",
+    "rag",
+    "reranking",
+    "semantic-routing",
+    "semantic-search",
+    "structured-output",
+    "system-one-models",
+    "typesafe-ai",
+    "typescript"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:642065600",
+  "author_or_org": "Anil-matcha",
+  "official_status": "community",
+  "jev_relationship": "mention_only",
+  "original_title": "Anil-matcha/awesome-jev-by-typesafe",
+  "summary_zh": "用例、模式与入门代码合集（高星社区目录）。",
+  "summary_en": "Evidence-backed use cases, patterns, prompts, and starter code for TypeSafe Jev — a System One model for fast, typed, confidence-aware decisions in software.",
+  "developer_value": "快速浏览可落地的问题拆分方式。",
+  "jev_role": "示例与模式索引",
+  "prerequisites": null,
+  "limitations": "条目需回到原项目核实；不自动继承“官方”标签。",
+  "published_at": {
+    "value": "2023-05-17T18:38:27Z",
+    "precision": "datetime",
+    "raw": "2023-05-17T18:38:27Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.595032Z"
+  },
+  "content_hash": "10de5531cc3abcb7dc44543018259f411f558ef8e195edadbf4a1ad08f777b1d",
+  "github_repo_id": 642065600,
+  "github_full_name": "Anil-matcha/awesome-jev-by-typesafe"
+}

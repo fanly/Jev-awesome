@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375069862",
+  "resource_kind": "alternative",
+  "primary_category": "research_alts",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "python"
+  ],
+  "canonical_url": "https://github.com/jaredpalmer/kev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375069862",
+  "author_or_org": "jaredpalmer",
+  "official_status": "community",
+  "jev_relationship": "inspired_independent",
+  "original_title": "jaredpalmer/kev",
+  "summary_zh": "受 Jev 启发、可在 MacBook 训练运行的小型决策模型。",
+  "summary_en": "tiny Jev-like model built on top of Qwen2.5-0.5B you can train and run on your MacBook",
+  "developer_value": "理解 System One 形态的小模型路径。",
+  "jev_role": "独立复现/启发实现",
+  "prerequisites": null,
+  "limitations": "非 TypeSafe 官方；勿混淆品牌。",
+  "published_at": {
+    "value": "2026-09-17T20:49:39Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T20:49:39Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/jaredpalmer/kev",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.650333Z"
+  },
+  "content_hash": "e62643e178af25b3337506c2ed254876a5183c65c61381f17a32683fb4f230e7",
+  "github_repo_id": 1375069862,
+  "github_full_name": "jaredpalmer/kev"
+}

@@ -1,0 +1,14 @@
+timezone: Asia/Shanghai
+collector_enabled: false
+auto_pr_enabled: false
+pages_enabled: false
+classifier_mode: rules
+typesafe_max_requests: 50
+github_token_env: GITHUB_TOKEN
+dry_run_default: true
+robot_branch: automation/catalog-update
+expected_repo: fanly/Jev-awesome
+site_base_path: /Jev-awesome/
+request_timeout_seconds: 30.0
+max_response_bytes: 2000000
+max_redirects: 5

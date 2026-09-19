@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:6b79f05c84473e46",
+  "resource_kind": "official_doc",
+  "primary_category": "getting_started",
+  "tags": [
+    "seed",
+    "official"
+  ],
+  "languages": [],
+  "canonical_url": "https://docs.typesafe.ai/primitives.md",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "official:docs_primitives",
+  "author_or_org": "TypeSafe",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "TypeSafe Primitives",
+  "summary_zh": "Choice / Score / Noul 三类问题与返回字段说明。",
+  "summary_en": null,
+  "developer_value": "选型问题类型、理解同请求问题相互独立。",
+  "jev_role": "定义可组合的判断原语。",
+  "prerequisites": null,
+  "limitations": "Noul 无独立 confidence。",
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://docs.typesafe.ai/primitives.md",
+      "source_type": "official_docs",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "source page read 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "official_doc",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:41.804793Z"
+  },
+  "content_hash": "6cbe8960e23863cf2a1c8c6892d2fa4a0c0b42c9a4f034b6cec0727f2ec8c728",
+  "github_repo_id": null,
+  "github_full_name": null
+}

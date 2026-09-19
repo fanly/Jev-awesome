@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375970233",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "golang",
+    "jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Alurith/jeff",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375970233",
+  "author_or_org": "Alurith",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "Alurith/jeff",
+  "summary_zh": null,
+  "summary_en": "Catch code issues before they catch you.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T14:13:58Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T14:13:58Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.129534Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.670822Z"
+  },
+  "content_hash": "6c787b8cfe1c1e333b8658e36800031b42ba7264d90dc544c003f2a04a2e41dc",
+  "github_repo_id": 1375970233,
+  "github_full_name": "Alurith/jeff"
+}

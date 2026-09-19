@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374561793",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome",
+    "awesome-list",
+    "jev",
+    "llm"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/yibie/awesome-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374561793",
+  "author_or_org": "yibie",
+  "official_status": "unknown",
+  "jev_relationship": "mention_only",
+  "original_title": "yibie/awesome-jev",
+  "summary_zh": null,
+  "summary_en": "A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T14:23:21Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T14:23:21Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.639722Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.599755Z"
+  },
+  "content_hash": "f0bd64eca0e47c28983e9b18dbafe0a5c71781b2ec9526b786005965654d97a0",
+  "github_repo_id": 1374561793,
+  "github_full_name": "yibie/awesome-jev"
+}

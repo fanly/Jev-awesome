@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376201850",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "ai-agents",
+    "awesome",
+    "awesome-list",
+    "claude-code",
+    "jev",
+    "system-one",
+    "typed-decisions",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/valentynkit/awesome-jev-typesafe",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376201850",
+  "author_or_org": "valentynkit",
+  "official_status": "unknown",
+  "jev_relationship": "mention_only",
+  "original_title": "valentynkit/awesome-jev-typesafe",
+  "summary_zh": null,
+  "summary_en": "Typed decisions with TypeSafe's Jev, the first System One model",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T17:22:58Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T17:22:58Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210708Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "CC0-1.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.655724Z"
+  },
+  "content_hash": "b9b19c62c522532bde384e17b745c092d8f235b54b6a4438b9e752e9ad8ea84c",
+  "github_repo_id": 1376201850,
+  "github_full_name": "valentynkit/awesome-jev-typesafe"
+}

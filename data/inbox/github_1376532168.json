@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376532168",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/LukasCaha/jev-profanity",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376532168",
+  "author_or_org": "LukasCaha",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "LukasCaha/jev-profanity",
+  "summary_zh": null,
+  "summary_en": "Jev based detector and rewrite engine to censor profanity, rudeness and hate speech.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T23:33:42Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T23:33:42Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322601Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.639483Z"
+  },
+  "content_hash": "66c8f4bf7477b435669810f91e2996332f215c0d3234f257bb5bf390cf87700a",
+  "github_repo_id": 1376532168,
+  "github_full_name": "LukasCaha/jev-profanity"
+}

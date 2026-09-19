@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:155022149",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "fivem",
+    "fivem-script",
+    "html",
+    "javascript",
+    "jeva",
+    "lua",
+    "nodejs",
+    "zua"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/jevajs/Jeva",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:155022149",
+  "author_or_org": "jevajs",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "jevajs/Jeva",
+  "summary_zh": null,
+  "summary_en": "A monorepo for code used in videos/tutorials for Jeva. Created and maintained by @thatziv",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2018-10-28T00:37:08Z",
+    "precision": "datetime",
+    "raw": "2018-10-28T00:37:08Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.639785Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.601086Z"
+  },
+  "content_hash": "75ae74a8f5d1ab178368f49d3eaefa10419d8cf493c5aa4c5740fe3cb765d297",
+  "github_repo_id": 155022149,
+  "github_full_name": "jevajs/Jeva"
+}

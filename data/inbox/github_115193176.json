@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:115193176",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "nodejs",
+    "revolut",
+    "sdk",
+    "typescript"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ascariandrea/revolut-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:115193176",
+  "author_or_org": "ascariandrea",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "ascariandrea/revolut-sdk",
+  "summary_zh": null,
+  "summary_en": "Typesafe SDK for Revolut Business API https://www.revolut.com/it/business",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2017-12-23T12:08:34Z",
+    "precision": "datetime",
+    "raw": "2017-12-23T12:08:34Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210629Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.654995Z"
+  },
+  "content_hash": "86443694cc1b7fc08c2aa52544faf531cd30ef90a8b19bf5134a8bb73906219a",
+  "github_repo_id": 115193176,
+  "github_full_name": "ascariandrea/revolut-sdk"
+}

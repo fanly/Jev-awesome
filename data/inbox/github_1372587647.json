@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1372587647",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "guardrails",
+    "jev",
+    "pi-extension",
+    "pi-package",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/y0usaf/pi-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1372587647",
+  "author_or_org": "y0usaf",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "y0usaf/pi-jev",
+  "summary_zh": null,
+  "summary_en": "TypeSafe Jev as a decision layer for the Pi coding agent: a measured tool-call gate plus jev_ask for typed, calibrated answers",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-16T05:57:10Z",
+    "precision": "datetime",
+    "raw": "2026-09-16T05:57:10Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.128748Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.666003Z"
+  },
+  "content_hash": "d70b077c0d046350b09c5cb2579c782b4514104496417db9a9a6cfcb2bab1205",
+  "github_repo_id": 1372587647,
+  "github_full_name": "y0usaf/pi-jev"
+}

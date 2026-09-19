@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375979662",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/yatharth1706/jev-automation",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375979662",
+  "author_or_org": "yatharth1706",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "yatharth1706/jev-automation",
+  "summary_zh": null,
+  "summary_en": "Trying automation on web browser via jev from typesafe",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T14:21:21Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T14:21:21Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322705Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.642539Z"
+  },
+  "content_hash": "7c41e12fb86f71d636335b0d7f5c9e7e865869ee9768b70a5da98059b955d585",
+  "github_repo_id": 1375979662,
+  "github_full_name": "yatharth1706/jev-automation"
+}

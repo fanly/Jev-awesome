@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375286981",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "awesome",
+    "awesome-list",
+    "github-actions",
+    "jev",
+    "open-source",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/fatwang2/awesome-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375286981",
+  "author_or_org": "fatwang2",
+  "official_status": "community",
+  "jev_relationship": "mention_only",
+  "original_title": "fatwang2/awesome-jev",
+  "summary_zh": "偏证据的 Jev 项目目录，含可复用 review workflow。",
+  "summary_en": "A source-backed Jev project directory with a reusable Jev-only GitHub review workflow.",
+  "developer_value": "可对照本仓库的人工审核设计。",
+  "jev_role": "发现候选与审核流程参考",
+  "prerequisites": null,
+  "limitations": "仅作发现源，不搬运 README。",
+  "published_at": {
+    "value": "2026-09-18T02:45:39Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T02:45:39Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/fatwang2/awesome-jev",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.606354Z"
+  },
+  "content_hash": "6940ad55c27361aa80ef81d9cb94f96c8de369b2b4f9fc7d1b21acf07e2bf26f",
+  "github_repo_id": 1375286981,
+  "github_full_name": "fatwang2/awesome-jev"
+}

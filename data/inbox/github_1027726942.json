@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1027726942",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/vercel-labs/ai-cli",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1027726942",
+  "author_or_org": "vercel-labs",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "vercel-labs/ai-cli",
+  "summary_zh": null,
+  "summary_en": "Generate anything from your terminal",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2025-07-28T12:49:12Z",
+    "precision": "datetime",
+    "raw": "2025-07-28T12:49:12Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.572552Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.622868Z"
+  },
+  "content_hash": "ccd294c47611f3871a102ea3173d84175b731bcb0f5e962cab2e5f49300b15ff",
+  "github_repo_id": 1027726942,
+  "github_full_name": "vercel-labs/ai-cli"
+}

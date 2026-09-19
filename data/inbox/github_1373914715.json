@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373914715",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "ai",
+    "codex",
+    "jev",
+    "llm",
+    "macos",
+    "routing",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/0xNatoshi/jev-codex-router",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373914715",
+  "author_or_org": "0xNatoshi",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "0xNatoshi/jev-codex-router",
+  "summary_zh": null,
+  "summary_en": "Per-turn model & reasoning routing for Codex, driven by Jev (TypeSafe System One): picks the model, thinking depth and speed mode for every turn.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T04:14:19Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T04:14:19Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.128825Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.666488Z"
+  },
+  "content_hash": "b4f905270e76d1e6112bfbee18e5ea29d473ccd654da28055b49c6b92333fc25",
+  "github_repo_id": 1373914715,
+  "github_full_name": "0xNatoshi/jev-codex-router"
+}

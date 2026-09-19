@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376907976",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/hrstmr/typesafe-ai-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376907976",
+  "author_or_org": "hrstmr",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "hrstmr/typesafe-ai-sdk",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T08:14:58Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T08:14:58Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322459Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.635651Z"
+  },
+  "content_hash": "5fd4a4debcae564289b52a1ed0343e15e24b4fa6e632df827de37d7f1a06c973",
+  "github_repo_id": 1376907976,
+  "github_full_name": "hrstmr/typesafe-ai-sdk"
+}

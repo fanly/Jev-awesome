@@ -1,0 +1,21 @@
+# {{ meta.title_zh }} / {{ meta.title_en }}
+
+{{ generated_start }}
+本页由权威数据生成。仅包含 **curated** 精选。
+
+{% if items %}
+{% for r in items -%}
+## {{ r.original_title | md }}
+
+- 链接：[{{ safe_href(r.canonical_url) }}]({{ safe_href(r.canonical_url) }})
+- 解决什么问题：{{ (r.developer_value or '（待补）') | md }}
+- Jev 角色：{{ (r.jev_role or '（待补）') | md }}
+- 验证：`{{ r.verification_level.value }}`
+- 限制：{{ (r.limitations or '（待补）') | md }}
+- 摘要：{{ (r.summary_zh or r.summary_en or '') | md }}
+
+{% endfor %}
+{% else %}
+（本类暂无精选条目）
+{% endif %}
+{{ generated_end }}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375473949",
+  "resource_kind": "sdk",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "ai-agent",
+    "awesome",
+    "awesome-list",
+    "chinese",
+    "jev",
+    "llm",
+    "structured-output",
+    "system-one",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/yzfly/awesome-jev-zh",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375473949",
+  "author_or_org": "yzfly",
+  "official_status": "community",
+  "jev_relationship": "mention_only",
+  "original_title": "yzfly/awesome-jev-zh",
+  "summary_zh": "中文 Jev/TypeSafe 精选列表与自动收录脚本。",
+  "summary_en": "Jev / TypeSafe System One 中文精选列表：官方资料、SDK、爆款应用、Agent 工具、开源复现与独立评测，附中文上手指南，每日自动收录 GitHub 热门项目。",
+  "developer_value": "中文读者入口之一。",
+  "jev_role": "中文导航与发现",
+  "prerequisites": null,
+  "limitations": "自动收录不等于已核实集成。",
+  "published_at": {
+    "value": "2026-09-18T06:33:02Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T06:33:02Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "CC0-1.0",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/yzfly/awesome-jev-zh",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.658341Z"
+  },
+  "content_hash": "6c4c4a4db81bce3f35ec599d41a6a45d10370216982acdb47b6f51f822840bb9",
+  "github_repo_id": 1375473949,
+  "github_full_name": "yzfly/awesome-jev-zh"
+}

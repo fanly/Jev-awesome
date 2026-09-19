@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:601996062",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "cardano",
+    "fp-ts",
+    "input-output",
+    "marlowe",
+    "marlowe-contracts",
+    "smart-contract"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/marlowe-lang/marlowe-ts-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:601996062",
+  "author_or_org": "marlowe-lang",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "marlowe-lang/marlowe-ts-sdk",
+  "summary_zh": null,
+  "summary_en": "Marlowe TypeScript SDK ",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2023-02-15T09:23:45Z",
+    "precision": "datetime",
+    "raw": "2023-02-15T09:23:45Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210121Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.651200Z"
+  },
+  "content_hash": "3612ebb667b092a7e0295b810ce9fb2eddebe597afbacde1f9ba3bb21b4b9d48",
+  "github_repo_id": 601996062,
+  "github_full_name": "marlowe-lang/marlowe-ts-sdk"
+}

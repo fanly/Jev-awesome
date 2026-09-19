@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374703864",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/Fizzyhex/great-chef",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374703864",
+  "author_or_org": "Fizzyhex",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "Fizzyhex/great-chef",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T16:09:35Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T16:09:35Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322807Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.644935Z"
+  },
+  "content_hash": "de77667c6c34cbd3b2b76744fd88259394c2d148ee8b7b2c54333aae1c07e76e",
+  "github_repo_id": 1374703864,
+  "github_full_name": "Fizzyhex/great-chef"
+}

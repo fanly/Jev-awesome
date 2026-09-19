@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377163963",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "typescript"
+  ],
+  "canonical_url": "https://github.com/frodi-karlsson/jev-client",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377163963",
+  "author_or_org": "frodi-karlsson",
+  "official_status": "community",
+  "jev_relationship": "community_sdk",
+  "original_title": "frodi-karlsson/jev-client",
+  "summary_zh": "面向 TypeSafe systemone API 的 TypeScript 客户端。",
+  "summary_en": "A typescript client for accessing the Jev API ergonomically",
+  "developer_value": "对比官方 JS SDK 的人体工程学。",
+  "jev_role": "社区 TS 客户端",
+  "prerequisites": null,
+  "limitations": "社区维护；接口需对照官方 API。",
+  "published_at": {
+    "value": "2026-09-19T13:04:00Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T13:04:00Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/frodi-karlsson/jev-client",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": null,
+  "content_hash": "78e3c1b46d1078d352ab9f3f732f16ae11d9175a1bb4671db1aa08be14188c31",
+  "github_repo_id": 1377163963,
+  "github_full_name": "frodi-karlsson/jev-client"
+}

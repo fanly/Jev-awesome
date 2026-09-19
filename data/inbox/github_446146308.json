@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:446146308",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "stedi-cloud"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Stedi-Public-Archive/ts2asl",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:446146308",
+  "author_or_org": "Stedi-Public-Archive",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "Stedi-Public-Archive/ts2asl",
+  "summary_zh": null,
+  "summary_en": "TypeScript to AWS ASL transpiler",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2022-01-09T16:44:51Z",
+    "precision": "datetime",
+    "raw": "2022-01-09T16:44:51Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210448Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.653921Z"
+  },
+  "content_hash": "dc36179885e74edefe74080d4b2c2fdcb2b0a556a8255438ca3c13aa0610f26e",
+  "github_repo_id": 446146308,
+  "github_full_name": "Stedi-Public-Archive/ts2asl"
+}

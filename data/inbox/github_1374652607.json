@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374652607",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "awesome",
+    "awesome-list",
+    "jev",
+    "system-one",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/hellogumbo/awesome-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374652607",
+  "author_or_org": "hellogumbo",
+  "official_status": "community",
+  "jev_relationship": "mention_only",
+  "original_title": "hellogumbo/awesome-jev",
+  "summary_zh": "社区维护的 Jev 项目目录。",
+  "summary_en": "A community directory of projects built on Jev, TypeSafe AI's System One model.",
+  "developer_value": "补充社区视角的项目列表。",
+  "jev_role": "候选发现",
+  "prerequisites": null,
+  "limitations": "分类与官方身份需自行核验。",
+  "published_at": {
+    "value": "2026-09-17T15:30:09Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T15:30:09Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "CC0-1.0",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/hellogumbo/awesome-jev",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.620559Z"
+  },
+  "content_hash": "abac63f05171f9d44cef22c83360db422dd5823b598375e53cb5d31bb037b7bc",
+  "github_repo_id": 1374652607,
+  "github_full_name": "hellogumbo/awesome-jev"
+}

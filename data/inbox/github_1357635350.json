@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1357635350",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "typescript",
+    "javascript"
+  ],
+  "canonical_url": "https://github.com/typesafe-ai/typesafe-sdk-js",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1357635350",
+  "author_or_org": "typesafe-ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "typesafe-ai/typesafe-sdk-js",
+  "summary_zh": "官方 TypeScript/JavaScript SDK。",
+  "summary_en": "The official TypeScript/JavaScript library for the TypeSafe API",
+  "developer_value": "JS 生态集成入口。",
+  "jev_role": "浏览器/Node 侧官方客户端",
+  "prerequisites": null,
+  "limitations": "与 Python SDK 能力对齐需查文档。",
+  "published_at": {
+    "value": "2026-09-04T22:16:47Z",
+    "precision": "datetime",
+    "raw": "2026-09-04T22:16:47Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/typesafe-ai/typesafe-sdk-js",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "sdk_integrations",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.619812Z"
+  },
+  "content_hash": "5636fa0d743fe215d5e555eb9483a5d08725d9d62bae6b4d006c623f8c4d19f4",
+  "github_repo_id": 1357635350,
+  "github_full_name": "typesafe-ai/typesafe-sdk-js"
+}

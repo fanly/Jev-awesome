@@ -1,0 +1,41 @@
+name: Resource submission
+description: Suggest a Jev / TypeSafe related resource for human review
+title: "[submit] "
+labels: ["submission"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Canonical URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What problem does it solve for developers?
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Relationship to Jev / TypeSafe
+      options:
+        - official
+        - calls_official_api
+        - community_sdk
+        - inspired_independent
+        - mention_only
+        - unclear
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence (links, file paths, commit SHA)
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Known limitations

@@ -1,0 +1,38 @@
+inclusion:
+  require_primary_source: true
+  allow_negative_evals: true
+  allow_low_stars: true
+  disallow_auto_curate: true
+
+exclusion:
+  - unrelated_homonyms
+  - empty_ads
+  - unattributed_mirrors
+  - unverifiable_performance_claims
+  - illegal_or_dangerous
+  - generic_type_safety_without_typesafe_product
+
+editorial_protection:
+  never_overwrite:
+    - summary_zh
+    - summary_en
+    - developer_value
+    - jev_role
+    - prerequisites
+    - limitations
+    - editorial_status
+    - verification_level
+    - evidence
+    - review_record
+    - license_status
+    - license_identifier
+
+verification:
+  collectors_may_not_raise_above: source_checked
+  reproduced_requires_run_evidence: true
+  benchmarked_requires_baseline: true
+
+dedupe:
+  github_key: repository_id
+  fuzzy_title_suggest_only: true
+  different_owners_same_name: do_not_merge

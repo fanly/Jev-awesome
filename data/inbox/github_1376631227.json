@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376631227",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "classification",
+    "encoder",
+    "gliner",
+    "jev",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/logan-markewich/jeff",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376631227",
+  "author_or_org": "logan-markewich",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "logan-markewich/jeff",
+  "summary_zh": null,
+  "summary_en": "A self-hosted drop-in replacement for TypeSafe's jev, powered by GliFormer.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T02:17:25Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T02:17:25Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210365Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.653176Z"
+  },
+  "content_hash": "0743aceafc2da60a456f0025c3b545002ff540b6c146684b8ce90557bef4014c",
+  "github_repo_id": 1376631227,
+  "github_full_name": "logan-markewich/jeff"
+}

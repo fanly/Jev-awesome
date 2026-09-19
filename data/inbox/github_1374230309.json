@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374230309",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "ai",
+    "jev",
+    "typesafe",
+    "zod"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/mateonunez/jod",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374230309",
+  "author_or_org": "mateonunez",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "mateonunez/jod",
+  "summary_zh": null,
+  "summary_en": "Semantic schemas over TypeSafe's Jev — validate the state locally, then project typed answers.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T09:50:31Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T09:50:31Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322782Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.644294Z"
+  },
+  "content_hash": "c170089ca7cdc028c4571bc5e63f2220425c9f2314dd44fe74eab7334631c8e0",
+  "github_repo_id": 1374230309,
+  "github_full_name": "mateonunez/jod"
+}

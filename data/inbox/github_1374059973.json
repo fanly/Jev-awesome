@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374059973",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "asupersync",
+    "claude-code",
+    "cli",
+    "developer-tools",
+    "frankentui",
+    "jev",
+    "rust",
+    "skill-selection",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Dicklesworthstone/skillranker",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374059973",
+  "author_or_org": "Dicklesworthstone",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "Dicklesworthstone/skillranker",
+  "summary_zh": null,
+  "summary_en": "Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live session context. Includes Claude Code hooks, structured JSON, abstention, and local feedback. Requires a TypeSafe API key.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T06:58:19Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T06:58:19Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.128993Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "NOASSERTION",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.667536Z"
+  },
+  "content_hash": "807020b168e6a8a789f6ddd476f13d8c1c2259c6deb44c4f47c725619c3956ef",
+  "github_repo_id": 1374059973,
+  "github_full_name": "Dicklesworthstone/skillranker"
+}

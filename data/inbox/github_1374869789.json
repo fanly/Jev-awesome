@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374869789",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "jev",
+    "llm",
+    "structured-generation",
+    "systemone"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ekzhang/openjev-sglang",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374869789",
+  "author_or_org": "ekzhang",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "ekzhang/openjev-sglang",
+  "summary_zh": null,
+  "summary_en": "Jev-compatible API endpoint based on open models (prefill-only)",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T18:11:49Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T18:11:49Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:59.128587Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.665149Z"
+  },
+  "content_hash": "f28cfdbd8fc928a11c350e880838fc8422da6fbfa3cf6388f45b014802785098",
+  "github_repo_id": 1374869789,
+  "github_full_name": "ekzhang/openjev-sglang"
+}

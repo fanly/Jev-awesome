@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1328238153",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "python"
+  ],
+  "canonical_url": "https://github.com/typesafe-ai/system-one-adapter-python",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1328238153",
+  "author_or_org": "typesafe-ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "typesafe-ai/system-one-adapter-python",
+  "summary_zh": "可用 LLM API 作为 TypeSafeClient 替代后端的适配器。",
+  "summary_en": "Drop-in TypeSafeClient replacement backed by LLM APIs",
+  "developer_value": "无官方 Key 时本地实验。",
+  "jev_role": "开发/测试时的客户端替身",
+  "prerequisites": null,
+  "limitations": "结果不等同于 Jev；勿当作生产替代。",
+  "published_at": {
+    "value": "2026-08-08T22:59:50Z",
+    "precision": "datetime",
+    "raw": "2026-08-08T22:59:50Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/typesafe-ai/system-one-adapter-python",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.648160Z"
+  },
+  "content_hash": "fa868d9dffa819a5739153c4a4f09a398bd0ac5c685160add0a1ba224a586c5c",
+  "github_repo_id": 1328238153,
+  "github_full_name": "typesafe-ai/system-one-adapter-python"
+}

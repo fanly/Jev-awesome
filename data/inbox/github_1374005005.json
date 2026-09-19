@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374005005",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/tamaratran/fast-jev-compaction",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374005005",
+  "author_or_org": "tamaratran",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "tamaratran/fast-jev-compaction",
+  "summary_zh": null,
+  "summary_en": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T05:57:20Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T05:57:20Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.638052Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.589381Z"
+  },
+  "content_hash": "f1311766063690d94a4901393fcef33dc48ee9d99c45625e6eb74843c406ab7b",
+  "github_repo_id": 1374005005,
+  "github_full_name": "tamaratran/fast-jev-compaction"
+}

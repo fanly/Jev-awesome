@@ -1,0 +1,83 @@
+from __future__ import annotations
+
+from datetime import UTC, datetime, timedelta
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+from jev_awesome.atomic_io import atomic_write_text
+from jev_awesome.paths import Paths
+from jev_awesome.store import CatalogStore
+
+
+def previous_complete_week(
+    now: datetime | None = None, tz_name: str = "Asia/Shanghai"
+) -> tuple[datetime, datetime, str]:
+    """Return [start, end) of previous complete local week (Mon 00:00 – next Mon)."""
+    tz = ZoneInfo(tz_name)
+    now_local = (now or datetime.now(UTC)).astimezone(tz)
+    # Start of this week (Monday)
+    days_since_mon = now_local.weekday()
+    this_monday = (now_local - timedelta(days=days_since_mon)).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
+    prev_monday = this_monday - timedelta(days=7)
+    week_id = prev_monday.strftime("%Y-W%W")
+    return prev_monday, this_monday, week_id
+
+
+def build_weekly(
+    store: CatalogStore | None = None,
+    *,
+    tz_name: str = "Asia/Shanghai",
+    now: datetime | None = None,
+) -> tuple[str, str, bool]:
+    """Return (week_id, markdown, material_changed). Idempotent for same events."""
+    store = store or CatalogStore()
+    start, end, week_id = previous_complete_week(now, tz_name)
+    events = [
+        e
+        for e in store.list_events()
+        if e.material and start <= e.occurred_at.astimezone(start.tzinfo) < end
+    ]
+    events.sort(key=lambda e: (e.occurred_at, e.id))
+    lines = [
+        f"# 周报 {week_id}",
+        "",
+        f"窗口（{tz_name}）：{start.isoformat()} — {end.isoformat()}（不含结束）",
+        "",
+    ]
+    if not events:
+        lines.append("本周无已采纳内容或精选资源的实质变化。")
+        lines.append("")
+        material = False
+    else:
+        material = True
+        for e in events:
+            lines.append(f"- `{e.id}` **{e.event_type}** `{e.resource_id}`: {e.summary}")
+        lines.append("")
+    body = "\n".join(lines)
+    return week_id, body, material
+
+
+def write_weekly(
+    store: CatalogStore | None = None,
+    paths: Paths | None = None,
+    *,
+    tz_name: str = "Asia/Shanghai",
+    now: datetime | None = None,
+) -> Path | None:
+
+    store = store or CatalogStore()
+    paths = paths or store.paths
+    week_id, body, material = build_weekly(store, tz_name=tz_name, now=now)
+    out = paths.updates / f"weekly-{week_id}.md"
+    # Stable content hash path — rewrite same content is fine (idempotent)
+    prev = out.read_text(encoding="utf-8") if out.exists() else None
+    if prev == body:
+        return out if material or out.exists() else None
+    if not material and prev is None:
+        # Still write once so re-runs are stable and "no fake weekly spam commits"
+        # Callers decide whether to commit.
+        pass
+    atomic_write_text(out, body)
+    return out

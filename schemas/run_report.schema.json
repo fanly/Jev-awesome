@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "ClassifierMode": {
+      "enum": [
+        "rules",
+        "auto",
+        "typesafe"
+      ],
+      "title": "ClassifierMode",
+      "type": "string"
+    },
+    "SourceResult": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "success",
+            "failed",
+            "skipped",
+            "degraded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "discovered": {
+          "default": 0,
+          "title": "Discovered",
+          "type": "integer"
+        },
+        "duplicates": {
+          "default": 0,
+          "title": "Duplicates",
+          "type": "integer"
+        },
+        "candidates": {
+          "default": 0,
+          "title": "Candidates",
+          "type": "integer"
+        },
+        "requests": {
+          "default": 0,
+          "title": "Requests",
+          "type": "integer"
+        },
+        "coverage_gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Coverage Gaps",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        },
+        "time_range": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Range"
+        }
+      },
+      "required": [
+        "source_id",
+        "status"
+      ],
+      "title": "SourceResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "finished_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Finished At"
+    },
+    "mode": {
+      "title": "Mode",
+      "type": "string"
+    },
+    "classifier": {
+      "$ref": "#/$defs/ClassifierMode"
+    },
+    "dry_run": {
+      "title": "Dry Run",
+      "type": "boolean"
+    },
+    "write_local": {
+      "title": "Write Local",
+      "type": "boolean"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceResult"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "model_calls": {
+      "default": 0,
+      "title": "Model Calls",
+      "type": "integer"
+    },
+    "overall": {
+      "default": "success",
+      "enum": [
+        "success",
+        "degraded",
+        "failed"
+      ],
+      "title": "Overall",
+      "type": "string"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Notes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "run_id",
+    "started_at",
+    "mode",
+    "classifier",
+    "dry_run",
+    "write_local"
+  ],
+  "title": "RunReport",
+  "type": "object"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "evt-disc-558311d0ea13",
+  "event_type": "first_discovered",
+  "resource_id": "github:1374800096",
+  "occurred_at": "2026-09-19T13:23:53.574427Z",
+  "summary": "Discovered via github_discovery",
+  "material": false
+}

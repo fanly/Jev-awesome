@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1184318458",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "ai-agents",
+    "donsetch",
+    "hermes-agent",
+    "mcp",
+    "python",
+    "research-agent",
+    "search-api",
+    "searxng",
+    "source-grounding",
+    "web-extraction",
+    "web-search"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/robbyczgw-cla/hermes-web-search-plus",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1184318458",
+  "author_or_org": "robbyczgw-cla",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "robbyczgw-cla/hermes-web-search-plus",
+  "summary_zh": null,
+  "summary_en": "Give your Hermes agent the web as real sources, never a made-up answer — multi-provider search and extraction with an optional local, key-free DonSeTch option.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-03-17T13:25:07Z",
+    "precision": "datetime",
+    "raw": "2026-03-17T13:25:07Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.210860Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.656658Z"
+  },
+  "content_hash": "9236a2bbc4da599a027f98efdd36fcd483331a6c2385ca543d403038010335ae",
+  "github_repo_id": 1184318458,
+  "github_full_name": "robbyczgw-cla/hermes-web-search-plus"
+}

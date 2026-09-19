@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374089307",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "ai-game",
+    "jev",
+    "phaser",
+    "probabilistic-ai",
+    "remotion",
+    "stealth-game",
+    "system-one-models",
+    "typesafe",
+    "typescript"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/AbdelStark/heist-one",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374089307",
+  "author_or_org": "AbdelStark",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "AbdelStark/heist-one",
+  "summary_zh": null,
+  "summary_en": "Observable browser stealth game: Jev makes typed guard judgments while deterministic code owns the world.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T07:29:14Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T07:29:14Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322880Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.646998Z"
+  },
+  "content_hash": "5fda32d6780a9ab643c48509642f1d7b69b02cae907ff52da8a5e762420adad4",
+  "github_repo_id": 1374089307,
+  "github_full_name": "AbdelStark/heist-one"
+}

@@ -1,0 +1,72 @@
+# Jev-awesome
+
+面向开发者的 **Jev / TypeSafe** 参考库：自动发现、来源可追溯、人工精选，说明用途与限制。
+
+> 非官方项目，与 TypeSafe 无隶属关系。资料可能过时，请自行评估。English overview: [README.en.md](README.en.md)
+
+## 快速入门
+
+```bash
+uv sync --frozen
+uv run jev-awesome doctor
+uv run jev-awesome validate
+uv run jev-awesome render --check
+```
+
+无 `TYPESAFE_API_KEY` 时默认 `rules` 模式可完整运行。
+
+## 官方入口
+
+- [TypeSafe](https://typesafe.ai/)
+- [文档索引](https://docs.typesafe.ai/llms.txt)
+- [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)（PyPI: `typesafe-sdk`）
+- [Agent Skill](https://github.com/typesafe-ai/skills)
+
+<!-- JEV-AWESOME:GENERATED-START -->
+## 分类索引
+
+- [官方与变更](docs/categories/official.md)（0）
+- [入门与模式](docs/categories/getting-started.md)（0）
+- [应用与工具](docs/categories/applications.md)（0）
+- [SDK 与集成](docs/categories/sdk-integrations.md)（0）
+- [评测与限制](docs/categories/evals-limits.md)（0）
+- [研究与替代实现](docs/categories/research-alts.md)（0）
+
+
+## 精选资源
+
+
+当前尚无维护者采纳的精选条目。请查看 [待审预览 / seed-review](docs/implementation/seed-review.md)。
+
+
+## 统计
+
+- 精选：0
+- 待审（pending+proposed）：131
+- 归档：0
+- 拒绝：0
+
+## 验证标记
+
+| 级别 | 含义 |
+|---|---|
+| discovered | 有线索，未确认实现 |
+| source_checked | 阅读了原始资料 |
+| code_located | 定位到实现位置 |
+| reproduced | 有可复核的运行证据 |
+| benchmarked | 有基线与口径的对照评测 |
+
+自动化不得自行抬高 `reproduced` / `benchmarked`。
+<!-- JEV-AWESOME:GENERATED-END -->
+
+## 贡献
+
+见 [CONTRIBUTING.md](CONTRIBUTING.md)。纠错与移除请开 Issue。
+
+## 自动化状态
+
+定时采集默认关闭（`COLLECTOR_ENABLED=false`）。开启前请阅读 [docs/operations/bootstrap.md](docs/operations/bootstrap.md)。
+
+## 许可
+
+本仓库脚本建议采用 MIT；原创说明的内容许可由维护者确认。第三方项目权利归各自权利人，本仓库不做全文镜像。

@@ -1,0 +1,72 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "resource_id": {
+      "title": "Resource Id",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "rejected",
+        "merged",
+        "archived",
+        "restored"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "decided_at": {
+      "format": "date-time",
+      "title": "Decided At",
+      "type": "string"
+    },
+    "content_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Hash"
+    },
+    "merged_into": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Merged Into"
+    },
+    "actor": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Actor"
+    }
+  },
+  "required": [
+    "resource_id",
+    "decision",
+    "reason",
+    "decided_at"
+  ],
+  "title": "Decision",
+  "type": "object"
+}

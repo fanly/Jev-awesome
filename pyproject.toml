@@ -1,0 +1,64 @@
+[project]
+name = "jev-awesome"
+version = "0.1.0"
+description = "Developer reference catalog for Jev / TypeSafe: discover, review, and publish curated resources."
+readme = "README.md"
+authors = [
+    { name = "fanly" }
+]
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "click>=8.5.0",
+    "feedparser>=6.0.14",
+    "httpx>=0.28.1",
+    "jinja2>=3.1.6",
+    "pydantic>=2.13.5",
+    "python-dateutil>=2.9.0.post0",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "tenacity>=9.1.4",
+    "typesafe-sdk>=0.7.0",
+]
+
+[project.scripts]
+jev-awesome = "jev_awesome.cli:main"
+
+[project.optional-dependencies]
+typesafe = [
+    "typesafe-sdk>=0.7.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.40.1",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.8",
+    "types-python-dateutil>=2.9.0.20260807",
+    "types-pyyaml>=6.0.12.20260906",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "UP047"]
+
+[tool.basedpyright]
+include = ["src", "tests"]
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+reportMissingImports = true

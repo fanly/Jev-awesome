@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376174149",
+  "resource_kind": "alternative",
+  "primary_category": "research_alts",
+  "tags": [
+    "seed"
+  ],
+  "languages": [
+    "typescript"
+  ],
+  "canonical_url": "https://github.com/githubnext/localjev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376174149",
+  "author_or_org": "githubnext",
+  "official_status": "community",
+  "jev_relationship": "inspired_independent",
+  "original_title": "githubnext/localjev",
+  "summary_zh": "本地兼容 POST /v1/systemone 的实现（Bun + DiffusionGemma）。",
+  "summary_en": null,
+  "developer_value": "研究替代后端与本地部署。",
+  "jev_role": "独立兼容实现，非官方 Jev",
+  "prerequisites": null,
+  "limitations": "兼容≠官方模型；结果与校准不同。",
+  "published_at": {
+    "value": "2026-09-18T16:59:55Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T16:59:55Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/githubnext/localjev",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.649690Z"
+  },
+  "content_hash": "267a0bfca6c0cf56319c9d1c4b0c4ba591265026ee976aff58cd795dd196e340",
+  "github_repo_id": 1376174149,
+  "github_full_name": "githubnext/localjev"
+}

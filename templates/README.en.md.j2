@@ -1,0 +1,45 @@
+# Jev-awesome
+
+A developer-focused reference catalog for **Jev / TypeSafe**: discoverable sources, human curation, and clear limits.
+
+> Unofficial. Not affiliated with TypeSafe. Always verify upstream yourself. 中文主文档：[README.md](README.md)
+
+## Quick start
+
+```bash
+uv sync --frozen
+uv run jev-awesome doctor
+uv run jev-awesome validate
+```
+
+Works without `TYPESAFE_API_KEY` in `rules` mode.
+
+## Official links
+
+- [TypeSafe](https://typesafe.ai/)
+- [Docs index](https://docs.typesafe.ai/llms.txt)
+- [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
+
+{{ generated_start }}
+## Categories
+
+{% for cat, meta in category_meta.items() -%}
+- [{{ meta.title_en }}](docs/categories/{{ meta.slug }}.md) ({{ by_category[cat]|length }})
+{% endfor %}
+
+## Curated
+
+{% if curated %}
+{% for r in curated[:25] -%}
+- [{{ r.original_title | md }}]({{ safe_href(r.canonical_url) }}) — {{ (r.summary_en or r.summary_zh or '(summary pending)') | md }} · `{{ r.verification_level.value }}`
+{% endfor %}
+{% else %}
+No maintainer-accepted curated entries yet. See [seed-review](docs/implementation/seed-review.md).
+{% endif %}
+
+Counts: curated={{ counts.curated }}, inbox={{ counts.inbox }}, archived={{ counts.archived }}
+{{ generated_end }}
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).

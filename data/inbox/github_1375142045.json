@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375142045",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/moritzkremb/jev-voice-browser",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375142045",
+  "author_or_org": "moritzkremb",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "moritzkremb/jev-voice-browser",
+  "summary_zh": null,
+  "summary_en": "Control a real browser by voice. Jev (TypeSafe System One) decides intent + target in ~300 ms per spoken word; Playwright acts — often before you finish the sentence.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T22:40:19Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T22:40:19Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.572707Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.624495Z"
+  },
+  "content_hash": "4c3aa9e868c5f3178ed2c11cf20cfa447430b4b9bde33fdedccc7512959e69bb",
+  "github_repo_id": 1375142045,
+  "github_full_name": "moritzkremb/jev-voice-browser"
+}

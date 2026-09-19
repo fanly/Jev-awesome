@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375639479",
+  "resource_kind": "alternative",
+  "primary_category": "research_alts",
+  "tags": [
+    "seed"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/razorback16/openjev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375639479",
+  "author_or_org": "razorback16",
+  "official_status": "community",
+  "jev_relationship": "inspired_independent",
+  "original_title": "razorback16/openjev",
+  "summary_zh": "基于开放模型的 Jev 兼容 System One 决策服务。",
+  "summary_en": "Open, Jev-compatible System One decision server on DiffusionGemma",
+  "developer_value": "评估开源替代。",
+  "jev_role": "开源兼容服务",
+  "prerequisites": null,
+  "limitations": "非官方；概率校准需自测。",
+  "published_at": {
+    "value": "2026-09-18T09:15:33Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T09:15:33Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/razorback16/openjev",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.651918Z"
+  },
+  "content_hash": "963aa47ad5f4ad9abb14f6cdfebc7bf8d26ab941ca14c4b496e68d9eeea4fce3",
+  "github_repo_id": 1375639479,
+  "github_full_name": "razorback16/openjev"
+}

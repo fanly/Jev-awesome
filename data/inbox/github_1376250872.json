@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376250872",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/atharvamhaske/typesafe-sdk-go",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376250872",
+  "author_or_org": "atharvamhaske",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "atharvamhaske/typesafe-sdk-go",
+  "summary_zh": null,
+  "summary_en": "unofficial  go sdk for typesafe ai",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T18:02:48Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T18:02:48Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.211017Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.657738Z"
+  },
+  "content_hash": "40043eea793952d7ae43832913d0a029f8e195b3a5596d0faca2c09cf0eebde4",
+  "github_repo_id": 1376250872,
+  "github_full_name": "atharvamhaske/typesafe-sdk-go"
+}

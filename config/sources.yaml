@@ -1,0 +1,70 @@
+sources:
+  github_discovery:
+    id: github_discovery
+    type: github_search
+    enabled: true
+    allowed_domains:
+      - api.github.com
+      - github.com
+    priority: 10
+    frequency: "6h"
+    parser: github_discovery
+    request_budget: 30
+    fault_strategy: isolate
+    queries:
+      - "jev in:name,description,readme fork:false"
+      - '"typesafe.ai" in:readme fork:false'
+      - '"@typesafe-ai/sdk" in:readme fork:false'
+      - '"typesafe-sdk" in:readme fork:false'
+      - "topic:jev"
+
+  rss_atom:
+    id: rss_atom
+    type: rss
+    enabled: true
+    priority: 20
+    frequency: "6h"
+    parser: rss_atom
+    request_budget: 10
+    fault_strategy: isolate
+    feeds:
+      - id: typesafe_github_releases_python
+        url: https://github.com/typesafe-ai/typesafe-sdk-python/releases.atom
+        enabled: true
+        allowed_domains:
+          - github.com
+
+  official_monitor:
+    id: official_monitor
+    type: official_docs
+    enabled: true
+    priority: 5
+    frequency: "1d"
+    parser: official_monitor
+    request_budget: 15
+    fault_strategy: isolate
+    pages:
+      - id: docs_llms_index
+        title: TypeSafe docs index (llms.txt)
+        url: https://docs.typesafe.ai/llms.txt
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_python_sdk
+        title: TypeSafe Python SDK
+        url: https://docs.typesafe.ai/sdk/python.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_primitives
+        title: TypeSafe Primitives
+        url: https://docs.typesafe.ai/primitives.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_confidence
+        title: TypeSafe Confidence
+        url: https://docs.typesafe.ai/confidence.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai

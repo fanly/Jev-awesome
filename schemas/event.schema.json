@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "event_type": {
+      "enum": [
+        "first_discovered",
+        "human_accepted",
+        "new_version",
+        "doc_change",
+        "verification_update",
+        "withdrawn",
+        "archived",
+        "suggestion_only"
+      ],
+      "title": "Event Type",
+      "type": "string"
+    },
+    "resource_id": {
+      "title": "Resource Id",
+      "type": "string"
+    },
+    "occurred_at": {
+      "format": "date-time",
+      "title": "Occurred At",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "material": {
+      "default": true,
+      "title": "Material",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "event_type",
+    "resource_id",
+    "occurred_at",
+    "summary"
+  ],
+  "title": "CatalogEvent",
+  "type": "object"
+}

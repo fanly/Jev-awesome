@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375482713",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "ai-agents",
+    "awesome",
+    "awesome-list",
+    "decision-model",
+    "developer-tools",
+    "jev",
+    "jev-model",
+    "system-one",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/logicrw/awesome-jev-projects",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375482713",
+  "author_or_org": "logicrw",
+  "official_status": "community",
+  "jev_relationship": "mention_only",
+  "original_title": "logicrw/awesome-jev-projects",
+  "summary_zh": "开源生态雷达与自动 GitHub 同步。",
+  "summary_en": "Awesome Jev: source-backed open-source ecosystem radar, plain-language project discovery, and automatic GitHub sync",
+  "developer_value": "可对比自动同步策略。",
+  "jev_role": "发现与站点展示参考",
+  "prerequisites": null,
+  "limitations": "自动同步条目需人工核验。",
+  "published_at": {
+    "value": "2026-09-18T06:41:50Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T06:41:50Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/logicrw/awesome-jev-projects",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 2.0,
+    "reason_codes": [
+      "positive_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.654582Z"
+  },
+  "content_hash": "a095429447ac0db63c03d60cec969d73d533b840938cdaf796db211bd73b280b",
+  "github_repo_id": 1375482713,
+  "github_full_name": "logicrw/awesome-jev-projects"
+}

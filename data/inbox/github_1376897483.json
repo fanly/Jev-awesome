@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376897483",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "community-candidate"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/umgbhalla/jevx",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376897483",
+  "author_or_org": "umgbhalla",
+  "official_status": "community",
+  "jev_relationship": "unclear",
+  "original_title": "umgbhalla/jevx",
+  "summary_zh": null,
+  "summary_en": "Jev (TypeSafe System One) research: API notes, benchmarks, community experiments, agent-loop patterns",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/umgbhalla/jevx",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "listed as community candidate; integration not verified",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": null,
+  "content_hash": "09b7ad989be4bb98e27a40a3ac14ccdd7dfd922bdc0c8827c39fbf00ab2b4217",
+  "github_repo_id": 1376897483,
+  "github_full_name": "umgbhalla/jevx"
+}

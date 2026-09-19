@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1135380370",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "rubyllm",
+    "skills"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/kieranklaassen/ruby_llm-skills",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1135380370",
+  "author_or_org": "kieranklaassen",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "kieranklaassen/ruby_llm-skills",
+  "summary_zh": null,
+  "summary_en": "Agent Skills extension for RubyLLM - load, validate, and integrate skills from filesystem or database",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-01-16T02:39:30Z",
+    "precision": "datetime",
+    "raw": "2026-01-16T02:39:30Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.574507Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.631180Z"
+  },
+  "content_hash": "7a422b2c61e0f6f3c83f07697e7e232529f634320020496d06da4d64a902e893",
+  "github_repo_id": 1135380370,
+  "github_full_name": "kieranklaassen/ruby_llm-skills"
+}

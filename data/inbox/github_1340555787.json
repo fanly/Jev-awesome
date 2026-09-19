@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1340555787",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "chrome-extension",
+    "extension",
+    "twitter"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/rokcso/bluenoise",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1340555787",
+  "author_or_org": "rokcso",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "rokcso/bluenoise",
+  "summary_zh": null,
+  "summary_en": "Blur or hide noisy replies, posts & ads on X (Twitter), and clean up its interface with local, reversible keyword/account rules — no X API, no data collection, no account changes. 用本地可逆的关键词/账号规则模糊或隐藏 X（推特）上的嘈杂回复、帖子和广告，并整理界面——不调用 X API、不收集数据、不修改账号。",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-08-20T10:08:40Z",
+    "precision": "datetime",
+    "raw": "2026-08-20T10:08:40Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.572949Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-19T13:24:37.626770Z"
+  },
+  "content_hash": "5ddc71c5dde85239dfc0a03a8eafb3b814fcd4dbea30b3ba8a60cc86e19f4b10",
+  "github_repo_id": 1340555787,
+  "github_full_name": "rokcso/bluenoise"
+}
