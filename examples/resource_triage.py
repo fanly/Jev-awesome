@@ -4,6 +4,7 @@
 Default mode is offline mock — never calls a paid API unless you pass --live
 and set TYPESAFE_API_KEY.
 """
+
 from __future__ import annotations
 
 import argparse
