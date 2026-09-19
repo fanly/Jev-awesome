@@ -34,4 +34,4 @@ Jev（System One）主要吃第 2 步：你给出 `state` 和 typed `questions`�
 
 - 选型入口：[官方 API、社区 SDK、LocalJev、kev：应该从哪里开始？](choose-your-path.md)
 - 代码级拆分：[读 Jev Ultrafast：为什么「选动作」和「写文字」要分开？](browser-agent-code-tour.md)
-- 动手：仓库根目录 `examples/resource_triage.py`（默认 mock，不打真实 API）
+- 动手：按官方 [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) Quickstart 跑通一次 `system_one`（需 `TYPESAFE_API_KEY`）

@@ -42,8 +42,7 @@
 
 1. 读 [start-here](start-here.md) 把步骤拆开  
 2. 读 primitives + confidence  
-3. 跑本仓库 `examples/resource_triage.py`（mock）  
-4. 有 Key 再 `--live` 打一次官方 API  
-5. 再选一个垂直仓库读「先读源码」字段里的文件
+3. 按官方 [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) Quickstart 打通一次真实 `system_one`（需 Key）  
+4. 再选一个垂直仓库读「先读 / 依赖」字段里的文件
 
 其他 Awesome 列表只放在 README 底部作生态导航，**不计入**本目录首批精选核心。

@@ -39,9 +39,14 @@ Start with a path: official SDKs, browser/mobile agents, DB semantic routing, lo
 
 Curated: **14**. Inbox (not featured): 118.
 
-## Minimal Python example
+## Try it: official Python SDK
 
-See [examples/resource_triage.py](examples/resource_triage.py). Default is offline mock; `--live` requires `TYPESAFE_API_KEY` and never runs by accident.
+Use the upstream Quickstart (`TypeSafeClient.system_one` + typed questions). Requires `TYPESAFE_API_KEY`:
+
+- [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python)
+- [docs.typesafe.ai/sdk/python](https://docs.typesafe.ai/sdk/python/)
+
+This catalog does not ship local mock / half-finished example scripts.
 
 ## Verification levels
 
