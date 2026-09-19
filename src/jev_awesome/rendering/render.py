@@ -6,7 +6,7 @@ from jev_awesome.atomic_io import atomic_write_text
 from jev_awesome.models import CATEGORY_META, EditorialStatus, PrimaryCategory, Resource
 from jev_awesome.paths import Paths
 from jev_awesome.security import escape_md, safe_href
-from jev_awesome.store import CatalogStore
+from jev_awesome.store import CatalogStore, load_yaml
 
 GENERATED_START = "<!-- JEV-AWESOME:GENERATED-START -->"
 GENERATED_END = "<!-- JEV-AWESOME:GENERATED-END -->"
@@ -18,6 +18,15 @@ def _sort_key(r: Resource) -> tuple:
         (r.original_title or "").lower(),
         r.id,
     )
+
+
+def _load_featured_ids(paths: Paths) -> list[str]:
+    featured_path = paths.config / "featured.yaml"
+    if not featured_path.exists():
+        return []
+    data = load_yaml(featured_path)
+    raw = data.get("homepage") or data.get("featured") or []
+    return [str(x) for x in raw if x]
 
 
 class Renderer:
@@ -32,14 +41,31 @@ class Renderer:
         self.env.filters["md"] = escape_md
 
     def curated(self) -> list[Resource]:
-        return sorted(
-            [
-                r
-                for r in self.store.list_resources(status_dir="resources")
-                if r.editorial_status == EditorialStatus.CURATED
-            ],
-            key=_sort_key,
-        )
+        items = [
+            r
+            for r in self.store.list_resources(status_dir="resources")
+            if r.editorial_status == EditorialStatus.CURATED
+        ]
+        featured_ids = _load_featured_ids(self.paths)
+        if not featured_ids:
+            return sorted(items, key=_sort_key)
+        rank = {rid: i for i, rid in enumerate(featured_ids)}
+
+        def key(r: Resource) -> tuple:
+            if r.id in rank:
+                return (0, rank[r.id], r.id)
+            return (1, *_sort_key(r))
+
+        return sorted(items, key=key)
+
+    def featured(self, curated: list[Resource] | None = None) -> list[Resource]:
+        curated = curated if curated is not None else self.curated()
+        featured_ids = _load_featured_ids(self.paths)
+        if not featured_ids:
+            return curated[:10]
+        by_id = {r.id: r for r in curated}
+        out = [by_id[i] for i in featured_ids if i in by_id]
+        return out[:10]
 
     def proposed(self) -> list[Resource]:
         return sorted(
@@ -49,6 +75,7 @@ class Renderer:
 
     def render_all(self) -> dict[str, str]:
         curated = self.curated()
+        featured = self.featured(curated)
         proposed = self.proposed()
         counts = self.store.counts()
         by_cat: dict[PrimaryCategory, list[Resource]] = {c: [] for c in PrimaryCategory}
@@ -58,6 +85,7 @@ class Renderer:
 
         ctx = {
             "curated": curated,
+            "featured": featured,
             "proposed": proposed,
             "counts": counts,
             "by_category": by_cat,

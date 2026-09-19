@@ -16,12 +16,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "TypeSafe Confidence",
-  "summary_zh": "解释 confidence 与概率分布的关系及如何阈值。",
+  "summary_zh": "官方置信度说明：confidence 仅适用于 Choice/Score；Noul 无 confidence。",
   "summary_en": null,
-  "developer_value": "设计自动执行 vs 人工升级阈值。",
-  "jev_role": "为 Choice/Score 提供确定性度量。",
-  "prerequisites": null,
-  "limitations": "阈值需按业务校准，非通用魔法数。",
+  "developer_value": "避免在 Noul 上读不存在的字段，或把 confidence 误当成万能阈值。",
+  "jev_role": "解释如何解读返回分布上的置信信息。",
+  "prerequisites": "先读 primitives，再读本页。无需 Key。",
+  "limitations": "置信度≠业务正确性保证。",
   "published_at": {
     "value": null,
     "precision": "unknown",
@@ -29,11 +29,11 @@
     "source": null
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.053709Z",
   "license_status": "unknown",
   "license_identifier": null,
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -47,10 +47,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.053709Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

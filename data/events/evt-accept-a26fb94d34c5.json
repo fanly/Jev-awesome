@@ -1,0 +1,8 @@
+{
+  "id": "evt-accept-a26fb94d34c5",
+  "event_type": "human_accepted",
+  "resource_id": "github:1372296290",
+  "occurred_at": "2026-09-19T16:47:14.041649Z",
+  "summary": "Editorial acceptance by delegated editor `cursor:delegated-editor` (catalog curation only; not a claim of human line-by-line review or runtime reproduction). note=launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
+  "material": true
+}

@@ -16,12 +16,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "TypeSafe docs index (llms.txt)",
-  "summary_zh": "官方文档机器可读索引，发现概念、原语、SDK 与 cookbook 的入口。",
+  "summary_zh": "官方文档机器可读索引（llms.txt）：概念、原语、SDK 与 cookbook 入口。",
   "summary_en": "Official docs index for System One / Jev.",
-  "developer_value": "开始集成前应先读索引再定点打开页面。",
+  "developer_value": "动手前先定向打开正确文档页，避免只搜到过时二次摘要。",
   "jev_role": "文档导航；不调用模型。",
-  "prerequisites": null,
-  "limitations": "索引会变更；需结合具体页面核验。",
+  "prerequisites": "浏览器或能拉文本的客户端。先打开该索引再跟链到 primitives/confidence/SDK。",
+  "limitations": "索引会变更；条目存在≠你已理解实现。",
   "published_at": {
     "value": null,
     "precision": "unknown",
@@ -29,11 +29,11 @@
     "source": null
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.050753Z",
   "license_status": "unknown",
   "license_identifier": null,
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -47,10 +47,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.050753Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

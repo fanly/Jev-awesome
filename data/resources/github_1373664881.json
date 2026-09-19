@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373664881",
+  "resource_kind": "evaluation",
+  "primary_category": "evals_limits",
+  "tags": [
+    "launch-v1"
+  ],
+  "languages": [
+    "typescript",
+    "javascript"
+  ],
+  "canonical_url": "https://github.com/iammrduncan/typesafe-ai-benchmark",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373664881",
+  "author_or_org": "iammrduncan",
+  "official_status": "community",
+  "jev_relationship": "calls_official_api",
+  "original_title": "iammrduncan/typesafe-ai-benchmark",
+  "summary_zh": "并排对照：Cerebras 上 Qwen 结构化输出 vs TypeSafe Jev vs 本地 Needle，记录延迟、成本与校验通过情况。",
+  "summary_en": "LLM structured output vs TypeSafe Jev latency/cost/judgment benchmark",
+  "developer_value": "读方法与原始导出，判断「换模型」还是「换决策形态」；不要只看首页 GIF。",
+  "jev_role": "基准中的原生判断路径；与 LLM schema 输出、本地 tool-call 对照。",
+  "prerequisites": "复现需各提供商 Key 与上游说明的运行环境。先读：`docs/benchmarks/README.md` 与 `docs/jev.md`；把表格当作者实验记录，非本仓库复现。",
+  "limitations": "作者自述 Needle 测量条件不同，不能当严格速度排名。本目录仅阅读公开方法与结果页，未重跑基准 → verification 非 benchmarked。",
+  "published_at": {
+    "value": "2026-09-16",
+    "precision": "day",
+    "raw": "2026-09-16",
+    "source": "github.created_approx"
+  },
+  "first_discovered_at": "2026-09-20T04:00:00Z",
+  "last_material_change_at": "2026-09-19T16:47:14.048774Z",
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "curated",
+  "verification_level": "source_checked",
+  "evidence": [
+    {
+      "url": "https://github.com/iammrduncan/typesafe-ai-benchmark",
+      "source_type": "github",
+      "checked_at": "2026-09-20T04:00:00Z",
+      "supports": "README methodology and caveat table reviewed 2026-09-20",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.048774Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": null,
+  "content_hash": null,
+  "github_repo_id": 1373664881,
+  "github_full_name": "iammrduncan/typesafe-ai-benchmark"
+}

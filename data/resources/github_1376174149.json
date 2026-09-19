@@ -17,12 +17,12 @@
   "official_status": "community",
   "jev_relationship": "inspired_independent",
   "original_title": "githubnext/localjev",
-  "summary_zh": "本地兼容 POST /v1/systemone 的实现（Bun + DiffusionGemma）。",
+  "summary_zh": "GitHub Next：本地兼容 `POST /v1/systemone` 的实现（Bun + Diffusion），用于研究/桥接。",
   "summary_en": null,
-  "developer_value": "研究替代后端与本地部署。",
-  "jev_role": "独立兼容实现，非官方 Jev",
-  "prerequisites": null,
-  "limitations": "兼容≠官方模型；结果与校准不同。",
+  "developer_value": "在无官方 Key 或要本地试验时，对齐 System One 契约做客户端联调。",
+  "jev_role": "本地兼容端点；不是官方托管 Jev，质量与校准不可直接等同。",
+  "prerequisites": "按上游 README 安装运行时与模型依赖。先读仓库说明与 `/v1/systemone` 兼容说明。",
+  "limitations": "名称易与官方混淆；输出≠官方 Jev。本目录未本地启动服务。",
   "published_at": {
     "value": "2026-09-18T16:59:55Z",
     "precision": "datetime",
@@ -30,11 +30,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.043267Z",
   "license_status": "known",
   "license_identifier": "MIT",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -48,10 +48,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.043267Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

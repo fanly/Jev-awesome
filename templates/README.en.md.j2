@@ -1,45 +1,51 @@
-# Jev-awesome
+# Jev Awesome
 
-A developer-focused reference catalog for **Jev / TypeSafe**: discoverable sources, human curation, and clear limits.
+**Put Jev at the right decision point.**
 
-> Unofficial. Not affiliated with TypeSafe. Always verify upstream yourself. 中文主文档：[README.md](README.md)
+A developer-focused **Jev / TypeSafe** catalog: what Jev owns in each project, where to start reading, dependencies, and what is *not* runtime-verified here.
 
-## Quick start
+[中文主文档](README.md) · English
 
-```bash
-uv sync --frozen
-uv run jev-awesome doctor
-uv run jev-awesome validate
-```
+Start with a path: official SDKs, browser/mobile agents, DB semantic routing, local research, or method-transparent benchmarks.
 
-Works without `TYPESAFE_API_KEY` in `rules` mode.
-
-## Official links
-
-- [TypeSafe](https://typesafe.ai/)
-- [Docs index](https://docs.typesafe.ai/llms.txt)
-- [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
+[Start here (ZH)](docs/guides/start-here.md) · [Choose your path (ZH)](docs/guides/choose-your-path.md) · [Browser agent code tour (ZH)](docs/guides/browser-agent-code-tour.md)
 
 {{ generated_start }}
-## Categories
+## Featured (launch-v1)
+
+{% if featured %}
+{% for r in featured -%}
+- [{{ r.original_title | md }}]({{ safe_href(r.canonical_url) }}) — {{ r.summary_en or r.summary_zh or '' }} · `{{ r.verification_level.value }}`
+{% endfor %}
+{% else %}
+No featured curated entries yet.
+{% endif %}
+
+## Categories (curated only)
 
 {% for cat, meta in category_meta.items() -%}
 - [{{ meta.title_en }}](docs/categories/{{ meta.slug }}.md) ({{ by_category[cat]|length }})
 {% endfor %}
 
-## Curated
+Curated: **{{ counts.curated }}**. Inbox (not featured): {{ counts.inbox }}.
 
-{% if curated %}
-{% for r in curated[:25] -%}
-- [{{ r.original_title | md }}]({{ safe_href(r.canonical_url) }}) — {{ (r.summary_en or r.summary_zh or '(summary pending)') | md }} · `{{ r.verification_level.value }}`
-{% endfor %}
-{% else %}
-No maintainer-accepted curated entries yet. See [seed-review](docs/implementation/seed-review.md).
-{% endif %}
+## Minimal Python example
 
-Counts: curated={{ counts.curated }}, inbox={{ counts.inbox }}, archived={{ counts.archived }}
+See [examples/resource_triage.py](examples/resource_triage.py). Default is offline mock; `--live` requires `TYPESAFE_API_KEY` and never runs by accident.
+
+## Verification levels
+
+| Level | Meaning |
+|---|---|
+| discovered | Hint only |
+| source_checked | Upstream docs/README read |
+| code_located | Implementation located |
+| reproduced | Reproducible run evidence |
+| benchmarked | Defined baseline comparison |
+
+Curated means editorial inclusion in this catalog — **not** a claim that this repo ran or certified the project.
 {{ generated_end }}
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Unofficial. Not affiliated with TypeSafe.

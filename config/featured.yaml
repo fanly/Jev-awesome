@@ -1,0 +1,13 @@
+# Homepage featured order (8–10). Must be curated resource IDs.
+# Full curated batch may be larger; only these appear in the homepage short list.
+homepage:
+  - github:1357590729   # Python SDK
+  - github:1357635350   # JS SDK
+  - github:1373655162   # Jev Ultrafast
+  - github:1374280231   # Mobile Jev
+  - github:1375026016   # pg-jev
+  - github:1372296290   # neo4jev
+  - github:1376174149   # LocalJev
+  - github:1375069862   # kev
+  - github:1345508845   # skills
+  - github:1373664881   # typesafe-ai-benchmark

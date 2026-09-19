@@ -1,0 +1,8 @@
+{
+  "id": "evt-accept-ef1566df7528",
+  "event_type": "human_accepted",
+  "resource_id": "web:6b79f05c84473e46",
+  "occurred_at": "2026-09-19T16:47:14.051970Z",
+  "summary": "Editorial acceptance by delegated editor `cursor:delegated-editor` (catalog curation only; not a claim of human line-by-line review or runtime reproduction). note=launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
+  "material": true
+}

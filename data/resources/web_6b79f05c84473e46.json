@@ -16,12 +16,12 @@
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "TypeSafe Primitives",
-  "summary_zh": "Choice / Score / Noul 三类问题与返回字段说明。",
+  "summary_zh": "官方原语说明：Choice / Score / Noul 的字段语义与同请求隔离。",
   "summary_en": null,
-  "developer_value": "选型问题类型、理解同请求问题相互独立。",
-  "jev_role": "定义可组合的判断原语。",
-  "prerequisites": null,
-  "limitations": "Noul 无独立 confidence。",
+  "developer_value": "设计问题时必读：弄清「选项」「有序档」「是否」三种问题类型。",
+  "jev_role": "定义你能向 Jev 问什么；本身不是运行时。",
+  "prerequisites": "无 Key。先读本页，再写 SDK 调用。",
+  "limitations": "文档会迭代；以线上 docs.typesafe.ai 为准。",
   "published_at": {
     "value": null,
     "precision": "unknown",
@@ -29,11 +29,11 @@
     "source": null
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.051970Z",
   "license_status": "unknown",
   "license_identifier": null,
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -47,10 +47,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.051970Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

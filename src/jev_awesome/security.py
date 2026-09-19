@@ -144,9 +144,11 @@ def validate_redirect_target(
 
 
 def escape_md(text: str) -> str:
+    # Escape markdown control chars. Do not escape '-' / '.' — repo names and
+    # prose become unreadable (typesafe\-ai) while they rarely form structure alone.
     out = []
     for ch in text:
-        if ch in "\\`*_{}[]()#+-.!|<>":
+        if ch in "\\`*_{}[]()#+!|<>":
             out.append("\\" + ch)
         else:
             out.append(ch)

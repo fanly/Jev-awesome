@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "id": "github:1375069862",
-  "resource_kind": "alternative",
+  "resource_kind": "research",
   "primary_category": "research_alts",
   "tags": [
     "seed"
@@ -17,12 +17,12 @@
   "official_status": "community",
   "jev_relationship": "inspired_independent",
   "original_title": "jaredpalmer/kev",
-  "summary_zh": "受 Jev 启发、可在 MacBook 训练运行的小型决策模型。",
+  "summary_zh": "受 Jev 启发的可训练小型决策模型（Qwen + LoRA/读出头）；提供兼容 System One 的服务端。",
   "summary_en": "tiny Jev-like model built on top of Qwen2.5-0.5B you can train and run on your MacBook",
-  "developer_value": "理解 System One 形态的小模型路径。",
-  "jev_role": "独立复现/启发实现",
-  "prerequisites": null,
-  "limitations": "非 TypeSafe 官方；勿混淆品牌。",
+  "developer_value": "研究「概率读出 vs 解码文本」、本地训练与冻结评测套件；可换 base_url 试官方 SDK。",
+  "jev_role": "独立模型族；API 形状对齐 System One，但权重与校准是作者自己的。",
+  "prerequisites": "Python 3.12+、uv、权重（Hugging Face）、Apple Silicon/CUDA 视规模而定。先读：README Highlights 与 PLAN.md；评测口径见 frozen suites 说明。",
+  "limitations": "作者自述部分 checkpoint 未过其发布门槛；数字不可当官方 Jev 成绩。本目录未训练/未服务。",
   "published_at": {
     "value": "2026-09-17T20:49:39Z",
     "precision": "datetime",
@@ -30,11 +30,11 @@
     "source": "github.created_at"
   },
   "first_discovered_at": "2026-09-19T13:16:55.366589Z",
-  "last_material_change_at": null,
+  "last_material_change_at": "2026-09-19T16:47:14.044350Z",
   "license_status": "known",
   "license_identifier": "Apache-2.0",
   "license_evidence": null,
-  "editorial_status": "proposed",
+  "editorial_status": "curated",
   "verification_level": "source_checked",
   "evidence": [
     {
@@ -48,10 +48,10 @@
     }
   ],
   "review_record": {
-    "reviewer": null,
-    "reviewed_at": null,
-    "decision": null,
-    "reason": null,
+    "reviewer": "cursor:delegated-editor",
+    "reviewed_at": "2026-09-19T16:47:14.044350Z",
+    "decision": "approve",
+    "reason": "launch-v1 editorial curation; source/code reviewed from public README; not runtime reproduction",
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
   "suggestion": {

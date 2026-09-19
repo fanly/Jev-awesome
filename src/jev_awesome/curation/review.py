@@ -64,12 +64,20 @@ class ReviewService:
             }
         )
         self.store.save_resource(updated, inbox=False)
+        if reviewer.startswith("cursor:"):
+            summary = (
+                f"Editorial acceptance by delegated editor `{reviewer}` "
+                f"(catalog curation only; not a claim of human line-by-line review "
+                f"or runtime reproduction). note={note or ''}"
+            )
+        else:
+            summary = f"Accepted by reviewer={reviewer} (audit only)"
         event = CatalogEvent(
             id=f"evt-accept-{content_hash(resource_id + now.isoformat())[:12]}",
             event_type="human_accepted",
             resource_id=resource_id,
             occurred_at=now,
-            summary=f"Accepted by reviewer={reviewer} (audit only)",
+            summary=summary,
             material=True,
         )
         self.store.save_event(event)
