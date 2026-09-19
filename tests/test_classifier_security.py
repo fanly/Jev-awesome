@@ -49,7 +49,7 @@ def test_t15_noul_has_no_confidence_read():
 
     class Resp:
         nouls = {"relevant": NoulAns()}
-        choices = {"kind": ChoiceAns(), "relationship": ChoiceAns()}
+        choices: dict = {"kind": ChoiceAns(), "relationship": ChoiceAns()}
         scores = {"review_priority": ScoreAns()}
         answers = {}
 

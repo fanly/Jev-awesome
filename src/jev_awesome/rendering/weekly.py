@@ -5,8 +5,21 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from jev_awesome.atomic_io import atomic_write_text
+from jev_awesome.models import EditorialStatus
 from jev_awesome.paths import Paths
 from jev_awesome.store import CatalogStore
+
+# Events that may appear in the curated weekly digest
+_WEEKLY_EVENT_TYPES = frozenset(
+    {
+        "human_accepted",
+        "new_version",
+        "doc_change",
+        "verification_update",
+        "withdrawn",
+        "archived",
+    }
+)
 
 
 def previous_complete_week(
@@ -21,7 +34,8 @@ def previous_complete_week(
         hour=0, minute=0, second=0, microsecond=0
     )
     prev_monday = this_monday - timedelta(days=7)
-    week_id = prev_monday.strftime("%Y-W%W")
+    # Stable week id from local Monday (not UTC week)
+    week_id = f"{prev_monday.strftime('%G')}-W{prev_monday.strftime('%V')}"
     return prev_monday, this_monday, week_id
 
 
@@ -34,11 +48,26 @@ def build_weekly(
     """Return (week_id, markdown, material_changed). Idempotent for same events."""
     store = store or CatalogStore()
     start, end, week_id = previous_complete_week(now, tz_name)
-    events = [
-        e
-        for e in store.list_events()
-        if e.material and start <= e.occurred_at.astimezone(start.tzinfo) < end
-    ]
+    curated_ids = {
+        r.id
+        for r in store.list_resources(status_dir="resources")
+        if r.editorial_status == EditorialStatus.CURATED
+    }
+    # Also treat human_accepted events as allowlisted even if resource scan races
+    events = []
+    for e in store.list_events():
+        if not e.material:
+            continue
+        if e.event_type not in _WEEKLY_EVENT_TYPES:
+            continue
+        occurred = e.occurred_at
+        if occurred.tzinfo is None:
+            occurred = occurred.replace(tzinfo=UTC)
+        local_occ = occurred.astimezone(start.tzinfo)
+        if not (start <= local_occ < end):
+            continue
+        if e.event_type == "human_accepted" or e.resource_id in curated_ids:
+            events.append(e)
     events.sort(key=lambda e: (e.occurred_at, e.id))
     lines = [
         f"# 周报 {week_id}",
@@ -66,18 +95,18 @@ def write_weekly(
     tz_name: str = "Asia/Shanghai",
     now: datetime | None = None,
 ) -> Path | None:
-
     store = store or CatalogStore()
     paths = paths or store.paths
+    paths.updates.mkdir(parents=True, exist_ok=True)
     week_id, body, material = build_weekly(store, tz_name=tz_name, now=now)
     out = paths.updates / f"weekly-{week_id}.md"
-    # Stable content hash path — rewrite same content is fine (idempotent)
     prev = out.read_text(encoding="utf-8") if out.exists() else None
+    if not material:
+        # Do not manufacture empty weeklies; never delete existing history
+        if prev is None:
+            return None
+        return out
     if prev == body:
-        return out if material or out.exists() else None
-    if not material and prev is None:
-        # Still write once so re-runs are stable and "no fake weekly spam commits"
-        # Callers decide whether to commit.
-        pass
+        return out
     atomic_write_text(out, body)
     return out

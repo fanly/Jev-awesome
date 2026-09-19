@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from jev_awesome.automation.checkpoint import CheckpointStore
 from jev_awesome.automation.collect import CollectOptions, run_collect
@@ -70,7 +69,7 @@ def test_t05_short_last_page_complete():
     assert result.queries[0].coverage_status == "complete"
 
 
-def test_t27_failed_shard_does_not_advance_checkpoint(tmp_paths: Path):
+def test_t27_failed_shard_does_not_advance_checkpoint(tmp_paths):
     (tmp_paths.config / "sources.yaml").write_text(
         "sources:\n  github_discovery:\n    enabled: false\n  rss_atom:\n    enabled: false\n    feeds: []\n  official_monitor:\n    enabled: false\n    pages: []\n",
         encoding="utf-8",

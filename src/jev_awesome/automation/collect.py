@@ -77,6 +77,7 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
         OfficialMonitorAdapter(
             pages=off_cfg.get("pages") or [],
             enabled=off_cfg.get("enabled", True),
+            cache_dir=config.paths.cache / "http" / "official",
         )
     )
 

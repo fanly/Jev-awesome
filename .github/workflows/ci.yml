@@ -30,13 +30,20 @@ jobs:
         run: uv sync --frozen
 
       - name: Ruff
-        run: uv run ruff check .
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Typecheck
+        run: uv run basedpyright
 
       - name: Pytest (offline)
         run: uv run pytest
         env:
           # Never call paid models in CI
           TYPESAFE_API_KEY: ""
+          JEV_ALLOW_FAKE_IP: "0"
+          CI: "true"
 
       - name: Validate + render check
         run: |

@@ -124,15 +124,21 @@ class TypeSafeClassifier:
                 created_at=utc_now(),
             )
 
-        # Noul: only .noul — no confidence field exists
-        noul_ans = response.nouls.get("relevant") or response.answers.get("relevant")
-        relevance_p = float(noul_ans.noul)
+        # Noul: only .noul — no confidence field exists on NoulAnswer
+        noul_obj: Any = response.nouls.get("relevant") or response.answers.get("relevant")
+        if noul_obj is None:
+            raise TypeError("typesafe response missing noul for 'relevant'")
+        relevance_p = float(noul_obj.noul)
         # Do NOT read confidence on Noul
-        choice_kind = response.choices.get("kind") or response.answers.get("kind")
-        choice_rel = response.choices.get("relationship") or response.answers.get("relationship")
-        score_pri = response.scores.get("review_priority") or response.answers.get(
+        choice_kind: Any = response.choices.get("kind") or response.answers.get("kind")
+        choice_rel: Any = response.choices.get("relationship") or response.answers.get(
+            "relationship"
+        )
+        score_pri: Any = response.scores.get("review_priority") or response.answers.get(
             "review_priority"
         )
+        if choice_kind is None or choice_rel is None or score_pri is None:
+            raise TypeError("typesafe response missing choice/score answers")
 
         kind_raw = choice_kind.choice
         rel_raw = choice_rel.choice

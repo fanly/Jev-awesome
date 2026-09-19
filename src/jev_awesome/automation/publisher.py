@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from jev_awesome.automation.git_workspace import GitError, GitWorkspace
+from jev_awesome.automation.git_workspace import GitError, GitWorkspace, run_git
 from jev_awesome.automation.github_transport import FakeGitHubTransport, GitHubTransport
 from jev_awesome.automation.write_policy import (
     WritePolicyError,
@@ -131,6 +131,32 @@ class Publisher:
         root = catalog_root or self.workspace
         store = CatalogStore(Paths(root))
 
+        recovery = self._prepare_robot_catalog(store, root)
+        if recovery == "recovery_gap":
+            pending = root / "data" / "reports" / "pending-robot-write.json"
+            pending.parent.mkdir(parents=True, exist_ok=True)
+            pending.write_text(
+                json.dumps(
+                    {
+                        "reason": "recovery_gap",
+                        "expected": self.opts.last_robot_sha,
+                        "at": utc_now().isoformat(),
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            self._paused = True
+            self._pause_reason = "recovery_gap"
+            self._save_state(pending_path=str(pending.relative_to(root)))
+            return PublishResult(
+                status="paused",
+                reason="recovery_gap",
+                notes=["robot branch missing; no verifiable PR head to restore"],
+                transport_calls=len(self.transport.calls),
+            )
+
         # Merge robot branch data if remote branch exists (via worktree copy already in store)
         # Re-render from trusted templates + validated data
         Renderer(store=store, paths=Paths(root)).write()
@@ -154,6 +180,14 @@ class Publisher:
             remote_sha = self.git.remote_branch_sha(opts.remote_name, opts.robot_branch)
         except GitError:
             remote_sha = None
+
+        # After a merged robot PR (merge or squash), main is authoritative —
+        # do not fast-forward from a stale pre-merge robot tip.
+        restart_after_merge = False
+        if self._robot_pr_merged():
+            restart_after_merge = True
+            remote_sha = None
+            opts.last_robot_sha = None
 
         # Manual edit detection on remote robot branch
         if remote_sha and opts.last_robot_sha:
@@ -265,6 +299,17 @@ class Publisher:
                 )
 
         try:
+            if restart_after_merge:
+                # Drop stale robot ref after merge/squash so the next tip is based on
+                # main (non-FF rewrite avoided by delete + create). Never force main.
+                del_ref = run_git(
+                    self.workspace,
+                    "push",
+                    opts.remote_name,
+                    f":refs/heads/{opts.robot_branch}",
+                    check=False,
+                )
+                _ = del_ref
             self.git.push(opts.remote_name, opts.robot_branch, force=False)
         except GitError as e:
             return PublishResult(
@@ -278,6 +323,10 @@ class Publisher:
         opts.last_robot_sha = sha
         if isinstance(self.transport, FakeGitHubTransport):
             self.transport.set_branch_sha(opts.robot_branch, sha)
+            # Keep PR head sha current for recovery after branch deletion
+            for p in self.transport.robot_prs(opts.robot_branch):
+                if p.get("state") == "open":
+                    p.setdefault("head", {})["sha"] = sha
 
         # Create or update PR
         pr_result = self._ensure_pr(sha)
@@ -286,6 +335,85 @@ class Publisher:
         pr_result.commit_sha = sha
         pr_result.transport_calls = len(self.transport.calls)
         return pr_result
+
+    def _robot_pr_merged(self) -> bool:
+        opts = self.opts
+        has = getattr(self.transport, "has_merged_robot_pr", None)
+        if callable(has):
+            return bool(has(opts.robot_branch))
+        status, data = self.transport.get_json(
+            f"/repos/{opts.owner}/{opts.repo}/pulls?state=closed&per_page=20"
+        )
+        if status != 200 or not isinstance(data, list):
+            return False
+        return any(
+            (p.get("head") or {}).get("ref") == opts.robot_branch and p.get("merged") for p in data
+        )
+
+    def _prepare_robot_catalog(self, store: CatalogStore, root: Path) -> str:
+        """Restore unmerged robot catalog when the branch ref is gone.
+
+        Returns: ok | recovered | merged | fresh | recovery_gap
+        """
+        opts = self.opts
+        remote_sha = None
+        try:
+            remote_sha = self.git.remote_branch_sha(opts.remote_name, opts.robot_branch)
+        except GitError:
+            remote_sha = None
+        if remote_sha:
+            return "ok"
+        if self._robot_pr_merged():
+            return "merged"
+
+        head_sha = None
+        getter = getattr(self.transport, "latest_unmerged_head_sha", None)
+        if callable(getter):
+            head_sha = getter(opts.robot_branch)
+        if not head_sha:
+            # Probe closed-unmerged via HTTP API shape
+            st, closed = self.transport.get_json(
+                f"/repos/{opts.owner}/{opts.repo}/pulls?state=closed&per_page=20"
+            )
+            if st == 200 and isinstance(closed, list):
+                for p in closed:
+                    if (p.get("head") or {}).get("ref") == opts.robot_branch and not p.get(
+                        "merged"
+                    ):
+                        head_sha = (p.get("head") or {}).get("sha")
+                        break
+            st2, opened = self.transport.get_json(
+                f"/repos/{opts.owner}/{opts.repo}/pulls?state=open&per_page=20"
+            )
+            if not head_sha and st2 == 200 and isinstance(opened, list):
+                for p in opened:
+                    if (p.get("head") or {}).get("ref") == opts.robot_branch:
+                        head_sha = (p.get("head") or {}).get("sha")
+                        break
+
+        if head_sha:
+            import tempfile
+
+            recover_sha = str(head_sha)
+            tmp = Path(tempfile.mkdtemp(prefix="jev-recover-"))
+            try:
+                remote_url = run_git(root, "remote", "get-url", opts.remote_name).stdout.strip()
+                run_git(tmp, "init", "-b", "recover")
+                GitWorkspace(root=tmp, known_robot_shas=set()).ensure_identity()
+                run_git(tmp, "fetch", "--depth=1", remote_url, recover_sha)
+                run_git(tmp, "checkout", "-f", "FETCH_HEAD")
+                store.merge_catalog_from_branch_files(tmp)
+                return "recovered"
+            except GitError:
+                if opts.last_robot_sha:
+                    return "recovery_gap"
+                return "fresh"
+            finally:
+                shutil.rmtree(tmp, ignore_errors=True)
+
+        if opts.last_robot_sha:
+            return "recovery_gap"
+        return "fresh"
 
     def _resolve_main_sha(self, main_ref: str) -> str:
         candidates = [

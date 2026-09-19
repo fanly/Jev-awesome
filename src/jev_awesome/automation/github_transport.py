@@ -125,7 +125,10 @@ class FakeGitHubTransport:
                 "merged": False,
                 "title": body.get("title"),
                 "body": body.get("body"),
-                "head": {"ref": body.get("head"), "sha": self.refs.get(body.get("head") or "", "")},
+                "head": {
+                    "ref": body.get("head"),
+                    "sha": self.refs.get(body.get("head") or "", ""),
+                },
                 "base": {"ref": body.get("base", "main")},
             }
             self.pulls.append(pr)
@@ -169,6 +172,42 @@ class FakeGitHubTransport:
                 p["merged"] = merged
                 return
         raise KeyError(f"PR {number} not found")
+
+    def mark_merged(self, number: int, *, head_sha: str | None = None) -> None:
+        for p in self.pulls:
+            if p["number"] == number:
+                p["state"] = "closed"
+                p["merged"] = True
+                if head_sha:
+                    p.setdefault("head", {})["sha"] = head_sha
+                return
+        raise KeyError(f"PR {number} not found")
+
+    def robot_prs(self, branch: str) -> list[dict[str, Any]]:
+        return [p for p in self.pulls if p.get("head", {}).get("ref") == branch]
+
+    def latest_unmerged_head_sha(self, branch: str) -> str | None:
+        """Head SHA for open or closed-unmerged robot PR (prefer open)."""
+        open_prs = [
+            p
+            for p in self.pulls
+            if p.get("head", {}).get("ref") == branch and p.get("state") == "open"
+        ]
+        if open_prs:
+            return (open_prs[0].get("head") or {}).get("sha") or self.refs.get(branch)
+        closed = [
+            p
+            for p in self.pulls
+            if p.get("head", {}).get("ref") == branch
+            and p.get("state") == "closed"
+            and not p.get("merged")
+        ]
+        if closed:
+            return (closed[0].get("head") or {}).get("sha")
+        return None
+
+    def has_merged_robot_pr(self, branch: str) -> bool:
+        return any(p.get("head", {}).get("ref") == branch and p.get("merged") for p in self.pulls)
 
 
 def encode_head(owner: str, branch: str) -> str:
