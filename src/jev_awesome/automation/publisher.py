@@ -21,6 +21,7 @@ from jev_awesome.automation.github_transport import (
     pr_is_merged,
 )
 from jev_awesome.automation.write_policy import (
+    FORBIDDEN_EVENT_TYPES,
     WritePolicyError,
     assert_event_allowed,
     assert_not_symlink,
@@ -724,7 +725,13 @@ class Publisher:
             for path in events.glob("*.json"):
                 assert_not_symlink(path)
                 ev = json.loads(path.read_text(encoding="utf-8"))
-                assert_event_allowed(ev.get("event_type", ""))
+                et = str(ev.get("event_type", ""))
+                # Main already contains human audit events (e.g. human_accepted from
+                # curated approve). Those must not fail robot publish. Automation is
+                # still forbidden from *emitting* them at write sites.
+                if et in FORBIDDEN_EVENT_TYPES:
+                    continue
+                assert_event_allowed(et)
 
     def _ensure_pr_if_needed(self, tip_sha: str | None) -> PublishResult:
         """When content has no material diff, still ensure an open PR exists for remote tip.
