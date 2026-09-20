@@ -133,7 +133,7 @@ GitHub Next：本地兼容 `POST /v1/systemone` 的实现（Bun + Diffusion）�
 - [研究与替代实现](docs/categories/research-alts.md)（2）
 
 
-当前精选 **14** 条；待审队列另有 1582 条（不计入上方推荐）。
+当前精选 **14** 条；待审队列另有 1585 条（不计入上方推荐）。
 
 ## 最近编辑更新
 

@@ -19,7 +19,11 @@
     "seo",
     "serp",
     "typesafe",
-    "typesafe-ai"
+    "typesafe-ai",
+    "decision-oracle",
+    "mcp-server",
+    "seo-audit",
+    "seo-tools"
   ],
   "languages": [],
   "canonical_url": "https://github.com/AkashPriyadarshii/jev-seo",
