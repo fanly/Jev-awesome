@@ -84,7 +84,12 @@ def test_payload_import_preserves_summary_zh(tmp_path: Path) -> None:
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
 
-    result = import_catalog_payload(payload_dir, main, expected_repo="fanly/Jev-awesome")
+    result = import_catalog_payload(
+        payload_dir,
+        main,
+        expected_repo="fanly/Jev-awesome",
+        require_trusted_identity=False,
+    )
     assert result.imported == 1
     after = store.get_resource("github:55")
     assert after is not None

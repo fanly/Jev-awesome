@@ -315,6 +315,26 @@ def payload_export(
 )
 @click.option("--owner", default="fanly")
 @click.option("--repo", default="Jev-awesome")
+@click.option(
+    "--expected-source-sha",
+    default=None,
+    help="Trusted collect tip SHA (or EXPECTED_SOURCE_SHA env).",
+)
+@click.option(
+    "--expected-run-id",
+    default=None,
+    help="Trusted collect run id (or EXPECTED_RUN_ID env).",
+)
+@click.option(
+    "--expected-producer-attempt",
+    default=None,
+    help="Trusted collect attempt (or EXPECTED_PRODUCER_ATTEMPT env).",
+)
+@click.option(
+    "--actual-checkout-sha",
+    default=None,
+    help="Publish checkout SHA (or ACTUAL_CHECKOUT_SHA env / git HEAD).",
+)
 def publish_cmd(
     enabled: bool,
     dry_run: bool,
@@ -323,8 +343,14 @@ def publish_cmd(
     payload_dir: Path | None,
     owner: str,
     repo: str,
+    expected_source_sha: str | None,
+    expected_run_id: str | None,
+    expected_producer_attempt: str | None,
+    actual_checkout_sha: str | None,
 ) -> None:
     """Publish allowlisted catalog changes to robot branch and open/update PR."""
+    from dataclasses import asdict
+
     from jev_awesome.automation.github_transport import HttpxGitHubTransport
     from jev_awesome.automation.payload import PayloadError, import_catalog_payload
     from jev_awesome.automation.publisher import Publisher, PublishOptions
@@ -332,30 +358,7 @@ def publish_cmd(
 
     root = _paths().root
     expected_repo = f"{owner}/{repo}"
-
-    if payload_dir is not None:
-        if not payload_dir.exists():
-            console.print(f"[red]payload required but missing: {payload_dir}[/red]")
-            raise SystemExit(1)
-        try:
-            imported = import_catalog_payload(
-                payload_dir,
-                root,
-                expected_repo=expected_repo,
-            )
-        except PayloadError as e:
-            console.print(f"[red]payload import failed: {e}[/red]")
-            raise SystemExit(1) from e
-        console.print(f"payload imported resources={imported.imported}")
-
-    if merge_from and merge_from.exists():
-        CatalogStore(Paths(root)).merge_catalog_from_branch_files(merge_from)
-
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
-    if enabled and not dry_run and not token:
-        console.print("[red]GITHUB_TOKEN required for non-dry-run publish[/red]")
-        raise SystemExit(2)
-
     transport = HttpxGitHubTransport(token=token or "dry-run-unused")
     opts = PublishOptions(
         enabled=enabled,
@@ -366,7 +369,58 @@ def publish_cmd(
         expected_repo=expected_repo,
         require_payload=payload_dir is not None,
     )
-    from dataclasses import asdict
+
+    # G2: dry-run / disabled must return BEFORE payload import / merge_from / mutation
+    if (not enabled) or dry_run:
+        result = Publisher(root, transport=transport, opts=opts).publish()
+        console.print_json(data=asdict(result))
+        return
+
+    if not token:
+        console.print("[red]GITHUB_TOKEN required for non-dry-run publish[/red]")
+        raise SystemExit(2)
+
+    if payload_dir is not None:
+        if not payload_dir.exists():
+            console.print(f"[red]payload required but missing: {payload_dir}[/red]")
+            raise SystemExit(1)
+        src_sha = expected_source_sha or os.environ.get("EXPECTED_SOURCE_SHA")
+        run_id = expected_run_id or os.environ.get("EXPECTED_RUN_ID")
+        attempt = expected_producer_attempt or os.environ.get("EXPECTED_PRODUCER_ATTEMPT")
+        checkout = actual_checkout_sha or os.environ.get("ACTUAL_CHECKOUT_SHA")
+        if not checkout:
+            import subprocess
+
+            try:
+                checkout = subprocess.check_output(
+                    ["git", "rev-parse", "HEAD"], cwd=root, text=True
+                ).strip()
+            except (OSError, subprocess.CalledProcessError):
+                checkout = None
+        if not src_sha or not run_id or not attempt or not checkout:
+            console.print(
+                "[red]EXPECTED_SOURCE_SHA, EXPECTED_RUN_ID, EXPECTED_PRODUCER_ATTEMPT "
+                "(and checkout SHA) required for live payload publish[/red]"
+            )
+            raise SystemExit(2)
+        try:
+            imported = import_catalog_payload(
+                payload_dir,
+                root,
+                expected_repo=expected_repo,
+                expected_source_sha=src_sha,
+                expected_run_id=run_id,
+                expected_producer_attempt=attempt,
+                actual_checkout_sha=checkout,
+                require_trusted_identity=True,
+            )
+        except PayloadError as e:
+            console.print(f"[red]payload import failed: {e}[/red]")
+            raise SystemExit(1) from e
+        console.print(f"payload imported resources={imported.imported}")
+
+    if merge_from and merge_from.exists():
+        CatalogStore(Paths(root)).merge_catalog_from_branch_files(merge_from)
 
     result = Publisher(root, transport=transport, opts=opts).publish()
     console.print_json(data=asdict(result))

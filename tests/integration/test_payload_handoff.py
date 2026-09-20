@@ -60,6 +60,7 @@ def test_payload_handoff_two_independent_checkouts(tmp_path: Path) -> None:
         payload_dir,
         publish_work,
         expected_repo="fanly/Jev-awesome",
+        require_trusted_identity=False,
     )
     assert imported.imported == 1
     assert "github:8101" in imported.resource_ids
@@ -83,7 +84,12 @@ def test_publish_without_payload_fails_when_required(tmp_path: Path) -> None:
     bare, work, _ws, transport = _setup_repo(tmp_path)
     missing = tmp_path / "no-such-payload"
     with pytest.raises(PayloadError, match="missing"):
-        import_catalog_payload(missing, work, expected_repo="fanly/Jev-awesome")
+        import_catalog_payload(
+            missing,
+            work,
+            expected_repo="fanly/Jev-awesome",
+            require_trusted_identity=False,
+        )
 
     # CLI-style: missing path checked before publish
     assert not missing.exists()

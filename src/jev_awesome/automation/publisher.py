@@ -15,6 +15,7 @@ from urllib.parse import quote
 from jev_awesome.automation.git_workspace import GitError, GitWorkspace, run_git
 from jev_awesome.automation.github_transport import (
     FakeGitHubTransport,
+    GitHubAPIError,
     GitHubTransport,
     pr_is_closed_unmerged,
     pr_is_merged,
@@ -284,9 +285,16 @@ class Publisher:
         root = catalog_root or self.workspace
         store = CatalogStore(Paths(root))
 
-        self._hydrate_robot_identity(root)
-
-        recovery = self._prepare_robot_catalog(store, root)
+        try:
+            self._hydrate_robot_identity(root)
+            recovery = self._prepare_robot_catalog(store, root)
+        except GitHubAPIError as e:
+            return PublishResult(
+                status="failed",
+                reason=f"pr_list_failed:{e}",
+                notes=["GitHub PR list failed; refusing empty-success"],
+                transport_calls=len(self.transport.calls),
+            )
         if recovery == "recovery_gap":
             pending = root / "data" / "reports" / "pending-robot-write.json"
             pending.parent.mkdir(parents=True, exist_ok=True)
@@ -340,10 +348,19 @@ class Publisher:
         # do not fast-forward from a stale pre-merge robot tip.
         # CRITICAL (F4): never restart/delete when an OPEN robot PR exists.
         restart_after_merge = False
-        if self._robot_pr_merged():
-            restart_after_merge = True
-            remote_sha = None
-            opts.last_robot_sha = None
+        try:
+            if self._robot_pr_merged():
+                restart_after_merge = True
+                remote_sha = None
+                opts.last_robot_sha = None
+        except GitHubAPIError as e:
+            shutil.rmtree(staging, ignore_errors=True)
+            return PublishResult(
+                status="failed",
+                reason=f"pr_list_failed:{e}",
+                notes=["GitHub PR list failed during merge detection"],
+                transport_calls=len(self.transport.calls),
+            )
 
         # Manual edit detection on remote robot branch
         if remote_sha and opts.last_robot_sha:
@@ -422,12 +439,16 @@ class Publisher:
                 sizes[rel] = p.stat().st_size
 
         if not rels:
-            return PublishResult(
-                status="no_diff",
-                reason="no_material_diff",
-                notes=["no allowlisted changes to commit"],
-                transport_calls=len(self.transport.calls),
-            )
+            tip_sha = remote_sha or opts.last_robot_sha
+            try:
+                return self._ensure_pr_if_needed(tip_sha)
+            except GitHubAPIError as e:
+                return PublishResult(
+                    status="failed",
+                    reason=f"pr_list_failed:{e}",
+                    notes=["no material diff; PR list failed"],
+                    transport_calls=len(self.transport.calls),
+                )
 
         try:
             validate_write_set(rels, sizes=sizes)
@@ -437,7 +458,16 @@ class Publisher:
         self.git.add_paths(rels)
         sha = self.git.commit(f"chore(catalog): automation update {utc_now().strftime('%Y-%m-%d')}")
         if sha is None:
-            return PublishResult(status="no_diff", reason="empty_commit_skipped")
+            tip_sha = remote_sha or opts.last_robot_sha
+            try:
+                return self._ensure_pr_if_needed(tip_sha)
+            except GitHubAPIError as e:
+                return PublishResult(
+                    status="failed",
+                    reason=f"pr_list_failed:{e}",
+                    notes=["empty commit; PR list failed"],
+                    transport_calls=len(self.transport.calls),
+                )
 
         sha = self._finalize_identity_in_commit(root, sha)
         if ROBOT_IDENTITY_REL not in rels:
@@ -490,7 +520,17 @@ class Publisher:
                     p.setdefault("head", {})["sha"] = sha
 
         # Create or update PR
-        pr_result = self._ensure_pr(sha)
+        try:
+            pr_result = self._ensure_pr(sha)
+        except GitHubAPIError as e:
+            return PublishResult(
+                status="failed",
+                reason=f"pr_list_failed:{e}",
+                commit_sha=sha,
+                written_paths=rels,
+                notes=["branch pushed; PR list failed — retryable"],
+                transport_calls=len(self.transport.calls),
+            )
         self._save_state()
         pr_result.written_paths = rels
         pr_result.commit_sha = sha
@@ -498,7 +538,10 @@ class Publisher:
         return pr_result
 
     def _list_robot_prs(self, *, state: str) -> list[dict[str, Any]]:
-        """List robot PRs via get_json only (head filter + pagination budget)."""
+        """List robot PRs via get_json only (head filter + pagination budget).
+
+        Non-200 or non-list responses raise GitHubAPIError — never empty-success.
+        """
         opts = self.opts
         head = quote(f"{opts.owner}:{opts.robot_branch}", safe=":")
         results: list[dict[str, Any]] = []
@@ -509,7 +552,7 @@ class Publisher:
             )
             status, data = self.transport.get_json(path)
             if status != 200 or not isinstance(data, list):
-                break
+                raise GitHubAPIError(f"status={status} type={type(data).__name__}")
             for p in data:
                 if (p.get("head") or {}).get("ref") == opts.robot_branch:
                     results.append(p)
@@ -522,6 +565,7 @@ class Publisher:
 
         Must NOT return True while an open robot PR exists (F4).
         Uses get_json + pr_is_merged only — never Fake-only helpers.
+        Propagates GitHubAPIError from list failures (do not treat as empty).
         """
         open_prs = self._list_robot_prs(state="open")
         if open_prs:
@@ -543,6 +587,7 @@ class Publisher:
         """Restore unmerged robot catalog when the branch ref is gone.
 
         Returns: ok | recovered | merged | fresh | recovery_gap
+        Propagates GitHubAPIError from PR list failures.
         """
         opts = self.opts
         remote_sha = None
@@ -680,6 +725,80 @@ class Publisher:
                 assert_not_symlink(path)
                 ev = json.loads(path.read_text(encoding="utf-8"))
                 assert_event_allowed(ev.get("event_type", ""))
+
+    def _ensure_pr_if_needed(self, tip_sha: str | None) -> PublishResult:
+        """When content has no material diff, still ensure an open PR exists for remote tip.
+
+        - No remote tip → no_diff (same as today)
+        - Open PR exists → 0 POST/PATCH
+        - Remote tip, no open PR → POST create only (0 commit, 0 push)
+        """
+        if not tip_sha:
+            return PublishResult(
+                status="no_diff",
+                reason="no_material_diff",
+                notes=["no allowlisted changes to commit"],
+                transport_calls=len(self.transport.calls),
+            )
+
+        opts = self.opts
+        open_robot = self._list_robot_prs(state="open")
+        if open_robot:
+            pr = open_robot[0]
+            return PublishResult(
+                status="no_diff",
+                reason="no_material_diff",
+                pr_number=pr.get("number"),
+                pr_url=pr.get("html_url"),
+                commit_sha=tip_sha,
+                notes=["no allowlisted changes; open PR unchanged"],
+                transport_calls=len(self.transport.calls),
+            )
+
+        # Closed-unmerged: do not auto-reopen
+        for p in self._list_robot_prs(state="closed"):
+            if pr_is_closed_unmerged(p):
+                return PublishResult(
+                    status="paused",
+                    reason="previous_pr_closed_unmerged",
+                    notes=[
+                        "no material diff; not auto-reopening identical closed PR",
+                        f"closed_pr={p.get('number')}",
+                    ],
+                    pr_number=p.get("number"),
+                    pr_url=p.get("html_url"),
+                    commit_sha=tip_sha,
+                    transport_calls=len(self.transport.calls),
+                )
+
+        title = "chore(catalog): automated discovery update"
+        body = self._pr_body(tip_sha)
+        st3, created = self.transport.post_json(
+            f"/repos/{opts.owner}/{opts.repo}/pulls",
+            {
+                "title": title,
+                "head": opts.robot_branch,
+                "base": opts.main_branch,
+                "body": body,
+            },
+        )
+        if st3 >= 400:
+            return PublishResult(
+                status="failed",
+                reason=f"pr_create_failed:{st3}",
+                commit_sha=tip_sha,
+                notes=["no new commit; PR create failed — retryable next run"],
+                transport_calls=len(self.transport.calls),
+            )
+        return PublishResult(
+            status="success",
+            reason="pr_created",
+            pr_number=created.get("number"),
+            pr_url=created.get("html_url"),
+            commit_sha=tip_sha,
+            notes=["no material diff; created PR for existing robot tip"],
+            transport_calls=len(self.transport.calls),
+        )
 
     def _ensure_pr(self, head_sha: str) -> PublishResult:
         opts = self.opts

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -43,6 +44,8 @@ MAX_PAYLOAD_TOTAL_BYTES = 40_000_000
 MAX_PAYLOAD_FILES = 5_000
 
 MACHINE_STATUSES = frozenset({"pending", "proposed"})
+
+_SHA_RE = re.compile(r"^[0-9a-fA-F]{7,64}$")
 
 
 class PayloadError(ValueError):
@@ -83,6 +86,15 @@ def _assert_payload_rel(rel: str) -> str:
     if p.startswith("observations/") and p.endswith(".json"):
         return p
     raise PayloadError(f"path not allowlisted in payload: {p}")
+
+
+def _assert_hex_sha(label: str, value: str | None) -> str:
+    if value is None or not str(value).strip():
+        raise PayloadError(f"{label} required and must be non-empty")
+    sha = str(value).strip()
+    if not _SHA_RE.fullmatch(sha):
+        raise PayloadError(f"{label} is not a valid hex SHA: {sha!r}")
+    return sha
 
 
 def _coverage_summary(root: Path) -> dict[str, Any]:
@@ -180,16 +192,69 @@ def export_catalog_payload(root: Path | str, *, out_dir: Path | str, meta: dict[
     return out
 
 
+def _require_trusted_identity(
+    manifest: dict[str, Any],
+    *,
+    expected_repo: str,
+    expected_source_sha: str,
+    expected_run_id: str,
+    expected_producer_attempt: str | int,
+    actual_checkout_sha: str,
+) -> None:
+    """Compare trusted expected values to manifest — never derive expected from manifest."""
+    source_sha = _assert_hex_sha("expected_source_sha", expected_source_sha)
+    checkout = _assert_hex_sha("actual_checkout_sha", actual_checkout_sha)
+    if checkout != source_sha:
+        raise PayloadError(
+            f"actual_checkout_sha mismatch: actual={checkout!r} expected={source_sha!r}"
+        )
+
+    run_id = str(expected_run_id).strip()
+    if not run_id:
+        raise PayloadError("expected_run_id required and must be non-empty")
+
+    if expected_producer_attempt is None or str(expected_producer_attempt).strip() == "":
+        raise PayloadError("expected_producer_attempt required and must be non-empty")
+    attempt = str(expected_producer_attempt).strip()
+
+    repo = manifest.get("repository")
+    if repo != expected_repo:
+        raise PayloadError(f"repository mismatch: payload={repo!r} expected={expected_repo!r}")
+
+    src = manifest.get("source_sha")
+    if src != source_sha:
+        raise PayloadError(
+            f"source_sha mismatch: payload={src!r} expected={source_sha!r} "
+            "(collect/publish bases moved incompatibly; re-run collect)"
+        )
+
+    if str(manifest.get("run_id")) != run_id:
+        raise PayloadError(
+            f"run_id mismatch: payload={manifest.get('run_id')!r} expected={run_id!r}"
+        )
+
+    if str(manifest.get("attempt")) != attempt:
+        raise PayloadError(
+            f"attempt mismatch: payload={manifest.get('attempt')!r} expected={attempt!r}"
+        )
+
+
 def import_catalog_payload(
     payload_dir: Path | str,
     trusted_root: Path | str,
     *,
     expected_repo: str,
     expected_source_sha: str | None = None,
+    expected_run_id: str | None = None,
+    expected_producer_attempt: str | int | None = None,
+    actual_checkout_sha: str | None = None,
+    require_trusted_identity: bool = True,
 ) -> ImportResult:
     """Import payload into trusted_root inbox with editorial baseline merge.
 
     Raises PayloadError on missing/corrupt/mismatched payload — never silent no_diff.
+    Production mode REQUIRES trusted identity fields from Actions context (not manifest).
+    Atomic: validate all resources into staging first; only then write catalog.
     """
     payload = Path(payload_dir)
     trusted = Path(trusted_root)
@@ -212,18 +277,35 @@ def import_catalog_payload(
             f"expected {SCHEMA_VERSION}"
         )
 
-    repo = manifest.get("repository")
-    if repo != expected_repo:
-        raise PayloadError(f"repository mismatch: payload={repo!r} expected={expected_repo!r}")
-
-    if expected_source_sha is not None:
-        src = manifest.get("source_sha")
-        if src and src != expected_source_sha:
-            # Documented merge rule: refuse when collect tip does not match publish base.
-            raise PayloadError(
-                f"source_sha mismatch: payload={src!r} expected={expected_source_sha!r} "
-                "(collect/publish bases moved incompatibly; re-run collect)"
-            )
+    if require_trusted_identity:
+        if expected_source_sha is None:
+            raise PayloadError("expected_source_sha required in production mode")
+        if expected_run_id is None:
+            raise PayloadError("expected_run_id required in production mode")
+        if expected_producer_attempt is None:
+            raise PayloadError("expected_producer_attempt required in production mode")
+        if actual_checkout_sha is None:
+            raise PayloadError("actual_checkout_sha required in production mode")
+        _require_trusted_identity(
+            manifest,
+            expected_repo=expected_repo,
+            expected_source_sha=expected_source_sha,
+            expected_run_id=expected_run_id,
+            expected_producer_attempt=expected_producer_attempt,
+            actual_checkout_sha=actual_checkout_sha,
+        )
+    else:
+        # Hash-only / unit-test mode: still enforce repo; optional source_sha check.
+        repo = manifest.get("repository")
+        if repo != expected_repo:
+            raise PayloadError(f"repository mismatch: payload={repo!r} expected={expected_repo!r}")
+        if expected_source_sha is not None:
+            src = manifest.get("source_sha")
+            if src and src != expected_source_sha:
+                raise PayloadError(
+                    f"source_sha mismatch: payload={src!r} expected={expected_source_sha!r} "
+                    "(collect/publish bases moved incompatibly; re-run collect)"
+                )
 
     file_hashes = manifest.get("file_hashes")
     if not isinstance(file_hashes, dict) or not file_hashes:
@@ -258,9 +340,11 @@ def import_catalog_payload(
         raise PayloadError("payload_hash mismatch")
 
     store = CatalogStore(Paths(trusted))
-    imported_ids: list[str] = []
+    staged_resources: list[Resource] = []
     notes: list[str] = []
+    staged_copies: list[tuple[Path, Path, str]] = []
 
+    # Stage ALL resources in memory — mid-failure must leave 0 catalog writes
     for rel in sorted(file_hashes or {}):
         if not str(rel).startswith("resources/"):
             continue
@@ -289,24 +373,31 @@ def import_catalog_payload(
         if resource.editorial_status.value not in MACHINE_STATUSES:
             notes.append(f"skip_non_machine_status:{rid}:{resource.editorial_status.value}")
             continue
-        store.save_resource(resource, inbox=True)
-        imported_ids.append(str(rid))
+        staged_resources.append(resource)
 
-    # Copy events/observations that are new (machine-allowed types already in files)
     for kind in ("events", "observations"):
         src_dir = payload / kind
         if not src_dir.is_dir():
             continue
         dest_dir = trusted / "data" / kind
-        dest_dir.mkdir(parents=True, exist_ok=True)
         for path in sorted(src_dir.glob("*.json")):
             rel = f"{kind}/{path.name}"
             if rel not in (file_hashes or {}):
                 continue
             dest = dest_dir / path.name
             if not dest.exists():
-                shutil.copy2(path, dest)
-                notes.append(f"copied:{rel}")
+                staged_copies.append((path, dest, rel))
+
+    # Commit phase: only after full validation/staging succeeded
+    imported_ids: list[str] = []
+    for resource in staged_resources:
+        store.save_resource(resource, inbox=True)
+        imported_ids.append(str(resource.id))
+
+    for src, dest, rel in staged_copies:
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
+        notes.append(f"copied:{rel}")
 
     return ImportResult(
         imported=len(imported_ids),

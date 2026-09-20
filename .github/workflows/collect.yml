@@ -46,6 +46,9 @@ jobs:
       dry_run: ${{ steps.flags.outputs.dry_run }}
       auto_pr: ${{ steps.flags.outputs.auto_pr }}
       payload_ready: ${{ steps.run.outputs.payload_ready || 'false' }}
+      source_sha: ${{ steps.run.outputs.source_sha || '' }}
+      run_id: ${{ steps.run.outputs.run_id || '' }}
+      attempt: ${{ steps.run.outputs.attempt || '' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -118,6 +121,9 @@ jobs:
             EXTRA+=(--merge-from "${MERGE_FROM}")
           fi
           echo "payload_ready=false" >> "$GITHUB_OUTPUT"
+          echo "source_sha=" >> "$GITHUB_OUTPUT"
+          echo "run_id=" >> "$GITHUB_OUTPUT"
+          echo "attempt=" >> "$GITHUB_OUTPUT"
           if [[ "${DRY}" == "true" ]]; then
             uv run jev-awesome collect --mode "$MODE" --classifier "$CLASSIFIER" --dry-run --max-pages 2 "${EXTRA[@]}"
           else
@@ -131,6 +137,9 @@ jobs:
               --run-id "${GITHUB_RUN_ID}" \
               --attempt "${GITHUB_RUN_ATTEMPT}"
             echo "payload_ready=true" >> "$GITHUB_OUTPUT"
+            echo "source_sha=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+            echo "run_id=${GITHUB_RUN_ID}" >> "$GITHUB_OUTPUT"
+            echo "attempt=${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
           fi
           python - <<'PY'
           import json, pathlib, os
@@ -183,10 +192,12 @@ jobs:
     needs: collect
     if: >-
       github.repository == 'fanly/Jev-awesome' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') &&
       needs.collect.outputs.dry_run == 'false' &&
       needs.collect.outputs.auto_pr == 'true' &&
-      needs.collect.outputs.overall != 'failed' &&
-      needs.collect.outputs.overall != 'skipped'
+      needs.collect.outputs.payload_ready == 'true' &&
+      (needs.collect.outputs.overall == 'success' || needs.collect.outputs.overall == 'degraded')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -195,6 +206,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
+          ref: ${{ needs.collect.outputs.source_sha }}
 
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
 
@@ -239,6 +251,10 @@ jobs:
           MERGE_FROM: ${{ steps.merge.outputs.path }}
           JEV_ALLOW_FAKE_IP: "0"
           CI: "true"
+          EXPECTED_SOURCE_SHA: ${{ needs.collect.outputs.source_sha }}
+          EXPECTED_RUN_ID: ${{ needs.collect.outputs.run_id }}
+          EXPECTED_PRODUCER_ATTEMPT: ${{ needs.collect.outputs.attempt }}
+          ACTUAL_CHECKOUT_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
           EXTRA=()

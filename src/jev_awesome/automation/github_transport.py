@@ -97,6 +97,10 @@ class HttpxGitHubTransport:
             return r.status_code, (r.json() if r.content else None)
 
 
+class GitHubAPIError(RuntimeError):
+    """GitHub REST call failed in a way that must not be treated as empty success."""
+
+
 @dataclass
 class FakeGitHubTransport:
     """In-memory GitHub REST subset for publisher integration tests."""
@@ -111,12 +115,15 @@ class FakeGitHubTransport:
     # Simulate API failure modes
     fail_create_pr: bool = False
     fail_update_pr: bool = False
+    fail_list_prs_status: int | None = None
     remote_head_override: str | None = None
 
     def get_json(self, path: str) -> tuple[int, Any]:
         self.calls.append(HttpCall("GET", path))
         # GET /repos/{owner}/{repo}/pulls?head=owner:branch&state=open
         if path.startswith(f"/repos/{self.owner}/{self.repo}/pulls"):
+            if self.fail_list_prs_status is not None:
+                return self.fail_list_prs_status, {"message": "list failed"}
             parsed = urlparse(path if "://" in path else f"https://api.github.com{path}")
             qs = parse_qs(parsed.query)
             state = (qs.get("state") or ["open"])[0]

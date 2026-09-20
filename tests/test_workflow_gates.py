@@ -39,6 +39,27 @@ def test_workflow_publish_requires_auto_pr_and_not_dry_run():
     assert "dry_run == 'false'" in cond
     assert "auto_pr == 'true'" in cond
     assert "fanly/Jev-awesome" in cond
+    assert "payload_ready == 'true'" in cond
+    assert "refs/heads/main" in cond
+    assert "workflow_dispatch" in cond
+    assert "schedule" in cond
+    # Whitelist overall — never exclusion-style != failed / != skipped
+    assert "overall == 'success'" in cond
+    assert "overall == 'degraded'" in cond
+    assert "!= 'failed'" not in cond
+    assert "!= 'skipped'" not in cond
+
+
+def test_workflow_publish_passes_trusted_identity_env():
+    text = WORKFLOW.read_text(encoding="utf-8")
+    assert "EXPECTED_SOURCE_SHA" in text
+    assert "EXPECTED_RUN_ID" in text
+    assert "EXPECTED_PRODUCER_ATTEMPT" in text
+    assert "ACTUAL_CHECKOUT_SHA" in text
+    assert "needs.collect.outputs.source_sha" in text
+    data = _load()
+    checkout = data["jobs"]["publish-pr"]["steps"][0]
+    assert checkout["with"]["ref"] == "${{ needs.collect.outputs.source_sha }}"
 
 
 def test_workflow_forces_ci_no_fake_ip():
