@@ -26,6 +26,7 @@ class Paths:
         self.events = self.data / "events"
         self.cache = self.data / "cache"
         self.reports = self.data / "reports"
+        self.automation = self.data / "automation"
         self.templates = self.root / "templates"
         self.docs = self.root / "docs"
         self.categories = self.docs / "categories"
@@ -42,5 +43,6 @@ class Paths:
             self.events,
             self.cache,
             self.reports,
+            self.automation,
         ):
             d.mkdir(parents=True, exist_ok=True)

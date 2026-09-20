@@ -15,6 +15,7 @@ ALLOWED_PATH_PREFIXES: tuple[str, ...] = (
     "data/events/",
     "data/cache/checkpoints/",
     "data/reports/",
+    "data/automation/",
 )
 
 ALLOWED_EXACT_PATHS: tuple[str, ...] = (

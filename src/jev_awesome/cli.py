@@ -254,11 +254,65 @@ def site_build() -> None:
     console.print(f"site → {out}")
 
 
+@main.group()
+def payload() -> None:
+    """Catalog payload export/import between collect and publish jobs."""
+
+
+@payload.command("export")
+@click.option("--out", "out_dir", type=click.Path(path_type=Path), required=True)
+@click.option("--repository", default="fanly/Jev-awesome", show_default=True)
+@click.option("--source-sha", default=None)
+@click.option("--run-id", default=None)
+@click.option("--attempt", default=None, type=int)
+def payload_export(
+    out_dir: Path,
+    repository: str,
+    source_sha: str | None,
+    run_id: str | None,
+    attempt: int | None,
+) -> None:
+    """Export allowlisted inbox candidates to a catalog payload directory."""
+    import os
+    import subprocess
+
+    from jev_awesome.automation.payload import export_catalog_payload
+
+    root = _paths().root
+    sha = source_sha
+    if not sha:
+        try:
+            sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+        except (OSError, subprocess.CalledProcessError):
+            sha = None
+    meta = {
+        "repository": repository,
+        "source_sha": sha,
+        "run_id": run_id or os.environ.get("GITHUB_RUN_ID"),
+        "attempt": attempt
+        if attempt is not None
+        else (
+            int(os.environ["GITHUB_RUN_ATTEMPT"])
+            if os.environ.get("GITHUB_RUN_ATTEMPT", "").isdigit()
+            else None
+        ),
+    }
+    path = export_catalog_payload(root, out_dir=out_dir, meta=meta)
+    console.print(f"payload exported → {path}")
+
+
 @main.command("publish")
 @click.option("--enabled/--disabled", default=False, help="Must pass --enabled; default skips.")
 @click.option("--dry-run/--no-dry-run", default=True, help="Default dry-run: no push/PR.")
 @click.option("--remote", default="origin", show_default=True)
 @click.option("--merge-from", type=click.Path(path_type=Path), default=None)
+@click.option(
+    "--payload",
+    "payload_dir",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Import catalog payload before publish (required on CI publish path).",
+)
 @click.option("--owner", default="fanly")
 @click.option("--repo", default="Jev-awesome")
 def publish_cmd(
@@ -266,15 +320,34 @@ def publish_cmd(
     dry_run: bool,
     remote: str,
     merge_from: Path | None,
+    payload_dir: Path | None,
     owner: str,
     repo: str,
 ) -> None:
     """Publish allowlisted catalog changes to robot branch and open/update PR."""
     from jev_awesome.automation.github_transport import HttpxGitHubTransport
+    from jev_awesome.automation.payload import PayloadError, import_catalog_payload
     from jev_awesome.automation.publisher import Publisher, PublishOptions
     from jev_awesome.store import CatalogStore
 
     root = _paths().root
+    expected_repo = f"{owner}/{repo}"
+
+    if payload_dir is not None:
+        if not payload_dir.exists():
+            console.print(f"[red]payload required but missing: {payload_dir}[/red]")
+            raise SystemExit(1)
+        try:
+            imported = import_catalog_payload(
+                payload_dir,
+                root,
+                expected_repo=expected_repo,
+            )
+        except PayloadError as e:
+            console.print(f"[red]payload import failed: {e}[/red]")
+            raise SystemExit(1) from e
+        console.print(f"payload imported resources={imported.imported}")
+
     if merge_from and merge_from.exists():
         CatalogStore(Paths(root)).merge_catalog_from_branch_files(merge_from)
 
@@ -290,6 +363,8 @@ def publish_cmd(
         remote_name=remote,
         owner=owner,
         repo=repo,
+        expected_repo=expected_repo,
+        require_payload=payload_dir is not None,
     )
     from dataclasses import asdict
 
