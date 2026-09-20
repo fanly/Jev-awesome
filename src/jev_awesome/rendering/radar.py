@@ -84,9 +84,11 @@ def _is_strong_signal(r: Resource) -> bool:
         "system one",
         "system_one",
     )
-    return any(s in blob for s in strong) or (
-        r.suggestion and (r.suggestion.priority_score or 0) >= 2.5
-    )
+    if any(s in blob for s in strong):
+        return True
+    if r.suggestion is not None and (r.suggestion.priority_score or 0) >= 2.5:
+        return True
+    return False
 
 
 def _is_weak_name_only_jev(r: Resource) -> bool:

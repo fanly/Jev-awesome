@@ -21,7 +21,7 @@ from jev_awesome.models import (
     SourceResult,
 )
 from jev_awesome.normalize import content_hash
-from jev_awesome.sources import CollectContext
+from jev_awesome.sources import CollectContext, SourceAdapter
 from jev_awesome.sources.awesome import AwesomeRadarAdapter
 from jev_awesome.sources.github import GitHubDiscoveryAdapter
 from jev_awesome.sources.known_repos import KnownRepoWatchAdapter
@@ -85,7 +85,7 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
         except json.JSONDecodeError:
             previous_snapshots = {}
 
-    adapters: list[tuple[dict, object]] = []
+    adapters: list[tuple[dict, SourceAdapter]] = []
     gh_cfg = _source_cfg(src_cfg, "github_discovery")
     adapters.append(
         (
