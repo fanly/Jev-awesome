@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any, Protocol
-from urllib.parse import quote
+from urllib.parse import parse_qs, quote, urlparse
 
 
 @dataclass
@@ -23,6 +23,29 @@ class GitHubTransport(Protocol):
     def post_json(self, path: str, body: dict[str, Any]) -> tuple[int, Any]: ...
 
     def patch_json(self, path: str, body: dict[str, Any]) -> tuple[int, Any]: ...
+
+
+def pr_is_merged(pr: dict[str, Any]) -> bool:
+    """True if GitHub PR is merged (merged==True OR merged_at is a non-null string)."""
+    if pr.get("merged") is True:
+        return True
+    merged_at = pr.get("merged_at")
+    return isinstance(merged_at, str) and bool(merged_at.strip())
+
+
+def pr_is_closed_unmerged(pr: dict[str, Any]) -> bool:
+    return pr.get("state") == "closed" and not pr_is_merged(pr)
+
+
+def normalize_pr_list_item(pr: dict[str, Any]) -> dict[str, Any]:
+    """Shared list shape: omit `merged` boolean so callers must use pr_is_merged/merged_at."""
+    out = dict(pr)
+    merged_flag = out.pop("merged", None)
+    if pr_is_merged({**out, "merged": merged_flag}):
+        out.setdefault("merged_at", out.get("merged_at") or "1970-01-01T00:00:00Z")
+    else:
+        out.setdefault("merged_at", None)
+    return out
 
 
 @dataclass
@@ -74,6 +97,10 @@ class HttpxGitHubTransport:
             return r.status_code, (r.json() if r.content else None)
 
 
+class GitHubAPIError(RuntimeError):
+    """GitHub REST call failed in a way that must not be treated as empty success."""
+
+
 @dataclass
 class FakeGitHubTransport:
     """In-memory GitHub REST subset for publisher integration tests."""
@@ -88,16 +115,30 @@ class FakeGitHubTransport:
     # Simulate API failure modes
     fail_create_pr: bool = False
     fail_update_pr: bool = False
+    fail_list_prs_status: int | None = None
     remote_head_override: str | None = None
 
     def get_json(self, path: str) -> tuple[int, Any]:
         self.calls.append(HttpCall("GET", path))
         # GET /repos/{owner}/{repo}/pulls?head=owner:branch&state=open
         if path.startswith(f"/repos/{self.owner}/{self.repo}/pulls"):
-            open_pulls = [p for p in self.pulls if p.get("state") == "open"]
-            if "state=closed" in path:
-                return 200, [p for p in self.pulls if p.get("state") == "closed"]
-            return 200, open_pulls
+            if self.fail_list_prs_status is not None:
+                return self.fail_list_prs_status, {"message": "list failed"}
+            parsed = urlparse(path if "://" in path else f"https://api.github.com{path}")
+            qs = parse_qs(parsed.query)
+            state = (qs.get("state") or ["open"])[0]
+            head_filter = (qs.get("head") or [None])[0]
+            page = int((qs.get("page") or ["1"])[0])
+            per_page = int((qs.get("per_page") or ["20"])[0])
+            items = [p for p in self.pulls if p.get("state") == state]
+            if head_filter:
+                # head is owner:branch
+                want_branch = head_filter.split(":", 1)[-1]
+                items = [p for p in items if (p.get("head") or {}).get("ref") == want_branch]
+            start = (page - 1) * per_page
+            page_items = items[start : start + per_page]
+            # Omit `merged` boolean — real GitHub list often has merged_at only
+            return 200, [normalize_pr_list_item(p) for p in page_items]
         if "/git/ref/heads/" in path:
             branch = path.rsplit("/", 1)[-1]
             sha = self.refs.get(branch)
@@ -123,6 +164,7 @@ class FakeGitHubTransport:
                 "html_url": f"https://github.com/{self.owner}/{self.repo}/pull/{number}",
                 "state": "open",
                 "merged": False,
+                "merged_at": None,
                 "title": body.get("title"),
                 "body": body.get("body"),
                 "head": {
@@ -132,7 +174,7 @@ class FakeGitHubTransport:
                 "base": {"ref": body.get("base", "main")},
             }
             self.pulls.append(pr)
-            return 201, pr
+            return 201, normalize_pr_list_item(pr)
         return 404, {"message": "Not Found"}
 
     def patch_json(self, path: str, body: dict[str, Any]) -> tuple[int, Any]:
@@ -170,14 +212,18 @@ class FakeGitHubTransport:
             if p["number"] == number:
                 p["state"] = "closed"
                 p["merged"] = merged
+                p["merged_at"] = "2026-01-15T12:00:00Z" if merged else None
                 return
         raise KeyError(f"PR {number} not found")
 
     def mark_merged(self, number: int, *, head_sha: str | None = None) -> None:
+        """Mark PR merged using merged_at (omit relying on `merged` alone for list path)."""
         for p in self.pulls:
             if p["number"] == number:
                 p["state"] = "closed"
+                # Keep merged for internal helpers; list responses strip it via normalize.
                 p["merged"] = True
+                p["merged_at"] = "2026-01-15T12:00:00Z"
                 if head_sha:
                     p.setdefault("head", {})["sha"] = head_sha
                 return

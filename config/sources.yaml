@@ -1,3 +1,7 @@
+# Source definitions for collectors.
+# frequency: Nh / Nd / Nw — SourcePlanner skips when not due (unless mode=all|refresh|force).
+# known_repo_watch: curated GitHub repos are also auto-merged at runtime from CatalogStore.
+
 sources:
   github_discovery:
     id: github_discovery
@@ -11,12 +15,75 @@ sources:
     parser: github_discovery
     request_budget: 30
     fault_strategy: isolate
+    # Lower priority number = stronger / run earlier. Broad jev query is low priority (90).
     queries:
-      - "jev in:name,description,readme fork:false"
-      - '"typesafe.ai" in:readme fork:false'
-      - '"@typesafe-ai/sdk" in:readme fork:false'
-      - '"typesafe-sdk" in:readme fork:false'
-      - "topic:jev"
+      - id: gh-broad-jev
+        query: "jev in:name,description,readme fork:false"
+        priority: 90
+        signal: broad
+      - id: gh-typesafe-ai
+        query: '"typesafe.ai" in:readme fork:false'
+        priority: 10
+        signal: strong
+      - id: gh-api-typesafe
+        query: '"api.typesafe.ai" in:readme fork:false'
+        priority: 10
+        signal: strong
+      - id: gh-typesafe-api-key
+        query: '"TYPESAFE_API_KEY" in:readme fork:false'
+        priority: 10
+        signal: strong
+      - id: gh-typesafe-sdk-pkg
+        query: '"@typesafe-ai/sdk" in:readme fork:false'
+        priority: 10
+        signal: strong
+      - id: gh-typesafe-sdk
+        query: '"typesafe-sdk" in:readme fork:false'
+        priority: 10
+        signal: strong
+      - id: gh-jev-latest
+        query: '"jev-latest" in:readme fork:false'
+        priority: 15
+        signal: strong
+      - id: gh-system-one-typesafe
+        query: '"System One" typesafe in:readme fork:false'
+        priority: 15
+        signal: strong
+      - id: gh-system-one-api
+        query: "system_one TypeSafe in:readme fork:false"
+        priority: 15
+        signal: strong
+      - id: gh-topic-jev
+        query: "topic:jev"
+        priority: 20
+        signal: strong
+      - id: gh-topic-typesafe-ai
+        query: "topic:typesafe-ai"
+        priority: 20
+        signal: strong
+
+  known_repo_watch:
+    id: known_repo_watch
+    type: known_repos
+    enabled: true
+    priority: 8
+    frequency: "1d"
+    parser: known_repo_watch
+    request_budget: 40
+    fault_strategy: isolate
+    # High-value curated repos (also merged from CatalogStore curated github entries at runtime)
+    repos:
+      - full_name: typesafe-ai/typesafe-sdk-python
+      - full_name: typesafe-ai/typesafe-sdk-js
+      - full_name: typesafe-ai/skills
+      - full_name: typesafe-ai/system-one-adapter-python
+      - full_name: browser-use/jev-ultrafast
+      - full_name: droidrun/mobile-jev
+      - full_name: realZachi/pg-jev
+      - full_name: jexp/neo4jev
+      - full_name: githubnext/localjev
+      - full_name: jaredpalmer/kev
+      - full_name: iammrduncan/typesafe-ai-benchmark
 
   rss_atom:
     id: rss_atom
@@ -33,6 +100,16 @@ sources:
         enabled: true
         allowed_domains:
           - github.com
+      - id: typesafe_github_releases_js
+        url: https://github.com/typesafe-ai/typesafe-sdk-js/releases.atom
+        enabled: true
+        allowed_domains:
+          - github.com
+      - id: typesafe_github_releases_adapter
+        url: https://github.com/typesafe-ai/system-one-adapter-python/releases.atom
+        enabled: true
+        allowed_domains:
+          - github.com
 
   official_monitor:
     id: official_monitor
@@ -41,7 +118,7 @@ sources:
     priority: 5
     frequency: "1d"
     parser: official_monitor
-    request_budget: 15
+    request_budget: 20
     fault_strategy: isolate
     pages:
       - id: docs_llms_index
@@ -53,6 +130,12 @@ sources:
       - id: docs_python_sdk
         title: TypeSafe Python SDK
         url: https://docs.typesafe.ai/sdk/python.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_js_sdk
+        title: TypeSafe JavaScript SDK
+        url: https://docs.typesafe.ai/sdk/javascript.md
         enabled: true
         allowed_domains:
           - docs.typesafe.ai
@@ -68,3 +151,66 @@ sources:
         enabled: true
         allowed_domains:
           - docs.typesafe.ai
+      - id: docs_quickstart
+        title: TypeSafe Quickstart
+        url: https://docs.typesafe.ai/quickstart.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_api
+        title: TypeSafe API
+        url: https://docs.typesafe.ai/api.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_models
+        title: TypeSafe Models
+        url: https://docs.typesafe.ai/models.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_choice
+        title: TypeSafe Choice
+        url: https://docs.typesafe.ai/primitives/choice.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_noul
+        title: TypeSafe Noul
+        url: https://docs.typesafe.ai/primitives/noul.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_score
+        title: TypeSafe Score
+        url: https://docs.typesafe.ai/primitives/score.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+      - id: docs_agent_skill
+        title: TypeSafe Agent Skill
+        url: https://docs.typesafe.ai/guides/agent-skill.md
+        enabled: true
+        allowed_domains:
+          - docs.typesafe.ai
+
+  awesome_radar:
+    id: awesome_radar
+    type: awesome_radar
+    enabled: true
+    priority: 30
+    frequency: "1d"
+    parser: awesome_radar
+    request_budget: 10
+    fault_strategy: isolate
+    # Extract links only — never copy Chinese summaries / rankings / official labels
+    lists:
+      - id: hellogumbo_awesome_jev
+        full_name: hellogumbo/awesome-jev
+        enabled: true
+      - id: yzfly_awesome_jev_zh
+        full_name: yzfly/awesome-jev-zh
+        enabled: true
+      - id: logicrw_awesome_jev_projects
+        full_name: logicrw/awesome-jev-projects
+        enabled: true

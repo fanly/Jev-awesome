@@ -66,6 +66,18 @@
 
 - **2026-09-20 · launch-v1**：首批编辑精选与三篇中文导读发布（代理编辑身份 `cursor:delegated-editor`；未进行真人逐条复核或第三方运行复现）。详见 [docs/launch/launch-v1-batch.md](docs/launch/launch-v1-batch.md)。
 
+## Jev 生态雷达
+
+{% if radar_highlights %}
+{% for e in radar_highlights[:5] -%}
+- [{{ e.name | md }}]({{ safe_href(e.link) }}){% if e.auto_discovery %} · `{{ radar_label }}`{% endif %} — {{ e.why_matched }}
+{% endfor %}
+{% else %}
+近期无实质生态变化；完整雷达见 [docs/radar/latest.md](docs/radar/latest.md)。
+{% endif %}
+
+完整雷达（官方更新、高置信发现、SDK/发布、精选变更等）：[docs/radar/latest.md](docs/radar/latest.md)。
+
 ## 如何读验证标记
 
 | 级别 | 含义 |

@@ -21,13 +21,92 @@ from jev_awesome.normalize import content_hash, github_entity_id, normalize_url
 from jev_awesome.sources import CollectContext
 from jev_awesome.sources.http_client import SafeHttpClient, classify_http_error
 
-DEFAULT_QUERIES = [
-    "jev in:name,description,readme fork:false",
-    '"typesafe.ai" in:readme fork:false',
-    '"@typesafe-ai/sdk" in:readme fork:false',
-    '"typesafe-sdk" in:readme fork:false',
-    "topic:jev",
+DEFAULT_QUERIES: list[dict[str, Any]] = [
+    {
+        "id": "gh-broad-jev",
+        "query": "jev in:name,description,readme fork:false",
+        "priority": 90,
+        "signal": "broad",
+    },
+    {
+        "id": "gh-typesafe-ai",
+        "query": '"typesafe.ai" in:readme fork:false',
+        "priority": 10,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-api-typesafe",
+        "query": '"api.typesafe.ai" in:readme fork:false',
+        "priority": 10,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-typesafe-api-key",
+        "query": '"TYPESAFE_API_KEY" in:readme fork:false',
+        "priority": 10,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-typesafe-sdk-pkg",
+        "query": '"@typesafe-ai/sdk" in:readme fork:false',
+        "priority": 10,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-typesafe-sdk",
+        "query": '"typesafe-sdk" in:readme fork:false',
+        "priority": 10,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-jev-latest",
+        "query": '"jev-latest" in:readme fork:false',
+        "priority": 15,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-system-one-typesafe",
+        "query": '"System One" typesafe in:readme fork:false',
+        "priority": 15,
+        "signal": "strong",
+    },
+    {
+        "id": "gh-system-one-api",
+        "query": "system_one TypeSafe in:readme fork:false",
+        "priority": 15,
+        "signal": "strong",
+    },
+    {"id": "gh-topic-jev", "query": "topic:jev", "priority": 20, "signal": "strong"},
+    {
+        "id": "gh-topic-typesafe-ai",
+        "query": "topic:typesafe-ai",
+        "priority": 20,
+        "signal": "strong",
+    },
 ]
+
+
+def normalize_queries(queries: list[Any] | None) -> list[dict[str, Any]]:
+    """Accept plain strings or {id,query,priority} dicts."""
+    if not queries:
+        return list(DEFAULT_QUERIES)
+    out: list[dict[str, Any]] = []
+    for i, q in enumerate(queries):
+        if isinstance(q, str):
+            out.append({"id": f"gh-q{i}", "query": q, "priority": 50, "signal": "unknown"})
+        elif isinstance(q, dict):
+            query = str(q.get("query") or q.get("q") or "")
+            if not query:
+                continue
+            out.append(
+                {
+                    "id": str(q.get("id") or f"gh-q{i}"),
+                    "query": query,
+                    "priority": int(q.get("priority") or 50),
+                    "signal": str(q.get("signal") or "unknown"),
+                }
+            )
+    return out or list(DEFAULT_QUERIES)
 
 
 class GitHubDiscoveryAdapter:
@@ -36,12 +115,12 @@ class GitHubDiscoveryAdapter:
     def __init__(
         self,
         *,
-        queries: list[str] | None = None,
+        queries: list[Any] | None = None,
         allowed_domains: set[str] | None = None,
         client: SafeHttpClient | None = None,
         enabled: bool = True,
     ) -> None:
-        self.queries = queries or DEFAULT_QUERIES
+        self.queries = normalize_queries(queries)
         self.enabled = enabled
         self.client = client or SafeHttpClient(
             allowed_domains=allowed_domains or {"api.github.com", "github.com"},
@@ -67,7 +146,12 @@ class GitHubDiscoveryAdapter:
         discovered = 0
         query_coverages: list[QueryCoverage] = []
 
-        for qi, query in enumerate(self.queries):
+        # Strong signals first (lower priority number), then broad
+        ordered = sorted(self.queries, key=lambda q: (int(q.get("priority") or 50), q["id"]))
+
+        for qmeta in ordered:
+            query = qmeta["query"]
+            query_id = str(qmeta["id"])
             page = 1
             query_incomplete = False
             items_returned = 0
@@ -77,6 +161,7 @@ class GitHubDiscoveryAdapter:
             gap_reason: str | None = None
             coverage_status = "unknown"
             hit_page_budget = False
+            hit_search_cap = False
 
             while page <= ctx.max_pages:
                 self.client.wait_if_needed()
@@ -132,7 +217,9 @@ class GitHubDiscoveryAdapter:
                     coverage_status = "partial" if query_incomplete else "complete"
                     break
 
-                # GitHub search hard cap ~1000
+                # GitHub search hard cap ~1000 results
+                if isinstance(total_count, int) and total_count > 1000:
+                    hit_search_cap = True
                 if (
                     isinstance(total_count, int)
                     and total_count > 1000
@@ -140,6 +227,7 @@ class GitHubDiscoveryAdapter:
                 ):
                     gaps.append(f"search_cap_1000:{query}:total:{total_count}")
                     gap_reason = "search_cap"
+                    hit_search_cap = True
 
                 for item in items:
                     repo_id = item.get("id")
@@ -150,25 +238,25 @@ class GitHubDiscoveryAdapter:
                     resources.append(self._to_resource(item))
 
                 if len(items) < ctx.per_page:
-                    coverage_status = "partial" if query_incomplete else "complete"
+                    if hit_search_cap or query_incomplete:
+                        coverage_status = "partial"
+                        gap_reason = gap_reason or (
+                            "search_cap" if hit_search_cap else "upstream_incomplete"
+                        )
+                    else:
+                        coverage_status = "complete"
                     break
                 if page >= ctx.max_pages:
-                    # More results may exist
-                    if isinstance(total_count, int) and items_returned < min(total_count, 1000):
-                        hit_page_budget = True
-                        coverage_status = "partial"
-                        gap_reason = gap_reason or "page_budget"
-                        gaps.append(
-                            f"page_budget:{query}:pages={pages_read}:returned={items_returned}:total={total_count}"
-                        )
-                    elif query_incomplete:
-                        coverage_status = "partial"
-                        gap_reason = gap_reason or "upstream_incomplete"
+                    # page_budget alone must NEVER claim complete
+                    hit_page_budget = True
+                    coverage_status = "partial"
+                    if hit_search_cap:
+                        gap_reason = gap_reason or "search_cap"
                     else:
-                        # Exactly filled last page at budget — unknown if more
-                        coverage_status = "partial"
                         gap_reason = gap_reason or "page_budget"
-                        gaps.append(f"page_budget:{query}:pages={pages_read}")
+                    gaps.append(
+                        f"page_budget:{query}:pages={pages_read}:returned={items_returned}:total={total_count}"
+                    )
                     break
                 page += 1
 
@@ -177,13 +265,22 @@ class GitHubDiscoveryAdapter:
                 gap_reason = gap_reason or "upstream_incomplete"
                 gaps.append(f"coverage_gap:{query}")
 
+            if hit_search_cap:
+                coverage_status = "partial"
+                gap_reason = gap_reason or "search_cap"
+
             if exec_status == "success" and coverage_status == "unknown" and not hit_page_budget:
                 # Finished naturally without signals of more data
                 coverage_status = "complete"
 
+            # Never upgrade to complete when we only stopped due to page budget
+            if hit_page_budget and coverage_status == "complete":
+                coverage_status = "partial"
+                gap_reason = gap_reason or "page_budget"
+
             query_coverages.append(
                 QueryCoverage(
-                    query_id=f"gh-q{qi}",
+                    query_id=query_id,
                     query=query,
                     page_size=ctx.per_page,
                     pages_read=pages_read,

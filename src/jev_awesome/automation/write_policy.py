@@ -15,6 +15,7 @@ ALLOWED_PATH_PREFIXES: tuple[str, ...] = (
     "data/events/",
     "data/cache/checkpoints/",
     "data/reports/",
+    "data/automation/",
 )
 
 ALLOWED_EXACT_PATHS: tuple[str, ...] = (
@@ -25,6 +26,7 @@ ALLOWED_EXACT_PATHS: tuple[str, ...] = (
 ALLOWED_PATH_PREFIXES_DOCS: tuple[str, ...] = (
     "docs/categories/",
     "docs/updates/",
+    "docs/radar/",
 )
 
 # Never auto-touched
@@ -157,7 +159,7 @@ def is_path_allowed(rel: str) -> bool:
     if p in ALLOWED_EXACT_PATHS:
         return True
     for pref in ALLOWED_PATH_PREFIXES + ALLOWED_PATH_PREFIXES_DOCS:
-        if p.startswith(pref):
+        if p == pref.rstrip("/") or p.startswith(pref):
             return True
     # curated resources: robot must NOT write data/resources/ (human curation only)
     return False

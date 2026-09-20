@@ -139,6 +139,19 @@ GitHub Next：本地兼容 `POST /v1/systemone` 的实现（Bun + Diffusion）�
 
 - **2026-09-20 · launch-v1**：首批编辑精选与三篇中文导读发布（代理编辑身份 `cursor:delegated-editor`；未进行真人逐条复核或第三方运行复现）。详见 [docs/launch/launch-v1-batch.md](docs/launch/launch-v1-batch.md)。
 
+## Jev 生态雷达
+
+
+- [TypeSafe Confidence](https://docs.typesafe.ai/confidence.md) — official_domain, official_status, strong_signal
+- [TypeSafe docs index \(llms.txt\)](https://docs.typesafe.ai/llms.txt) — official_domain, official_status, strong_signal
+- [TypeSafe homepage](https://typesafe.ai/) · `自动发现 · 未精选` — official_status, strong_signal
+- [TypeSafe Primitives](https://docs.typesafe.ai/primitives.md) — official_domain, official_status, strong_signal
+- [TypeSafe Python SDK](https://docs.typesafe.ai/sdk/python.md) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+
+
+
+完整雷达（官方更新、高置信发现、SDK/发布、精选变更等）：[docs/radar/latest.md](docs/radar/latest.md)。
+
 ## 如何读验证标记
 
 | 级别 | 含义 |
