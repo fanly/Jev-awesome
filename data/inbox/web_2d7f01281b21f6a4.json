@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:2d7f01281b21f6a4",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/JoshuaSP/open-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:joshuasp/open-jev",
+  "author_or_org": "JoshuaSP",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "JoshuaSP/open-jev",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.776385Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:05.912817Z"
+  },
+  "content_hash": "ee219fe49d4cd5788ff55186df562d58cdc10ef2788d19205d1e6384c145dc08",
+  "github_repo_id": null,
+  "github_full_name": "JoshuaSP/open-jev"
+}

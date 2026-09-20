@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:711262660",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/russellballestrini/opencompletion",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:711262660",
+  "author_or_org": "russellballestrini",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "russellballestrini/opencompletion",
+  "summary_zh": null,
+  "summary_en": "Playground For All Language Models! Multi user!",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2023-10-28T17:42:46Z",
+    "precision": "datetime",
+    "raw": "2023-10-28T17:42:46Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:22.207004Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.767100Z"
+  },
+  "content_hash": "c460037d58fa67e828e1da5b556f91555253761a4cc3e79f7b311b5d326f2877",
+  "github_repo_id": 711262660,
+  "github_full_name": "russellballestrini/opencompletion"
+}

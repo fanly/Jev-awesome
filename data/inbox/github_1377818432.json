@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377818432",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/Dohv/model-advisor-tester",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377818432",
+  "author_or_org": "Dohv",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "Dohv/model-advisor-tester",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-20T02:31:55Z",
+    "precision": "datetime",
+    "raw": "2026-09-20T02:31:55Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:28.579957Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.785474Z"
+  },
+  "content_hash": "c096b781e45684ba55100b90fb416645a4e5d3dc83d0e2fd4dc1c3db9aadd0af",
+  "github_repo_id": 1377818432,
+  "github_full_name": "Dohv/model-advisor-tester"
+}

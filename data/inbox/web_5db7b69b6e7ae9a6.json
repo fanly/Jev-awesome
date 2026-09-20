@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:5db7b69b6e7ae9a6",
+  "resource_kind": "official_doc",
+  "primary_category": "official",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://docs.typesafe.ai/cookbooks/function_calling",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:https://docs.typesafe.ai/cookbooks/function_calling",
+  "author_or_org": "docs.typesafe.ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "https://docs.typesafe.ai/cookbooks/function_calling",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.107310Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "official_doc",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:14.278313Z"
+  },
+  "content_hash": "e700ddf86f3579964383b465746ff4dbaae8a4a36ed9fea73ebf4d01176e41be",
+  "github_repo_id": null,
+  "github_full_name": null
+}

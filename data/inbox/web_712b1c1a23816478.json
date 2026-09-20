@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:712b1c1a23816478",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "active-learning",
+    "classification",
+    "cli",
+    "gepa",
+    "human-in-the-loop",
+    "jev",
+    "prompt-optimization",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/sutro-sh/jev-align",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:sutro-sh/jev-align",
+  "author_or_org": "sutro-sh",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "sutro-sh/jev-align",
+  "summary_zh": null,
+  "summary_en": "Build calibrated AI classifiers from human feedback using Jev and GEPA.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.813361Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.322783Z"
+  },
+  "content_hash": "d59a672323ad8d21f0a4ac4acdd6700b558b3631bb6a98c2e249216cde2a1383",
+  "github_repo_id": 1376627816,
+  "github_full_name": "sutro-sh/jev-align"
+}

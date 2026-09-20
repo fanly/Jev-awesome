@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:ad21b72bf08845b5",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+  "author_or_org": "vercel.com",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.103005Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.289850Z"
+  },
+  "content_hash": "306348aa8c7af5710cc9250e888ae0686ef5a4ae1cb39f54ecd3f7788abc0470",
+  "github_repo_id": null,
+  "github_full_name": null
+}

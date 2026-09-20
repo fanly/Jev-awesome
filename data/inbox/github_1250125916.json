@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1250125916",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "agent",
+    "bun",
+    "cli",
+    "fun",
+    "gimmick",
+    "llm",
+    "opentui",
+    "terminal",
+    "visualisation"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/av/naiou",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1250125916",
+  "author_or_org": "av",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "av/naiou",
+  "summary_zh": null,
+  "summary_en": "Yes/no agent",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-05-26T10:29:04Z",
+    "precision": "datetime",
+    "raw": "2026-05-26T10:29:04Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077776Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.004914Z"
+  },
+  "content_hash": "ba38f1c9acab40c80149b7b0a991354c4026c8c0dab6b44c4f6df791b1c78be7",
+  "github_repo_id": 1250125916,
+  "github_full_name": "av/naiou"
+}

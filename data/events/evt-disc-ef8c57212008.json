@@ -1,0 +1,8 @@
+{
+  "id": "evt-disc-ef8c57212008",
+  "event_type": "first_discovered",
+  "resource_id": "web:ce56117605e6371f",
+  "occurred_at": "2026-09-20T04:14:55.517146Z",
+  "summary": "Discovered via awesome_radar",
+  "material": false
+}

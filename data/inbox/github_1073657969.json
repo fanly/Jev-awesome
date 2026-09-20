@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1073657969",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "ai-assistant",
+    "ai-tools",
+    "anthropic",
+    "claude",
+    "claude-code",
+    "context-engineering",
+    "developer-tools",
+    "llm",
+    "plugin",
+    "productivity"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/qf-studio/navigator",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1073657969",
+  "author_or_org": "qf-studio",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "qf-studio/navigator",
+  "summary_zh": null,
+  "summary_en": "Finish What You Start — Context engineering for Claude Code.         Sessions last 20+ exchanges instead of crashing at 7.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2025-10-10T12:35:30Z",
+    "precision": "datetime",
+    "raw": "2025-10-10T12:35:30Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:25.345419Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.302645Z"
+  },
+  "content_hash": "42353c802fe19b1ceccb3c8af5544d57dbc987e2cc85cd286ba2aa95ba4c24d9",
+  "github_repo_id": 1073657969,
+  "github_full_name": "qf-studio/navigator"
+}

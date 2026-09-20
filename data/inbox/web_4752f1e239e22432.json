@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:4752f1e239e22432",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/asfarsadewa/human-compiler",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:asfarsadewa/human-compiler",
+  "author_or_org": "asfarsadewa",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "asfarsadewa/human-compiler",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.773065Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:04.288242Z"
+  },
+  "content_hash": "100b8f2fef21f3b826ca557b1ad813aa8689d346b5aac2491224795bafa9bf2e",
+  "github_repo_id": null,
+  "github_full_name": "asfarsadewa/human-compiler"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:598138029",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "chatbot",
+    "customer-support-chatbot",
+    "discourse",
+    "discourse-plugin",
+    "open-ai",
+    "rag"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/merefield/discourse-chatbot",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:598138029",
+  "author_or_org": "merefield",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "merefield/discourse-chatbot",
+  "summary_zh": null,
+  "summary_en": "An AI bot with RAG capability for Topics, Chat & Customer Support in Discourse, currently powered by OpenAI",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2023-02-06T13:37:53Z",
+    "precision": "datetime",
+    "raw": "2023-02-06T13:37:53Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.076747Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "GPL-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.909078Z"
+  },
+  "content_hash": "f06914f649cc05a1a28448f90c43613adf7ffff0f8be94f436a8f91e549b14f7",
+  "github_repo_id": 598138029,
+  "github_full_name": "merefield/discourse-chatbot"
+}

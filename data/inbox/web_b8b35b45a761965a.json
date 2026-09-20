@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:b8b35b45a761965a",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/obie/ruby_decision_model",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:obie/ruby_decision_model",
+  "author_or_org": "obie",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "obie/ruby_decision_model",
+  "summary_zh": null,
+  "summary_en": "Ruby client for decision models such as Typesafe Jev",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:57.211330Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:55.866749Z"
+  },
+  "content_hash": "d71578458c9eb841af71d39b6b4f3be5146c8accc38af2c7dd5ac47c76b0385a",
+  "github_repo_id": 1376067407,
+  "github_full_name": "obie/ruby_decision_model"
+}

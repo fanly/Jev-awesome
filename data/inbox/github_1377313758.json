@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377313758",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "java",
+    "jev",
+    "reactor",
+    "sdk",
+    "spring-boot",
+    "typesafe-ai",
+    "vercel-ai-gateway",
+    "webclient"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/gudcks0305/jev-java",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377313758",
+  "author_or_org": "gudcks0305",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "gudcks0305/jev-java",
+  "summary_zh": null,
+  "summary_en": "Unofficial Java SDK for TypeSafe Jev and Vercel AI Gateway, with Spring Boot and WebClient support",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T15:26:15Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T15:26:15Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.244770Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.156990Z"
+  },
+  "content_hash": "a1b3faa7fbdbfccf0cea7a77182db2660e2951734d5a217e258c9c739339a079",
+  "github_repo_id": 1377313758,
+  "github_full_name": "gudcks0305/jev-java"
+}

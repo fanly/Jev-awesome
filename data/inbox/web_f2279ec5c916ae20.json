@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:f2279ec5c916ae20",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Butochnikov/typesafe-sdk-php",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:butochnikov/typesafe-sdk-php",
+  "author_or_org": "Butochnikov",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "Butochnikov/typesafe-sdk-php",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.104934Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.367217Z"
+  },
+  "content_hash": "0cd57dd1970924842bf48fdeb04f89269f20f56ecae7e9f95d01e99a6a077d17",
+  "github_repo_id": null,
+  "github_full_name": "Butochnikov/typesafe-sdk-php"
+}

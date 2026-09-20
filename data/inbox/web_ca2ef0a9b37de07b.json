@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:ca2ef0a9b37de07b",
+  "resource_kind": "official_doc",
+  "primary_category": "official",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://docs.typesafe.ai/primitives/choice",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:https://docs.typesafe.ai/primitives/choice",
+  "author_or_org": "docs.typesafe.ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "https://docs.typesafe.ai/primitives/choice",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.102889Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "official_doc",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.167632Z"
+  },
+  "content_hash": "7a445f201ecdb4e7141ed7e7321087ba3154425821f015ca820bab23199f889a",
+  "github_repo_id": null,
+  "github_full_name": null
+}

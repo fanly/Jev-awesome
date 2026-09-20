@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:986527564",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/SREGym/SREGym",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:986527564",
+  "author_or_org": "SREGym",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "SREGym/SREGym",
+  "summary_zh": null,
+  "summary_en": "Can AI agents resolve production incidents?",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2025-05-19T18:38:08Z",
+    "precision": "datetime",
+    "raw": "2025-05-19T18:38:08Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:26.157454Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.370699Z"
+  },
+  "content_hash": "8b2d7364921b4330656482af0231067c696fec4e6494c504dba95b3107d61d58",
+  "github_repo_id": 986527564,
+  "github_full_name": "SREGym/SREGym"
+}

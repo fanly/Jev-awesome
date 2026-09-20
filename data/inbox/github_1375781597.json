@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375781597",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "jev",
+    "security-scanner",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/luantak/is-malicious",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375781597",
+  "author_or_org": "luantak",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "luantak/is-malicious",
+  "summary_zh": null,
+  "summary_en": "A codebase scanner that helps you not run malicous code",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T11:40:17Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T11:40:17Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:36.416010Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.874701Z"
+  },
+  "content_hash": "f234b584af58322713b71f5fd09fd8ea34abfbc50d6d571309fa3bdbb0151d0f",
+  "github_repo_id": 1375781597,
+  "github_full_name": "luantak/is-malicious"
+}

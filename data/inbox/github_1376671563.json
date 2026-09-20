@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376671563",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/uehaj/jev-semgrep",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376671563",
+  "author_or_org": "uehaj",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "uehaj/jev-semgrep",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T03:18:28Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T03:18:28Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.768629Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T05:00:24.128445Z"
+  },
+  "content_hash": "80b3388038bcf9739371e9460a8b556910a5de8c92b87a1e05eb766cc03e0e97",
+  "github_repo_id": 1376671563,
+  "github_full_name": "uehaj/jev-semgrep"
+}

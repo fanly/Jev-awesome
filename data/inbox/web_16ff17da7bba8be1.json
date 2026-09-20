@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:16ff17da7bba8be1",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/tamaratran/jev-pruner",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:tamaratran/jev-pruner",
+  "author_or_org": "tamaratran",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "tamaratran/jev-pruner",
+  "summary_zh": null,
+  "summary_en": "Claude Code plugin: trim long Bash output with TypeSafe Jev before the model sees it",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.078312Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:57.283947Z"
+  },
+  "content_hash": "7492a28f3ae2ee41c1865bab030b14d13c22f4c0c2d2eb9fc53d4ed32187c898",
+  "github_repo_id": 1375299700,
+  "github_full_name": "tamaratran/jev-pruner"
+}

@@ -19,7 +19,7 @@
   "source_identity": "github:1373914715",
   "author_or_org": "0xNatoshi",
   "official_status": "unknown",
-  "jev_relationship": "unclear",
+  "jev_relationship": "calls_official_api",
   "original_title": "0xNatoshi/jev-codex-router",
   "summary_zh": null,
   "summary_en": "Per-turn model & reasoning routing for Codex, driven by Jev (TypeSafe System One): picks the model, thinking depth and speed mode for every turn.",
@@ -53,15 +53,15 @@
     "relevant": true,
     "relevance_probability": 1.0,
     "resource_kind": "application",
-    "jev_relationship": "unclear",
+    "jev_relationship": "calls_official_api",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 2.5,
     "reason_codes": [
-      "positive_signals:2"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.666488Z"
+    "created_at": "2026-09-20T04:14:39.322599Z"
   },
   "content_hash": "b4f905270e76d1e6112bfbee18e5ea29d473ccd654da28055b49c6b92333fc25",
   "github_repo_id": 1373914715,

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:893a5cdbf820b357",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/kt3k/jevchat",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:kt3k/jevchat",
+  "author_or_org": "kt3k",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "kt3k/jevchat",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.524406Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:28.325218Z"
+  },
+  "content_hash": "36c814a41568fab617402b7d28edf9bc14c1c60e4920681f0228f48c94fc1387",
+  "github_repo_id": null,
+  "github_full_name": "kt3k/jevchat"
+}

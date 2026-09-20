@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:5437c720374dc129",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/siliconkernel/vllm-jev-decison",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:siliconkernel/vllm-jev-decison",
+  "author_or_org": "siliconkernel",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "siliconkernel/vllm-jev-decison",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.106631Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.621742Z"
+  },
+  "content_hash": "b04bf51235b27426bbb900bbfd15fc8c76257f64276dd6c6b968bf98ccbf6ae4",
+  "github_repo_id": null,
+  "github_full_name": "siliconkernel/vllm-jev-decison"
+}

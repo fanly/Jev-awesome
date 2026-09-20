@@ -52,13 +52,13 @@
     "resource_kind": "sdk",
     "jev_relationship": "community_sdk",
     "primary_category": "sdk_integrations",
-    "priority_score": 2.0,
+    "priority_score": 2.5,
     "reason_codes": [
-      "positive_signals:1"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.654995Z"
+    "created_at": "2026-09-20T04:14:39.462983Z"
   },
   "content_hash": "86443694cc1b7fc08c2aa52544faf531cd30ef90a8b19bf5134a8bb73906219a",
   "github_repo_id": 115193176,

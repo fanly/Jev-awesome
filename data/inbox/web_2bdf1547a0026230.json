@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:2bdf1547a0026230",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://x.com/zxdubx/status/2100604919120121960",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:https://x.com/zxdubx/status/2100604919120121960",
+  "author_or_org": "x.com",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "https://x.com/zxdubx/status/2100604919120121960",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.765350Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:58.734764Z"
+  },
+  "content_hash": "8634858c42b42300523918c33b62009c90a4c7f003ee0e84660e59adcde4145d",
+  "github_repo_id": null,
+  "github_full_name": null
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:25a7641ced3561e5",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "ai",
+    "classification",
+    "jev",
+    "laravel",
+    "php",
+    "psr-18",
+    "sdk",
+    "typesafe",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/mzainzulifqar/jev-php-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:mzainzulifqar/jev-php-sdk",
+  "author_or_org": "mzainzulifqar",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "mzainzulifqar/jev-php-sdk",
+  "summary_zh": null,
+  "summary_en": "PHP SDK for TypeSafe's Jev: send text and typed questions, get typed answers with calibrated confidence. PHP 8.1+, works with any PSR-18 client, Laravel 8–13.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.245844Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:56.227823Z"
+  },
+  "content_hash": "b19b08ac6aed9f098afdd1c962d5a8877d2832d9717e1ca42bd3e55c6caae186",
+  "github_repo_id": 1375778797,
+  "github_full_name": "mzainzulifqar/jev-php-sdk"
+}

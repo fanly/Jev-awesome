@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375280769",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "ai-agents",
+    "content-moderation",
+    "jev",
+    "model-routing",
+    "semantic-search",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/SeeAPI/awesome-jev-use-cases",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375280769",
+  "author_or_org": "SeeAPI",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "SeeAPI/awesome-jev-use-cases",
+  "summary_zh": null,
+  "summary_en": "Explore real-world use cases and projects built with TypeSafe AI's Jev: content moderation, AI agents, model routing, and semantic search. Curated by SeeAPI.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T02:37:24Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T02:37:24Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.244120Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "CC-BY-4.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.057308Z"
+  },
+  "content_hash": "3393b5a24060fd359de250243d18af3ab8e8c3bdc52e5578920b858b14cd3789",
+  "github_repo_id": 1375280769,
+  "github_full_name": "SeeAPI/awesome-jev-use-cases"
+}

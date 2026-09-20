@@ -11,7 +11,10 @@
     "jev",
     "system-one",
     "typed-decisions",
-    "typesafe"
+    "typesafe",
+    "directory",
+    "llm-agents",
+    "system1"
   ],
   "languages": [],
   "canonical_url": "https://github.com/valentynkit/awesome-jev-typesafe",
@@ -56,13 +59,13 @@
     "resource_kind": "other",
     "jev_relationship": "mention_only",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 1.5,
     "reason_codes": [
-      "positive_signals:2"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.655724Z"
+    "created_at": "2026-09-20T04:14:38.931584Z"
   },
   "content_hash": "b9b19c62c522532bde384e17b745c092d8f235b54b6a4438b9e752e9ad8ea84c",
   "github_repo_id": 1376201850,

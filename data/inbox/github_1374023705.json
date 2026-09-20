@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374023705",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374023705",
+  "author_or_org": "brainstormity",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "brainstormity/Jev-Moderation-Bot",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T06:19:44Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T06:19:44Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:24.601096Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.146134Z"
+  },
+  "content_hash": "952811ce2ea202431c904b20fe92c345ea17f9ed1784d28361dd893dba9b9758",
+  "github_repo_id": 1374023705,
+  "github_full_name": "brainstormity/Jev-Moderation-Bot"
+}

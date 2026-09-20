@@ -5,14 +5,16 @@
   "primary_category": "official",
   "tags": [
     "seed",
-    "official"
+    "official",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
   ],
   "languages": [],
   "canonical_url": "https://typesafe.ai/",
   "related_links": [],
   "aliases": [],
-  "source_identity": null,
-  "author_or_org": "TypeSafe",
+  "source_identity": "awesome:hellogumbo_awesome_jev:https://typesafe.ai/",
+  "author_or_org": "typesafe.ai",
   "official_status": "official",
   "jev_relationship": "official",
   "original_title": "TypeSafe homepage",
@@ -53,8 +55,22 @@
     "reason": null,
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
-  "suggestion": null,
-  "content_hash": "b9fa342b188598af5afcdd9d347e6d7aac5ee1f998f19d8de3314acf336dec9e",
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:55.556585Z"
+  },
+  "content_hash": "87ccc0f18cd8d2dd4548072ebaf662b2ab3a7543fed8ba8a3b82acbe5c8a42f4",
   "github_repo_id": null,
   "github_full_name": null
 }

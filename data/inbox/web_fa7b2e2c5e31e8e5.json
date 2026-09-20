@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:fa7b2e2c5e31e8e5",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "llm",
+    "sdk",
+    "swift",
+    "swift-package",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/InsaneArts/typesafe-sdk-swift",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:insanearts/typesafe-sdk-swift",
+  "author_or_org": "InsaneArts",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "InsaneArts/typesafe-sdk-swift",
+  "summary_zh": null,
+  "summary_en": "Swift SDK for TypeSafe AI",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.684500Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:56.187702Z"
+  },
+  "content_hash": "3459a964179fe1a1a54a4f3f0614da7628dbd59bb4710debfc2fd7219b8ef5ab",
+  "github_repo_id": 1374374782,
+  "github_full_name": "InsaneArts/typesafe-sdk-swift"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377052744",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/narumiruna/chrome-bookmark-reranking",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377052744",
+  "author_or_org": "narumiruna",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "narumiruna/chrome-bookmark-reranking",
+  "summary_zh": null,
+  "summary_en": "AI slop",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T11:06:04Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T11:06:04Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433735Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "AGPL-3.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.048070Z"
+  },
+  "content_hash": "113a6f40f5f49e71ff39d52ead84bc1a04921e0f5d1f41d68598fd1274779eac",
+  "github_repo_id": 1377052744,
+  "github_full_name": "narumiruna/chrome-bookmark-reranking"
+}

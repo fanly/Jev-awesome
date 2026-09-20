@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "id": "github:1213316537",
-  "resource_kind": "other",
+  "resource_kind": "sdk",
   "primary_category": "applications",
   "tags": [
     "seed"
@@ -52,7 +52,21 @@
     "reason": null,
     "identity_note": "reviewer is audit metadata only; not an authorization credential"
   },
-  "suggestion": null,
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.082468Z"
+  },
   "content_hash": "734276633d38f6c92593ca7dbd196dd7831a06c66ef91aca6dab34b1c8e2d51c",
   "github_repo_id": 1213316537,
   "github_full_name": "typesafe-ai/daggerverse"

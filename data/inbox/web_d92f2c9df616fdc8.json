@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:d92f2c9df616fdc8",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/haseeb-heaven/jev-system-one",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:haseeb-heaven/jev-system-one",
+  "author_or_org": "haseeb-heaven",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "haseeb-heaven/jev-system-one",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.771985Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:03.205991Z"
+  },
+  "content_hash": "36e624b44a2a10a6dc6820154f4f4e1979a42bc4efe0656f9529258c2082100b",
+  "github_repo_id": null,
+  "github_full_name": "haseeb-heaven/jev-system-one"
+}

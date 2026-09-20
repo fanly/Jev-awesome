@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:da434feaea4e84d3",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "seed",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/thruwire/foreman",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:thruwire/foreman",
+  "author_or_org": "thruwire",
+  "official_status": "community",
+  "jev_relationship": "calls_official_api",
+  "original_title": "thruwire/foreman",
+  "summary_zh": "用 Jev 做软件工厂调度/决策的 Foreman。",
+  "summary_en": "Software factory foreman based on TypeSafe's Jev model",
+  "developer_value": "看 Jev 如何嵌入工程工作流。",
+  "jev_role": "在编码代理之上做快速决策路由",
+  "prerequisites": null,
+  "limitations": "需自行验证是否真实调用官方 API。",
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:16:55.366589Z",
+  "last_material_change_at": null,
+  "license_status": "known",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "proposed",
+  "verification_level": "discovered",
+  "evidence": [
+    {
+      "url": "https://github.com/thruwire/foreman",
+      "source_type": "github",
+      "checked_at": "2026-09-19T13:16:55.366589Z",
+      "supports": "readme/description reviewed 2026-09-19",
+      "excerpt": null,
+      "code_location": null,
+      "commit_sha": null
+    }
+  ],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:57.154578Z"
+  },
+  "content_hash": "a198435c16ea518e711a15d325dd44708c61e8c4520badbd63b2361585fc6329",
+  "github_repo_id": 1374349137,
+  "github_full_name": "thruwire/foreman"
+}

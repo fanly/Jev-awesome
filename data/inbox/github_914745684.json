@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:914745684",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/get-convex/convex-evals",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:914745684",
+  "author_or_org": "get-convex",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "get-convex/convex-evals",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2025-01-10T08:15:54Z",
+    "precision": "datetime",
+    "raw": "2025-01-10T08:15:54Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:31.048855Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.200782Z"
+  },
+  "content_hash": "7aa1bf486e562289abedc2d72c86383a7de6ecd0f868d234116c93457389ab0b",
+  "github_repo_id": 914745684,
+  "github_full_name": "get-convex/convex-evals"
+}

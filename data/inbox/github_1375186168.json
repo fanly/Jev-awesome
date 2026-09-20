@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375186168",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "bun",
+    "claude-code",
+    "codex",
+    "context-window",
+    "jev",
+    "llm-proxy",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/compozy/yoshi",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375186168",
+  "author_or_org": "compozy",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "compozy/yoshi",
+  "summary_zh": null,
+  "summary_en": "Context-pruning proxy for Claude Code and Codex: Jev judges which history is still needed, measured not claimed. POC here now, heading soon into https://github.com/compozy/compozy",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T00:02:20Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T00:02:20Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:35.652970Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.583522Z"
+  },
+  "content_hash": "9272380dbed9dcaf710b5731b2487695db112f09c7ca42d400207e6ed844af02",
+  "github_repo_id": 1375186168,
+  "github_full_name": "compozy/yoshi"
+}

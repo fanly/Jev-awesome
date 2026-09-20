@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376400065",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/dani1005/book-aurora",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376400065",
+  "author_or_org": "dani1005",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "dani1005/book-aurora",
+  "summary_zh": null,
+  "summary_en": "Jev reads a whole novel in seconds. Every passage becomes a row of colour.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T20:23:44Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T20:23:44Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.076969Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.928876Z"
+  },
+  "content_hash": "851ef888127cdbac080ec26fd164c88a1bd55d8143b2ddbf455ed03ba5d507a3",
+  "github_repo_id": 1376400065,
+  "github_full_name": "dani1005/book-aurora"
+}

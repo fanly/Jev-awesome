@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:55731a17abe7f294",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Mapika/decider",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:mapika/decider",
+  "author_or_org": "Mapika",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "Mapika/decider",
+  "summary_zh": null,
+  "summary_en": "One-pass typed decisions with calibrated probabilities (System One style model), fine-tuned from Qwen3.5-2B",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:32.556186Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:05.821628Z"
+  },
+  "content_hash": "428a4d0910fdfc55cfe7005b56ae08c0cf7fbea5a1c405f0f6161259fd7663f9",
+  "github_repo_id": 1372665897,
+  "github_full_name": "Mapika/decider"
+}

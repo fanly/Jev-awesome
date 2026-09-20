@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374550671",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "calibration",
+    "decision-model",
+    "gemma",
+    "jev",
+    "lora",
+    "machine-learning",
+    "scoring-model",
+    "system-one",
+    "transformers",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/akash-kamat/system-one-gemma",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374550671",
+  "author_or_org": "akash-kamat",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "akash-kamat/system-one-gemma",
+  "summary_zh": null,
+  "summary_en": "Open-source Jev-style System One decision model. Gemma 3 270M with a scoring head — fast, calibrated decisions in a single forward pass. No text generation. Inspired by TypeSafe.ai's Jev.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T14:15:31Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T14:15:31Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.245078Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:2"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.220142Z"
+  },
+  "content_hash": "1ef346d3c675f755167c239b0748bc868cfd38905ef468916c11e3a2f0f12a3e",
+  "github_repo_id": 1374550671,
+  "github_full_name": "akash-kamat/system-one-gemma"
+}

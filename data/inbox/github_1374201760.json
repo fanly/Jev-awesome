@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374201760",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "ai-sdk",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/binnash/typesafe-sdk",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374201760",
+  "author_or_org": "binnash",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "binnash/typesafe-sdk",
+  "summary_zh": null,
+  "summary_en": "PHP & Laravel SDK for TypeSafe AI's JEV Model series",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T09:21:43Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T09:21:43Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.245920Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.375743Z"
+  },
+  "content_hash": "10c54adc5fb02f9f4b943f195b3000d1dd524146154cca2569ce146da1cf41ab",
+  "github_repo_id": 1374201760,
+  "github_full_name": "binnash/typesafe-sdk"
+}

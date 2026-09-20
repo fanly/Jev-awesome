@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1174519898",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "claude-code",
+    "codex",
+    "grok",
+    "jev",
+    "llm",
+    "tokens"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/samuelfaj/distill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1174519898",
+  "author_or_org": "samuelfaj",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "samuelfaj/distill",
+  "summary_zh": null,
+  "summary_en": "Distill is a lightweight coding agent harness and TUI built to get more done with FAR FEWER tokens 🔥",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-03-06T14:37:09Z",
+    "precision": "datetime",
+    "raw": "2026-03-06T14:37:09Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:30.279901Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.094650Z"
+  },
+  "content_hash": "55311e0aa2660be9bf1ceab0c3ad7af42c63f54cf01ba995b79e285ffa100ead",
+  "github_repo_id": 1174519898,
+  "github_full_name": "samuelfaj/distill"
+}

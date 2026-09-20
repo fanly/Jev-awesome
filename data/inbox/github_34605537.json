@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:34605537",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/dnvriend/intro-to-akka-streams",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:34605537",
+  "author_or_org": "dnvriend",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "dnvriend/intro-to-akka-streams",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2015-04-26T09:26:39Z",
+    "precision": "datetime",
+    "raw": "2015-04-26T09:26:39Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:34.063616Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.442534Z"
+  },
+  "content_hash": "8598f30b71a84c0bedccff7772f8e5597efc0a65a439a286dd4da3c6edb98fce",
+  "github_repo_id": 34605537,
+  "github_full_name": "dnvriend/intro-to-akka-streams"
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:440e6d3a3f457bb6",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/wy-coliney/jev-browser-use",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:wy-coliney/jev-browser-use",
+  "author_or_org": "wy-coliney",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "wy-coliney/jev-browser-use",
+  "summary_zh": null,
+  "summary_en": "5–10x faster browser operations: Jev clicks, Codex thinks and verifies. Built at EZCollegeApp.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:38.734897Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:59.197233Z"
+  },
+  "content_hash": "92ff87bf4c2a96eb06a6f0f89f65491f8e9cf29173885b37aad1f9301505ebde",
+  "github_repo_id": 1375500090,
+  "github_full_name": "wy-coliney/jev-browser-use"
+}

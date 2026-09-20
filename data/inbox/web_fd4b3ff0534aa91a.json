@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:fd4b3ff0534aa91a",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/legacybridge-tech/pi-typesafe-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:legacybridge-tech/pi-typesafe-jev",
+  "author_or_org": "legacybridge-tech",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "legacybridge-tech/pi-typesafe-jev",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.765745Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:58.995508Z"
+  },
+  "content_hash": "25c468b8c31b75c318b0d7b7dba3a20f169fe4c423ddcc7d883664da30552a93",
+  "github_repo_id": null,
+  "github_full_name": "legacybridge-tech/pi-typesafe-jev"
+}

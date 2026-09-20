@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374296003",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/shantanugoel/ask-jev-skill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374296003",
+  "author_or_org": "shantanugoel",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "shantanugoel/ask-jev-skill",
+  "summary_zh": null,
+  "summary_en": "Skill for Hermes, and other agents, to ask typesafe's jev",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T10:57:10Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T10:57:10Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:30.279998Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.107167Z"
+  },
+  "content_hash": "8d9753a333fb0e7cecb10130e6ecdddb1d1e55e2b82d1e1ac889a05a941eb561",
+  "github_repo_id": 1374296003,
+  "github_full_name": "shantanugoel/ask-jev-skill"
+}
