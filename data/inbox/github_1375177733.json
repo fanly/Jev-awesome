@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375177733",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/trungdq88/youtube-sponsor-detection",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375177733",
+  "author_or_org": "trungdq88",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "trungdq88/youtube-sponsor-detection",
+  "summary_zh": null,
+  "summary_en": "Detect youtube sponsor segment with live audio and transcript powered by Jev",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T23:46:01Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T23:46:01Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:26.155439Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.340724Z"
+  },
+  "content_hash": "5d24b34ea3b4c103466924f13c2d54cb44bba6b0779732627a21dab26fc0f92d",
+  "github_repo_id": 1375177733,
+  "github_full_name": "trungdq88/youtube-sponsor-detection"
+}

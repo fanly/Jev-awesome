@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:b3d69e5f7395e1cf",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/standardagents/jevpilot",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:standardagents/jevpilot",
+  "author_or_org": "standardagents",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "standardagents/jevpilot",
+  "summary_zh": null,
+  "summary_en": "A playable Three.js driving simulator with Jev-powered autopilot",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.572475Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.324777Z"
+  },
+  "content_hash": "302bdc40116a3ef34e0b7de458cb445876df6ac3896ba606ba4fd8d3ac995610",
+  "github_repo_id": 1374676481,
+  "github_full_name": "standardagents/jevpilot"
+}

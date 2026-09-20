@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376510272",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "ai",
+    "jev",
+    "system-one"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/aamanlamba/jev-explore",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376510272",
+  "author_or_org": "aamanlamba",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "aamanlamba/jev-explore",
+  "summary_zh": null,
+  "summary_en": "An example repository for exploring Jev - the System One model",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T22:57:22Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T22:57:22Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.689747Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.706592Z"
+  },
+  "content_hash": "a8b4f58b0f05205320e4dda85db909e1ca6c340e47fe5a3d67891db5c39699e8",
+  "github_repo_id": 1376510272,
+  "github_full_name": "aamanlamba/jev-explore"
+}

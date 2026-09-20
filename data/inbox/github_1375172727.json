@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375172727",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/dabit3/jev-experiments",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375172727",
+  "author_or_org": "dabit3",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "dabit3/jev-experiments",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T23:36:37Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T23:36:37Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:38.734516Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.431354Z"
+  },
+  "content_hash": "0b1d79f828705266a90e0d8b1f4eddaad57708fede947481b6786fd7e761f57e",
+  "github_repo_id": 1375172727,
+  "github_full_name": "dabit3/jev-experiments"
+}

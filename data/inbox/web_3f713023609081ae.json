@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:3f713023609081ae",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://logicrw.github.io/awesome-jev-projects/en/projects/cequence-io/openai-scala-client",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:https://logicrw.github.io/awesome-jev-projects/en/projects/cequence-io/openai-scala-client",
+  "author_or_org": "logicrw.github.io",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "https://logicrw.github.io/awesome-jev-projects/en/projects/cequence-io/openai-scala-client",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.532654Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:43.901871Z"
+  },
+  "content_hash": "a48fbb2627c714bff3c627f72b7269e3a1a1c4e9d5ab56e69872f5d07abd555b",
+  "github_repo_id": null,
+  "github_full_name": null
+}

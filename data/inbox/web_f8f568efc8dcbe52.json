@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:f8f568efc8dcbe52",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "creative-tools",
+    "jev",
+    "moodboard",
+    "typesafe",
+    "typescript",
+    "visual-search",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/AlbionaHoti/refgarden",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:albionahoti/refgarden",
+  "author_or_org": "AlbionaHoti",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "AlbionaHoti/refgarden",
+  "summary_zh": null,
+  "summary_en": "A spatial reference explorer for creators. Local Jev query choices, metadata highlights and source-linked collections.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:35.652674Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:00.096263Z"
+  },
+  "content_hash": "d3d4833fad41ffc0ccad709f6040ae810e983da449a5f3d28cad48eb28c637f1",
+  "github_repo_id": 1375719666,
+  "github_full_name": "AlbionaHoti/refgarden"
+}

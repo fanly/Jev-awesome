@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:cec8fe5c7b9e2a1a",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "ad-blocker",
+    "android",
+    "jev",
+    "kotlin",
+    "notification-blocker",
+    "sms-blocker",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ufec/jev-block-android-ad",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:ufec/jev-block-android-ad",
+  "author_or_org": "ufec",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "ufec/jev-block-android-ad",
+  "summary_zh": null,
+  "summary_en": "JevNoiseGate filters unwanted notifications and SMS on Android. Rather than   matching keywords, an LLM decides what's noise — and only what it explicitly   flags is blocked. Verification codes are matched on-device and never uploaded;   anything uncertain passes through.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.244205Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:59.424919Z"
+  },
+  "content_hash": "396bfe639ec91538d3d6e6688c2b0b73a8d03c5a471a804c96e5f55c4855d91e",
+  "github_repo_id": 1376095310,
+  "github_full_name": "ufec/jev-block-android-ad"
+}

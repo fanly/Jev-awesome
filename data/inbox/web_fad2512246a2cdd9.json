@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:fad2512246a2cdd9",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://logicrw.github.io/awesome-jev-projects/en/projects/pistachioaihq/jev-synergy-screening",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:https://logicrw.github.io/awesome-jev-projects/en/projects/pistachioaihq/jev-synergy-screening",
+  "author_or_org": "logicrw.github.io",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "https://logicrw.github.io/awesome-jev-projects/en/projects/pistachioaihq/jev-synergy-screening",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.527221Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:33.723628Z"
+  },
+  "content_hash": "0a631b1892dc5a76770f732aacd12b1d9a51e3fa80d3dc3202e4109e2ecfeccc",
+  "github_repo_id": null,
+  "github_full_name": null
+}

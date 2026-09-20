@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376757283",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/heyjunpenn/awesome-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376757283",
+  "author_or_org": "heyjunpenn",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "heyjunpenn/awesome-jev",
+  "summary_zh": null,
+  "summary_en": "A verified, community-maintained catalog of 433 open-source projects built with Jev.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T05:14:36Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T05:14:36Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.685046Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.571666Z"
+  },
+  "content_hash": "e27d2c0fb6ff70ea889f078ae35154d44871a72bbd622678dca11efb50804ecd",
+  "github_repo_id": 1376757283,
+  "github_full_name": "heyjunpenn/awesome-jev"
+}

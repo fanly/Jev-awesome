@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:7b7fa1a2004a271f",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://logicrw.github.io/awesome-jev-projects/en/projects/gargpratyush/jev-router",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:https://logicrw.github.io/awesome-jev-projects/en/projects/gargpratyush/jev-router",
+  "author_or_org": "logicrw.github.io",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "https://logicrw.github.io/awesome-jev-projects/en/projects/gargpratyush/jev-router",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.531303Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:41.027435Z"
+  },
+  "content_hash": "282c92578780a32a249c1a105d9c2add87fb5a1bc305d6c75d1bcc2422881b6c",
+  "github_repo_id": null,
+  "github_full_name": null
+}

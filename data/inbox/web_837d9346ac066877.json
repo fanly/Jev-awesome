@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:837d9346ac066877",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "chrome-extension",
+    "jev",
+    "twitter",
+    "typesafe",
+    "x",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/oso95/x-scanner",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:oso95/x-scanner",
+  "author_or_org": "oso95",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "oso95/x-scanner",
+  "summary_zh": null,
+  "summary_en": "Chrome extension that labels every post you scroll past on X with typed Jev judgments and a live cost counter",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077114Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:59.244107Z"
+  },
+  "content_hash": "d6730afb038d530bf73705a3c48b874601af5828a529f03ed633fab41ef516e2",
+  "github_repo_id": 1376291528,
+  "github_full_name": "oso95/x-scanner"
+}

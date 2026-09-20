@@ -37,7 +37,7 @@ Start with a path: official SDKs, browser/mobile agents, DB semantic routing, lo
 - [Research & Alternatives](docs/categories/research-alts.md) (2)
 
 
-Curated: **14**. Inbox (not featured): 118.
+Curated: **14**. Inbox (not featured): 1582.
 
 ## Try it: official Python SDK
 

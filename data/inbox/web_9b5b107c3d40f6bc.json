@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:9b5b107c3d40f6bc",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/kuldeepsinh19/jev-decision-gateway",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:kuldeepsinh19/jev-decision-gateway",
+  "author_or_org": "kuldeepsinh19",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "kuldeepsinh19/jev-decision-gateway",
+  "summary_zh": null,
+  "summary_en": "A provider-agnostic AI decision gateway using TypeSafe AI's Jev (System One) model to gate, route, and verify expensive LLM workflows",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433005Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:42.147896Z"
+  },
+  "content_hash": "51f790d02f349ab47d0a04c4b235a9717a80612f52e845fea7115de51948a079",
+  "github_repo_id": 1376695369,
+  "github_full_name": "kuldeepsinh19/jev-decision-gateway"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375761817",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "cache",
+    "jev",
+    "llm",
+    "memoization",
+    "rust",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/hyperspaceai/jevcache",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375761817",
+  "author_or_org": "hyperspaceai",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "hyperspaceai/jevcache",
+  "summary_zh": null,
+  "summary_en": "A decision cache for TypeSafe Jev-class models — memoize decisions so repeats are free, deterministic, and shareable. One 2 MB binary.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T11:22:25Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T11:22:25Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:35.652368Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.487701Z"
+  },
+  "content_hash": "34a15f921cb96e832e07230e6e5cb3eecbce08c2a2b0351c0e181ef008b7ff5e",
+  "github_repo_id": 1375761817,
+  "github_full_name": "hyperspaceai/jevcache"
+}

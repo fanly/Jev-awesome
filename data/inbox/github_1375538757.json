@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375538757",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/FFatTiger/new-api-plugin-typesafe",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375538757",
+  "author_or_org": "FFatTiger",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "FFatTiger/new-api-plugin-typesafe",
+  "summary_zh": null,
+  "summary_en": "TypeSafe AI System One (Jev) task plugin for QuantumNous/new-api — native /v1/systemone, synchronous evaluation, token billing",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T07:36:33Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T07:36:33Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:31.049157Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.243661Z"
+  },
+  "content_hash": "0fc9d147dc02bae4d5026ced5186a8d7a9d77a56738a64dd9ae31afe56ba56cb",
+  "github_repo_id": 1375538757,
+  "github_full_name": "FFatTiger/new-api-plugin-typesafe"
+}

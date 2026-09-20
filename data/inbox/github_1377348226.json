@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377348226",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "ai",
+    "csharp",
+    "dotnet",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/laurentkempe/TypeSafeJevPlayground",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377348226",
+  "author_or_org": "laurentkempe",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "laurentkempe/TypeSafeJevPlayground",
+  "summary_zh": null,
+  "summary_en": "TypeSafe Jev Playground - idiomatic .NET port of typesafe-ai/typesafe-sdk-js v0.6.0",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T15:59:17Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T15:59:17Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.689825Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.718745Z"
+  },
+  "content_hash": "b8f5fd4db449f4f394abd207c6af03aebf3bb05a8a1dd7b8d5140b448841e9a0",
+  "github_repo_id": 1377348226,
+  "github_full_name": "laurentkempe/TypeSafeJevPlayground"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374268994",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/goodrahstar/jev-column-race",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374268994",
+  "author_or_org": "goodrahstar",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "goodrahstar/jev-column-race",
+  "summary_zh": null,
+  "summary_en": "Jev vs Gemini 3.8 Flash: labelling 1,000 app reviews, 4.1× faster and 7× cheaper",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T10:29:38Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T10:29:38Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:22.208323Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.841023Z"
+  },
+  "content_hash": "423ef2c0f76273bc4362a7fdf5d81f65594b74958c0183085ff84de6aa431a09",
+  "github_repo_id": 1374268994,
+  "github_full_name": "goodrahstar/jev-column-race"
+}

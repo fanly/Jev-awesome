@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373871278",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "auto-mode",
+    "coding-agent",
+    "guardrail",
+    "jev",
+    "permission",
+    "pi-coding-agent",
+    "pi-extension",
+    "pi-package",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/jomatsu/pi-jev-auto-mode",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373871278",
+  "author_or_org": "jomatsu",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "jomatsu/pi-jev-auto-mode",
+  "summary_zh": null,
+  "summary_en": "Jev (TypeSafe System One) backed auto mode for the Pi coding agent: semantically auto-approves bash, write, and edit tool calls and fails closed when a decision cannot be made.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T03:14:28Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T03:14:28Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077706Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.996996Z"
+  },
+  "content_hash": "fc885b4c61d42b8797aea54d8a90778c4c1d31e7134b4e926317931c06838e2a",
+  "github_repo_id": 1373871278,
+  "github_full_name": "jomatsu/pi-jev-auto-mode"
+}

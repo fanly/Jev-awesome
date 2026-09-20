@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:5792976",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/henrikengstrom/akka-kata-java",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:5792976",
+  "author_or_org": "henrikengstrom",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "henrikengstrom/akka-kata-java",
+  "summary_zh": null,
+  "summary_en": "The Akka kata implemented in Java",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2012-09-13T10:08:37Z",
+    "precision": "datetime",
+    "raw": "2012-09-13T10:08:37Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:32.555930Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "NOASSERTION",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.328425Z"
+  },
+  "content_hash": "5ff46a5ceafcefface58f4379b5151fb16f20474bbc29ff333ee1ee8ab60a469",
+  "github_repo_id": 5792976,
+  "github_full_name": "henrikengstrom/akka-kata-java"
+}

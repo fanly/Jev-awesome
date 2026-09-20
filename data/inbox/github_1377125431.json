@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377125431",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/samarkundal/expect-semantic",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377125431",
+  "author_or_org": "samarkundal",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "samarkundal/expect-semantic",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T12:24:07Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T12:24:07Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433811Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.060594Z"
+  },
+  "content_hash": "82c616bb797e032315f02f13ce92302b13705b529e7464ad0e1d958af00234c6",
+  "github_repo_id": 1377125431,
+  "github_full_name": "samarkundal/expect-semantic"
+}

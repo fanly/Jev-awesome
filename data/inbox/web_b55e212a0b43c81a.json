@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:b55e212a0b43c81a",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/vinilana/live-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:vinilana/live-jev",
+  "author_or_org": "vinilana",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "vinilana/live-jev",
+  "summary_zh": null,
+  "summary_en": "2D autonomous car simulation in the browser, driven by TypeSafe's Jev decision model",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:55.322315Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:59.246073Z"
+  },
+  "content_hash": "51502a2912a5add5f36e85446ee228ce72e44b8b64984e87cb9535ba80da82c0",
+  "github_repo_id": 1375191165,
+  "github_full_name": "vinilana/live-jev"
+}

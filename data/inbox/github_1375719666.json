@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375719666",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "creative-tools",
+    "jev",
+    "moodboard",
+    "typesafe",
+    "typescript",
+    "visual-search"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/AlbionaHoti/refgarden",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375719666",
+  "author_or_org": "AlbionaHoti",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "AlbionaHoti/refgarden",
+  "summary_zh": null,
+  "summary_en": "A spatial reference explorer for creators. Local Jev query choices, metadata highlights and source-linked collections.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T10:40:25Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T10:40:25Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:35.652674Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.536821Z"
+  },
+  "content_hash": "a117ea0ca104ab56e6df93e097ccf8ccb2dec06f59492e9f4ec92ed84dd6cdab",
+  "github_repo_id": 1375719666,
+  "github_full_name": "AlbionaHoti/refgarden"
+}

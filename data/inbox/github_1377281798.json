@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377281798",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "gmail",
+    "jev",
+    "jevmail",
+    "labeling",
+    "labeling-tool",
+    "spam",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ilyamk/jev-gmail-ai-spam-filter-and-labeling",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377281798",
+  "author_or_org": "ilyamk",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "ilyamk/jev-gmail-ai-spam-filter-and-labeling",
+  "summary_zh": null,
+  "summary_en": "Self-hosted AI email classifier for Gmail powered by Jev. Create custom labels, organize your inbox, and filter spam with confidence and cost controls.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T14:54:34Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T14:54:34Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.243924Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.027250Z"
+  },
+  "content_hash": "850a46a38321344f7a29b9ace71f2710e454a07ff977c55e7d92f2deb26ee67c",
+  "github_repo_id": 1377281798,
+  "github_full_name": "ilyamk/jev-gmail-ai-spam-filter-and-labeling"
+}

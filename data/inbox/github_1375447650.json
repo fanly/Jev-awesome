@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375447650",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/pavy23/jev_typesafeai_test",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375447650",
+  "author_or_org": "pavy23",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "pavy23/jev_typesafeai_test",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T06:04:25Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T06:04:25Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433584Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.023178Z"
+  },
+  "content_hash": "e47628a840a8d2e1d747c1f7b17ffd4b0dc6ae0feb8182a32c6efb672b370f02",
+  "github_repo_id": 1375447650,
+  "github_full_name": "pavy23/jev_typesafeai_test"
+}

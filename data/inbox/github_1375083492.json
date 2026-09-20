@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375083492",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/dbreunig/building-with-jev-skill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375083492",
+  "author_or_org": "dbreunig",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "dbreunig/building-with-jev-skill",
+  "summary_zh": null,
+  "summary_en": "A skill for writing and improving programs that call Jev, TypeSafe's System One model",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T21:07:53Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T21:07:53Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:31.767059Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.302543Z"
+  },
+  "content_hash": "7944ba767292d7b51d88be1a296ddf6bd7a08e3e1eb28ea2bedb983298b56751",
+  "github_repo_id": 1375083492,
+  "github_full_name": "dbreunig/building-with-jev-skill"
+}

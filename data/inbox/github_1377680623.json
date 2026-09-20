@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377680623",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/brainstormity/Jev-X-Sentiment-Analysis",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377680623",
+  "author_or_org": "brainstormity",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "brainstormity/Jev-X-Sentiment-Analysis",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T22:51:07Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T22:51:07Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:24.601489Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.185023Z"
+  },
+  "content_hash": "574a8a36f9600b2e417ab7341c1189ff58bd4181f8bdf5366bd8a788b5abd0eb",
+  "github_repo_id": 1377680623,
+  "github_full_name": "brainstormity/Jev-X-Sentiment-Analysis"
+}

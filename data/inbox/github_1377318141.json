@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377318141",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/ethanplusai/jev-chat-for-twitch",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377318141",
+  "author_or_org": "ethanplusai",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "ethanplusai/jev-chat-for-twitch",
+  "summary_zh": null,
+  "summary_en": "Filter any live Twitch chat with Jev: a bring-your-own-key Chrome extension",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T15:30:38Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T15:30:38Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:22.208555Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.851384Z"
+  },
+  "content_hash": "5a06542b68b7bfb4c9929265c466547bab1881d718dfe9387d254e133de06924",
+  "github_repo_id": 1377318141,
+  "github_full_name": "ethanplusai/jev-chat-for-twitch"
+}

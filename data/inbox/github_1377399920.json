@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377399920",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/Supprocom/TypeSafeAI-SDK",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377399920",
+  "author_or_org": "Supprocom",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "Supprocom/TypeSafeAI-SDK",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T16:49:27Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T16:49:27Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433658Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.034259Z"
+  },
+  "content_hash": "c873fb64116182a8ae46219b193544d618f7112bcdd7ae5e939ed1dd2f909bb3",
+  "github_repo_id": 1377399920,
+  "github_full_name": "Supprocom/TypeSafeAI-SDK"
+}

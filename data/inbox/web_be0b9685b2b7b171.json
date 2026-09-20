@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:be0b9685b2b7b171",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/kyotofin/tax-doc-classifier",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:kyotofin/tax-doc-classifier",
+  "author_or_org": "kyotofin",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "kyotofin/tax-doc-classifier",
+  "summary_zh": null,
+  "summary_en": "Tax document page classifier built on Jev decisions. 100% strict accuracy across 261 IRS forms, ~$0.001 per page.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:53.572874Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "Apache-2.0",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.306599Z"
+  },
+  "content_hash": "8a5506dd13d8cdfa55aff400ad310d667f06d73864b831247f123ae54d6524cd",
+  "github_repo_id": 1376004275,
+  "github_full_name": "kyotofin/tax-doc-classifier"
+}

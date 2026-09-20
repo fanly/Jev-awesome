@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:e93ea2d5230bd11a",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/santos-sanz/jev-audio-beeper",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:santos-sanz/jev-audio-beeper",
+  "author_or_org": "santos-sanz",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "santos-sanz/jev-audio-beeper",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.769291Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:01.001175Z"
+  },
+  "content_hash": "a5c1bd5c05cae28317f9caf16aee49f9f50ea0ce9945436103a42a06d17534e8",
+  "github_repo_id": null,
+  "github_full_name": "santos-sanz/jev-audio-beeper"
+}

@@ -63,13 +63,13 @@
     "resource_kind": "other",
     "jev_relationship": "mention_only",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 1.5,
     "reason_codes": [
-      "positive_signals:2"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.668862Z"
+    "created_at": "2026-09-20T04:14:39.164348Z"
   },
   "content_hash": "48c20f4a5aa3abc5c568b5d3e8995d6a440e92c0a1ef9d0ccac7520da7060cea",
   "github_repo_id": 1375039364,

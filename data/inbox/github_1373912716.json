@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1373912716",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "api-client",
+    "go",
+    "golang",
+    "jev",
+    "llm",
+    "sdk",
+    "structured-output",
+    "typesafe",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/anilsenay/jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1373912716",
+  "author_or_org": "anilsenay",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "anilsenay/jev",
+  "summary_zh": null,
+  "summary_en": "Unofficial Go client for TypeSafe's System One API  and its model, Jev.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T04:11:48Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T04:11:48Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.245771Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:41.345640Z"
+  },
+  "content_hash": "a37cf69367ff4fe3db3c7e3afab3bdd942a9912aa2abb8b42bfe848d0ea85779",
+  "github_repo_id": 1373912716,
+  "github_full_name": "anilsenay/jev"
+}

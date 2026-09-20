@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:73944e7f8db1aa30",
+  "resource_kind": "sdk",
+  "primary_category": "official",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://evals.typesafe.ai/",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:https://evals.typesafe.ai/",
+  "author_or_org": "evals.typesafe.ai",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "https://evals.typesafe.ai/",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.759001Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "official",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:55.743144Z"
+  },
+  "content_hash": "09845a3e62ec71d9ce086f162c519f1081c94a609983e0bf629f44b2c0e4c212",
+  "github_repo_id": null,
+  "github_full_name": null
+}

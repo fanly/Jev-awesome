@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:ee0c46747b86137e",
+  "resource_kind": "official_doc",
+  "primary_category": "sdk_integrations",
+  "tags": [
+    "official"
+  ],
+  "languages": [],
+  "canonical_url": "https://docs.typesafe.ai/sdk/javascript.md",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "official:docs_js_sdk",
+  "author_or_org": "TypeSafe",
+  "official_status": "official",
+  "jev_relationship": "official",
+  "original_title": "TypeSafe JavaScript SDK",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:52.918604Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "source_checked",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "official",
+    "primary_category": "sdk_integrations",
+    "priority_score": 3.0,
+    "reason_codes": [
+      "official_domain"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:54.343390Z"
+  },
+  "content_hash": "25ba04f5b55819bee85e21d9184b7b8c807a81e95754baef4b05157240a2e1bb",
+  "github_repo_id": null,
+  "github_full_name": null
+}

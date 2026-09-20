@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:3faba917c7c56f1a",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "ai-agent",
+    "pygame",
+    "python-game",
+    "system-one",
+    "typesafe",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ashaazami/river-run-typesafe",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:ashaazami/river-run-typesafe",
+  "author_or_org": "ashaazami",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "ashaazami/river-run-typesafe",
+  "summary_zh": null,
+  "summary_en": "River shooter game in Python, inspired by Atari's River Raid, played by a TypeSafe AI pilot",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.689384Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:02.668265Z"
+  },
+  "content_hash": "a41ff6c622f217a129d3c24a5c2eff5a32cdaef61d8da8564a6b7a9bcf26bbdb",
+  "github_repo_id": 1374106591,
+  "github_full_name": "ashaazami/river-run-typesafe"
+}

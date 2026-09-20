@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:f56234a5d680a100",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/TokenTrim/jev-agent-failure-benchmark",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:tokentrim/jev-agent-failure-benchmark",
+  "author_or_org": "TokenTrim",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "TokenTrim/jev-agent-failure-benchmark",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.778281Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:07.673313Z"
+  },
+  "content_hash": "b592ff6f76cdea674fc5a98c3c159ddeaf2e63b081cdbbd0f42823cd4bbfab7b",
+  "github_repo_id": null,
+  "github_full_name": "TokenTrim/jev-agent-failure-benchmark"
+}

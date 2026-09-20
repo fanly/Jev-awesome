@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:2c286f456a0195ac",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/HyunjunJeon/pi-quiet-ask",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:hyunjunjeon/pi-quiet-ask",
+  "author_or_org": "HyunjunJeon",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "HyunjunJeon/pi-quiet-ask",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.763312Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:57.485498Z"
+  },
+  "content_hash": "1378e2efb6fe29d24e60779382e8a66f489ae4381ae55cd4d81b79b2c3643dcb",
+  "github_repo_id": null,
+  "github_full_name": "HyunjunJeon/pi-quiet-ask"
+}

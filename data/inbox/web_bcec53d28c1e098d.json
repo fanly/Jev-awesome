@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:bcec53d28c1e098d",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/mmastrac/djev-spark",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:mmastrac/djev-spark",
+  "author_or_org": "mmastrac",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "mmastrac/djev-spark",
+  "summary_zh": null,
+  "summary_en": "DiffusionGemma NVFP4 structured decisions on a DGX Spark: container recipe",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:30.280080Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.328381Z"
+  },
+  "content_hash": "2f26dd1539d7d03e2557a07f22b4d03963f899e377ea6ef1203f9cb4233450b2",
+  "github_repo_id": 1376070655,
+  "github_full_name": "mmastrac/djev-spark"
+}

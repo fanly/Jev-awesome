@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374668398",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/nozo-moto/jev-reverse",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374668398",
+  "author_or_org": "nozo-moto",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "nozo-moto/jev-reverse",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T15:41:38Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T15:41:38Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.432767Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.913436Z"
+  },
+  "content_hash": "fe570ae287d92b55e6ec40e1145df77e2d67262cfb766cb16b0f79f42c6485f6",
+  "github_repo_id": 1374668398,
+  "github_full_name": "nozo-moto/jev-reverse"
+}

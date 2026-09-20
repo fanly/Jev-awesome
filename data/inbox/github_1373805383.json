@@ -11,7 +11,7 @@
   "source_identity": "github:1373805383",
   "author_or_org": "emrickgarrett",
   "official_status": "unknown",
-  "jev_relationship": "unclear",
+  "jev_relationship": "calls_official_api",
   "original_title": "emrickgarrett/OneVOneJev",
   "summary_zh": null,
   "summary_en": "1v1 Jev quickscope arena — Three.js + TypeSafe System One",
@@ -45,15 +45,15 @@
     "relevant": true,
     "relevance_probability": 1.0,
     "resource_kind": "application",
-    "jev_relationship": "unclear",
+    "jev_relationship": "calls_official_api",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 2.5,
     "reason_codes": [
-      "positive_signals:2"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.633767Z"
+    "created_at": "2026-09-20T04:14:39.743186Z"
   },
   "content_hash": "118c86b1ff4b4af19c417a76721c786e043b24f5158f037d69acde89c999edbf",
   "github_repo_id": 1373805383,

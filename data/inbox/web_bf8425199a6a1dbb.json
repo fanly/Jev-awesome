@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:bf8425199a6a1dbb",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "bun",
+    "claude-code",
+    "codex",
+    "context-window",
+    "jev",
+    "llm-proxy",
+    "typesafe",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/compozy/yoshi",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:compozy/yoshi",
+  "author_or_org": "compozy",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "compozy/yoshi",
+  "summary_zh": null,
+  "summary_en": "Context-pruning proxy for Claude Code and Codex: Jev judges which history is still needed, measured not claimed. POC here now, heading soon into https://github.com/compozy/compozy",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:35.652970Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:57.296006Z"
+  },
+  "content_hash": "bd7e597b433a333de245b490a01ba5fd0f65f4206f24168a73e198320b69666f",
+  "github_repo_id": 1375186168,
+  "github_full_name": "compozy/yoshi"
+}

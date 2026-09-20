@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377189665",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/shhivv/third-hand",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377189665",
+  "author_or_org": "shhivv",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "shhivv/third-hand",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T13:29:41Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T13:29:41Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:26.155067Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.318628Z"
+  },
+  "content_hash": "a02ccf8bd9ac16baab297a58159030236049183969b2014bdc5ffde62c7243cd",
+  "github_repo_id": 1377189665,
+  "github_full_name": "shhivv/third-hand"
+}

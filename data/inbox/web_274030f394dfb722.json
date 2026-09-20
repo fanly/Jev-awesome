@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:274030f394dfb722",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/mrnugget/jev-shell-history",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:mrnugget/jev-shell-history",
+  "author_or_org": "mrnugget",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "mrnugget/jev-shell-history",
+  "summary_zh": null,
+  "summary_en": "Fish-style zsh history autosuggestions ranked by Jev (TypeSafe)",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:26.155517Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:56.646352Z"
+  },
+  "content_hash": "f34973e36821dc3a8a59a06b88d7bea01f873c73fd5d1ea07d683de51552db74",
+  "github_repo_id": 1375573671,
+  "github_full_name": "mrnugget/jev-shell-history"
+}

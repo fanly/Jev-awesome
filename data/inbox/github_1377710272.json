@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377710272",
+  "resource_kind": "sdk",
+  "primary_category": "sdk_integrations",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/EmilianoVeron/jev-skill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377710272",
+  "author_or_org": "EmilianoVeron",
+  "official_status": "unknown",
+  "jev_relationship": "community_sdk",
+  "original_title": "EmilianoVeron/jev-skill",
+  "summary_zh": null,
+  "summary_en": "A Claude Code skill for TypeSafe's Jev (System One) model — Choice/Score/Noul design guidance, patterns, and SDK reference.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T23:41:24Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T23:41:24Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.432928Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "sdk",
+    "jev_relationship": "community_sdk",
+    "primary_category": "sdk_integrations",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.934674Z"
+  },
+  "content_hash": "72a8d0b48ac68684b9cdadec702e5afc74582f44d0dcfab308a5b12f9ef31810",
+  "github_repo_id": 1377710272,
+  "github_full_name": "EmilianoVeron/jev-skill"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1130752668",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/ksenxx/kiss_ai",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1130752668",
+  "author_or_org": "ksenxx",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "ksenxx/kiss_ai",
+  "summary_zh": null,
+  "summary_en": "KISS Sorcar: Keep it Simple, Stupid AI General Purpose Agent Framework for Long Horizon Tasks and AI Discovery",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-01-09T00:49:18Z",
+    "precision": "datetime",
+    "raw": "2026-01-09T00:49:18Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:31.048933Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "NOASSERTION",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.210108Z"
+  },
+  "content_hash": "975e045c6e5c89fe57c3f9e202532c40e84c81fc01bdfaf2c0ba203da8bec156",
+  "github_repo_id": 1130752668,
+  "github_full_name": "ksenxx/kiss_ai"
+}

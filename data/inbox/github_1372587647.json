@@ -50,16 +50,16 @@
     "mode": "rules",
     "relevant": true,
     "relevance_probability": 1.0,
-    "resource_kind": "application",
+    "resource_kind": "other",
     "jev_relationship": "unclear",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 0.5,
     "reason_codes": [
-      "positive_signals:1"
+      "weak_name_only_jev"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.666003Z"
+    "created_at": "2026-09-20T04:14:38.829461Z"
   },
   "content_hash": "d70b077c0d046350b09c5cb2579c782b4514104496417db9a9a6cfcb2bab1205",
   "github_repo_id": 1372587647,

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375675343",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/featherless-ai/simple-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375675343",
+  "author_or_org": "featherless-ai",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "featherless-ai/simple-jev",
+  "summary_zh": null,
+  "summary_en": "Turn any open model into a classifier/jev endpoint",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T09:52:15Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T09:52:15Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:31.766763Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.264490Z"
+  },
+  "content_hash": "9548a382dae2a71d281092f41a3682a0dc08bc58d84861ecbd3820773925d21c",
+  "github_repo_id": 1375675343,
+  "github_full_name": "featherless-ai/simple-jev"
+}

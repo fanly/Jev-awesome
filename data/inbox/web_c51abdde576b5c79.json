@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:c51abdde576b5c79",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/DanielKillenberger/jev-predict-skill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:danielkillenberger/jev-predict-skill",
+  "author_or_org": "DanielKillenberger",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "DanielKillenberger/jev-predict-skill",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:54.765072Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:58.563125Z"
+  },
+  "content_hash": "755d0bcc770c9dd84cb45930302823db70c7c995a4b17188e3e4d5376d7cbe79",
+  "github_repo_id": null,
+  "github_full_name": "DanielKillenberger/jev-predict-skill"
+}

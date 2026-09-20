@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:93b2cfb4f88278ad",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/virattt/ai-hedge-fund",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:virattt/ai-hedge-fund",
+  "author_or_org": "virattt",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "virattt/ai-hedge-fund",
+  "summary_zh": null,
+  "summary_en": "An AI Hedge Fund Team",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.637295Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:28.829595Z"
+  },
+  "content_hash": "24d79fbe3b19df7313d50f08d42318e4b3469dd55400f342268a40d4b458064c",
+  "github_repo_id": 896144595,
+  "github_full_name": "virattt/ai-hedge-fund"
+}

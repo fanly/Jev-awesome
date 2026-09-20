@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377534232",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/JordanDalton/jev-mermaid",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377534232",
+  "author_or_org": "JordanDalton",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "JordanDalton/jev-mermaid",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T19:19:07Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T19:19:07Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:28.579250Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.754731Z"
+  },
+  "content_hash": "669c34fc695c9b6b3b6569ee12f4e3326ccb8eb808efd0a2eca8a0eb2a32e425",
+  "github_repo_id": 1377534232,
+  "github_full_name": "JordanDalton/jev-mermaid"
+}

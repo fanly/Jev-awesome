@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1372676287",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/y0usaf/typesafe-cli",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1372676287",
+  "author_or_org": "y0usaf",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "y0usaf/typesafe-cli",
+  "summary_zh": null,
+  "summary_en": "Ask Jev typed questions from the shell: noul, choice, and score answers as numbers, not prose",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-16T07:25:01Z",
+    "precision": "datetime",
+    "raw": "2026-09-16T07:25:01Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077849Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.011995Z"
+  },
+  "content_hash": "1e32d7ce12d912ece8be12b1ab384e6348b059d56f4c50fb63d7d5daf1b17627",
+  "github_repo_id": 1372676287,
+  "github_full_name": "y0usaf/typesafe-cli"
+}

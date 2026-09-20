@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:ba7645c89bc0f4e5",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "cvss",
+    "jev",
+    "typesafe-ai",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Red5d/jev-cvss",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:red5d/jev-cvss",
+  "author_or_org": "Red5d",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "Red5d/jev-cvss",
+  "summary_zh": null,
+  "summary_en": "Fast CVSS scoring from vulnerability descriptions using Typesafe Jev",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:37.245229Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:00.451624Z"
+  },
+  "content_hash": "53f4edd8d9632874c70ccaf8bd196d305342e467345d7d8e53d73e146b98e133",
+  "github_repo_id": 1376100651,
+  "github_full_name": "Red5d/jev-cvss"
+}

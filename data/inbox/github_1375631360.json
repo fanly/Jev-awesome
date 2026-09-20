@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375631360",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/bespokelabsai/nimble",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375631360",
+  "author_or_org": "bespokelabsai",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "bespokelabsai/nimble",
+  "summary_zh": null,
+  "summary_en": "Local typed decisions, contrastive data curation, and model evaluation.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T09:07:48Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T09:07:48Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:34.063213Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:40.405043Z"
+  },
+  "content_hash": "ab0f45a43e4d0bde6f96b5593458db61974df33aec4de706a08cac3a5857fc7a",
+  "github_repo_id": 1375631360,
+  "github_full_name": "bespokelabsai/nimble"
+}

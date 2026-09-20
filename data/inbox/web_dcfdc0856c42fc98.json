@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:dcfdc0856c42fc98",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome",
+    "awesome-list",
+    "jev",
+    "llm",
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/yibie/awesome-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:yibie/awesome-jev",
+  "author_or_org": "yibie",
+  "official_status": "unknown",
+  "jev_relationship": "mention_only",
+  "original_title": "yibie/awesome-jev",
+  "summary_zh": null,
+  "summary_en": "A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-19T13:23:51.639722Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 1.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:09.537349Z"
+  },
+  "content_hash": "44f12e3a9e92fcd5dad8e898915e902e06d3ef7e995f254e27ce6911017c9160",
+  "github_repo_id": 1374561793,
+  "github_full_name": "yibie/awesome-jev"
+}

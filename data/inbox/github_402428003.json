@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:402428003",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [
+    "accessibility",
+    "awesome",
+    "awesome-list",
+    "comapny"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/yamanoku/awesome-japanese-a11y-companies",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:402428003",
+  "author_or_org": "yamanoku",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "yamanoku/awesome-japanese-a11y-companies",
+  "summary_zh": null,
+  "summary_en": "アクセシビリティに取り組む・推進している日本企業まとめ（随時更新）",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2021-09-02T13:19:56Z",
+    "precision": "datetime",
+    "raw": "2021-09-02T13:19:56Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:24.601411Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.174463Z"
+  },
+  "content_hash": "8ca108c14b725762337c4f76f4e449c574d3ac07f28ead372d92f09927a0e6de",
+  "github_repo_id": 402428003,
+  "github_full_name": "yamanoku/awesome-japanese-a11y-companies"
+}

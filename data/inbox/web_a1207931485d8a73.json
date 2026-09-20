@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:a1207931485d8a73",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome",
+    "awesome-list",
+    "awesome-lists",
+    "jev",
+    "llm",
+    "robotics",
+    "robotics-algorithms",
+    "robotics-control",
+    "robotics-simulation",
+    "awesome_radar",
+    "via:yzfly_awesome_jev_zh"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/v-modal/awesome-jev-tools",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:yzfly_awesome_jev_zh:v-modal/awesome-jev-tools",
+  "author_or_org": "v-modal",
+  "official_status": "unknown",
+  "jev_relationship": "mention_only",
+  "original_title": "v-modal/awesome-jev-tools",
+  "summary_zh": null,
+  "summary_en": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:32.556419Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "mention_only",
+    "primary_category": "applications",
+    "priority_score": 1.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:13.312157Z"
+  },
+  "content_hash": "1cd7260c7581ea28ae0d53a0de4da466d003d452331abf48a8d81138e95dc6e1",
+  "github_repo_id": 1377399471,
+  "github_full_name": "v-modal/awesome-jev-tools"
+}

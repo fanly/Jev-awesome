@@ -66,15 +66,15 @@
     "relevant": true,
     "relevance_probability": 1.0,
     "resource_kind": "other",
-    "jev_relationship": "mention_only",
+    "jev_relationship": "unclear",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 0.5,
     "reason_codes": [
-      "positive_signals:1"
+      "weak_name_only_jev"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.654582Z"
+    "created_at": "2026-09-20T04:14:39.216301Z"
   },
   "content_hash": "a095429447ac0db63c03d60cec969d73d533b840938cdaf796db211bd73b280b",
   "github_repo_id": 1375482713,

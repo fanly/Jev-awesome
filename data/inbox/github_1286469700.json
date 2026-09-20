@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1286469700",
+  "resource_kind": "other",
+  "primary_category": null,
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/Kirylka/flue-guard",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1286469700",
+  "author_or_org": "Kirylka",
+  "official_status": "unknown",
+  "jev_relationship": "not_related",
+  "original_title": "Kirylka/flue-guard",
+  "summary_zh": null,
+  "summary_en": "In-process authorization and tamper-evident audit for Flue agent tools",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-07-01T20:17:29Z",
+    "precision": "datetime",
+    "raw": "2026-07-01T20:17:29Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.432604Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": false,
+    "relevance_probability": 0.0,
+    "resource_kind": "unrelated",
+    "jev_relationship": "not_related",
+    "primary_category": null,
+    "priority_score": 0.0,
+    "reason_codes": [
+      "no_jev_signal"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.890687Z"
+  },
+  "content_hash": "79258dab0ec299ff7539a4bfbb4d3958431208dd455d4ff0ffcdef3680add1f1",
+  "github_repo_id": 1286469700,
+  "github_full_name": "Kirylka/flue-guard"
+}

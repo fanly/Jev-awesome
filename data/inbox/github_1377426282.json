@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377426282",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "cursor",
+    "decision-layer",
+    "grok-bot",
+    "jev",
+    "python",
+    "typesafe"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/Bodila51/grok-bot-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377426282",
+  "author_or_org": "Bodila51",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "Bodila51/grok-bot-jev",
+  "summary_zh": null,
+  "summary_en": "Connect TypeSafe Jev to Grok Bot as a cheap decision layer - usage gates, skill template, examples",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T17:15:48Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T17:15:48Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:27.684583Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.515042Z"
+  },
+  "content_hash": "893df5cddfedc351da3b9565f61462f132ea0c262efadab004b95bd033741ea3",
+  "github_repo_id": 1377426282,
+  "github_full_name": "Bodila51/grok-bot-jev"
+}

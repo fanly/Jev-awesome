@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:00eef4b6e31770be",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:logicrw_awesome_jev_projects"
+  ],
+  "languages": [],
+  "canonical_url": "https://logicrw.github.io/awesome-jev-projects/en/projects/kieranklaassen/ruby_llm-typesafe",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:logicrw_awesome_jev_projects:https://logicrw.github.io/awesome-jev-projects/en/projects/kieranklaassen/ruby_llm-typesafe",
+  "author_or_org": "logicrw.github.io",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "https://logicrw.github.io/awesome-jev-projects/en/projects/kieranklaassen/ruby_llm-typesafe",
+  "summary_zh": null,
+  "summary_en": null,
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:55.535579Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:15:50.114725Z"
+  },
+  "content_hash": "d20aaed8a21607fe126e04799089236091903a24fa81688d31e3f0ecb4cfb338",
+  "github_repo_id": null,
+  "github_full_name": null
+}

@@ -133,7 +133,7 @@ GitHub Next：本地兼容 `POST /v1/systemone` 的实现（Bun + Diffusion）�
 - [研究与替代实现](docs/categories/research-alts.md)（2）
 
 
-当前精选 **14** 条；待审队列另有 118 条（不计入上方推荐）。
+当前精选 **14** 条；待审队列另有 1582 条（不计入上方推荐）。
 
 ## 最近编辑更新
 
@@ -142,11 +142,11 @@ GitHub Next：本地兼容 `POST /v1/systemone` 的实现（Bun + Diffusion）�
 ## Jev 生态雷达
 
 
-- [TypeSafe Confidence](https://docs.typesafe.ai/confidence.md) — official_domain, official_status, strong_signal
-- [TypeSafe docs index \(llms.txt\)](https://docs.typesafe.ai/llms.txt) — official_domain, official_status, strong_signal
-- [TypeSafe homepage](https://typesafe.ai/) · `自动发现 · 未精选` — official_status, strong_signal
-- [TypeSafe Primitives](https://docs.typesafe.ai/primitives.md) — official_domain, official_status, strong_signal
-- [TypeSafe Python SDK](https://docs.typesafe.ai/sdk/python.md) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+- [https://console.typesafe.ai/docs/cookbooks](https://console.typesafe.ai/docs/cookbooks) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+- [https://console.typesafe.ai/playground](https://console.typesafe.ai/playground) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+- [https://console.typesafe.ai/settings/keys](https://console.typesafe.ai/settings/keys) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+- [https://docs.typesafe.ai/](https://docs.typesafe.ai/) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
+- [https://docs.typesafe.ai/agent-skill](https://docs.typesafe.ai/agent-skill) · `自动发现 · 未精选` — official_domain, official_status, strong_signal
 
 
 

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375771750",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/soderlind/ai-provider-for-jev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375771750",
+  "author_or_org": "soderlind",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "soderlind/ai-provider-for-jev",
+  "summary_zh": null,
+  "summary_en": "Connect WordPress to TypeSafe's Jev System One model for structured decisions (choice, score, noul).",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-18T11:31:22Z",
+    "precision": "datetime",
+    "raw": "2026-09-18T11:31:22Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077349Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.960073Z"
+  },
+  "content_hash": "7ca211d6a2cc96c0f8435fc7992d892c3e8f104a0d7905720b616d73a06ee559",
+  "github_repo_id": 1375771750,
+  "github_full_name": "soderlind/ai-provider-for-jev"
+}

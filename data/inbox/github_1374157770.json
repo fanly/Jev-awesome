@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1374157770",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/lukaske/jev-doom-agent",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1374157770",
+  "author_or_org": "lukaske",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "lukaske/jev-doom-agent",
+  "summary_zh": null,
+  "summary_en": "A browser-native Doom agent experiment with structured spatial state, composable AI controls, live decision telemetry, and a Chocolate Doom WebAssembly runtime.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T08:37:37Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T08:37:37Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:23.077636Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.989096Z"
+  },
+  "content_hash": "b5ec98cc6f10ee36f266f5a05527d37b0f10ba433870fd9eb8d9500dd695ce36",
+  "github_repo_id": 1374157770,
+  "github_full_name": "lukaske/jev-doom-agent"
+}

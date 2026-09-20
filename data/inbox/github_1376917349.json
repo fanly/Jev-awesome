@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1376917349",
+  "resource_kind": "evaluation",
+  "primary_category": "evals_limits",
+  "tags": [
+    "ai",
+    "benchmark",
+    "decision-support",
+    "evaluation",
+    "jev",
+    "llm",
+    "type-safety",
+    "typesafe-ai"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/andreaserradev-gbj/jev-access-day",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1376917349",
+  "author_or_org": "andreaserradev-gbj",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "andreaserradev-gbj/jev-access-day",
+  "summary_zh": null,
+  "summary_en": "A learning scaffold for TypeSafe AI's System One models: eval harness plus a measured, plain-language comparison of the Jev decision model vs an LLM stand-in on 24 real operational decisions. All numbers reproducible from committed run files.",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T08:25:12Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T08:25:12Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.433350Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "evaluation",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "evals_limits",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.992426Z"
+  },
+  "content_hash": "0c260bff2684b9b2b3e0e48cbd9d9abcd49dda1078eee005bdd037cbc1f8e4ba",
+  "github_repo_id": 1376917349,
+  "github_full_name": "andreaserradev-gbj/jev-access-day"
+}

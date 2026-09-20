@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1377376824",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [],
+  "languages": [],
+  "canonical_url": "https://github.com/gopinav/jev-demo",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1377376824",
+  "author_or_org": "gopinav",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "gopinav/jev-demo",
+  "summary_zh": null,
+  "summary_en": "Jev + TypeScript SDK demo",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-19T16:25:02Z",
+    "precision": "datetime",
+    "raw": "2026-09-19T16:25:02Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:29.429642Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": null,
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:39.830928Z"
+  },
+  "content_hash": "e4ec0be15e9c53d5c0657ab0e1d08e2060dc6125c496b366449bffd35d2406e9",
+  "github_repo_id": 1377376824,
+  "github_full_name": "gopinav/jev-demo"
+}

@@ -23,7 +23,7 @@
   "source_identity": "github:1374059973",
   "author_or_org": "Dicklesworthstone",
   "official_status": "unknown",
-  "jev_relationship": "unclear",
+  "jev_relationship": "calls_official_api",
   "original_title": "Dicklesworthstone/skillranker",
   "summary_zh": null,
   "summary_en": "Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live session context. Includes Claude Code hooks, structured JSON, abstention, and local feedback. Requires a TypeSafe API key.",
@@ -57,15 +57,15 @@
     "relevant": true,
     "relevance_probability": 1.0,
     "resource_kind": "application",
-    "jev_relationship": "unclear",
+    "jev_relationship": "calls_official_api",
     "primary_category": "applications",
-    "priority_score": 2.0,
+    "priority_score": 2.5,
     "reason_codes": [
-      "positive_signals:2"
+      "strong_signals:1"
     ],
     "model_name": null,
     "error": null,
-    "created_at": "2026-09-19T13:24:37.667536Z"
+    "created_at": "2026-09-20T04:14:40.453760Z"
   },
   "content_hash": "807020b168e6a8a789f6ddd476f13d8c1c2259c6deb44c4f47c725619c3956ef",
   "github_repo_id": 1374059973,

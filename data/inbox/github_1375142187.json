@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "id": "github:1375142187",
+  "resource_kind": "application",
+  "primary_category": "applications",
+  "tags": [
+    "browser-automation",
+    "chrome-extension",
+    "jev",
+    "mv3",
+    "typesafe",
+    "typescript"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/ranjan2829/AskJev",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "github:1375142187",
+  "author_or_org": "ranjan2829",
+  "official_status": "unknown",
+  "jev_relationship": "calls_official_api",
+  "original_title": "ranjan2829/AskJev",
+  "summary_zh": null,
+  "summary_en": "AskJev — Jev autopilot for any website + guard on irreversible clicks (TypeSafe System One, not Claude)",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": "2026-09-17T22:40:34Z",
+    "precision": "datetime",
+    "raw": "2026-09-17T22:40:34Z",
+    "source": "github.created_at"
+  },
+  "first_discovered_at": "2026-09-20T04:14:22.207625Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "application",
+    "jev_relationship": "calls_official_api",
+    "primary_category": "applications",
+    "priority_score": 2.5,
+    "reason_codes": [
+      "strong_signals:1"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:38.811886Z"
+  },
+  "content_hash": "95866d018f9af9e1c7b8c41da03715d67db61fd6dadc44ce99284d7b772772a5",
+  "github_repo_id": 1375142187,
+  "github_full_name": "ranjan2829/AskJev"
+}

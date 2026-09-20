@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "id": "web:6e39a707a1f9d517",
+  "resource_kind": "other",
+  "primary_category": "applications",
+  "tags": [
+    "awesome_radar",
+    "via:hellogumbo_awesome_jev"
+  ],
+  "languages": [],
+  "canonical_url": "https://github.com/shantanugoel/ask-jev-skill",
+  "related_links": [],
+  "aliases": [],
+  "source_identity": "awesome:hellogumbo_awesome_jev:shantanugoel/ask-jev-skill",
+  "author_or_org": "shantanugoel",
+  "official_status": "unknown",
+  "jev_relationship": "unclear",
+  "original_title": "shantanugoel/ask-jev-skill",
+  "summary_zh": null,
+  "summary_en": "Skill for Hermes, and other agents, to ask typesafe's jev",
+  "developer_value": null,
+  "jev_role": null,
+  "prerequisites": null,
+  "limitations": null,
+  "published_at": {
+    "value": null,
+    "precision": "unknown",
+    "raw": null,
+    "source": null
+  },
+  "first_discovered_at": "2026-09-20T04:14:30.279998Z",
+  "last_material_change_at": null,
+  "license_status": "unknown",
+  "license_identifier": "MIT",
+  "license_evidence": null,
+  "editorial_status": "pending",
+  "verification_level": "discovered",
+  "evidence": [],
+  "review_record": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "decision": null,
+    "reason": null,
+    "identity_note": "reviewer is audit metadata only; not an authorization credential"
+  },
+  "suggestion": {
+    "mode": "rules",
+    "relevant": true,
+    "relevance_probability": 1.0,
+    "resource_kind": "other",
+    "jev_relationship": "unclear",
+    "primary_category": "applications",
+    "priority_score": 0.5,
+    "reason_codes": [
+      "weak_name_only_jev"
+    ],
+    "model_name": null,
+    "error": null,
+    "created_at": "2026-09-20T04:14:57.253929Z"
+  },
+  "content_hash": "d4217801a9a38279474bd01251f1452c3b1cb931d02c673dc7f37886ae2cab55",
+  "github_repo_id": 1374296003,
+  "github_full_name": "shantanugoel/ask-jev-skill"
+}
