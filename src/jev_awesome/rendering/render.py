@@ -5,6 +5,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from jev_awesome.atomic_io import atomic_write_text
 from jev_awesome.models import CATEGORY_META, EditorialStatus, PrimaryCategory, Resource
 from jev_awesome.paths import Paths
+from jev_awesome.rendering.radar import radar_highlights, render_radar_markdown
 from jev_awesome.security import escape_md, safe_href
 from jev_awesome.store import CatalogStore, load_yaml
 
@@ -83,6 +84,7 @@ class Renderer:
             if r.primary_category:
                 by_cat[r.primary_category].append(r)
 
+        highlights = radar_highlights(self.store, limit=5)
         ctx = {
             "curated": curated,
             "featured": featured,
@@ -93,6 +95,8 @@ class Renderer:
             "generated_start": GENERATED_START,
             "generated_end": GENERATED_END,
             "safe_href": safe_href,
+            "radar_highlights": highlights,
+            "radar_label": "自动发现 · 未精选",
         }
         outputs: dict[str, str] = {}
         outputs["README.md"] = self.env.get_template("README.md.j2").render(**ctx)
@@ -101,6 +105,7 @@ class Renderer:
             outputs[f"docs/categories/{meta['slug']}.md"] = self.env.get_template(
                 "category.md.j2"
             ).render(category=cat, meta=meta, items=by_cat[cat], **ctx)
+        outputs["docs/radar/latest.md"] = render_radar_markdown(self.store)
         return outputs
 
     def write(self, *, check: bool = False) -> list[str]:

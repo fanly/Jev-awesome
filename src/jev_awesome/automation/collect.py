@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import json
 import os
 import uuid
 from dataclasses import dataclass
 from pathlib import Path
 
 from jev_awesome.automation.checkpoint import CheckpointStore
+from jev_awesome.automation.source_planner import SourceCheckpointStore, plan_source
 from jev_awesome.classification import apply_suggestion_fields, build_classifier
 from jev_awesome.config import AppConfig
 from jev_awesome.dates import utc_now
@@ -20,7 +22,9 @@ from jev_awesome.models import (
 )
 from jev_awesome.normalize import content_hash
 from jev_awesome.sources import CollectContext
+from jev_awesome.sources.awesome import AwesomeRadarAdapter
 from jev_awesome.sources.github import GitHubDiscoveryAdapter
+from jev_awesome.sources.known_repos import KnownRepoWatchAdapter
 from jev_awesome.sources.official import OfficialMonitorAdapter
 from jev_awesome.sources.rss import RssAtomAdapter
 from jev_awesome.store import CatalogStore
@@ -34,6 +38,12 @@ class CollectOptions:
     write_local: bool = False
     max_pages: int = 2
     merge_from: Path | None = None
+    force: bool = False
+
+
+def _source_cfg(src_cfg: dict, key: str) -> dict:
+    raw = src_cfg.get(key) or {}
+    return raw if isinstance(raw, dict) else {}
 
 
 def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunReport:
@@ -57,27 +67,72 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
         report.notes.append(f"merged_unmerged_branch_files:{n}")
 
     src_cfg = config.sources.get("sources") or config.sources
-    adapters = []
-    gh_cfg = (src_cfg.get("github_discovery") or {}) if isinstance(src_cfg, dict) else {}
+    if not isinstance(src_cfg, dict):
+        src_cfg = {}
+
+    curated = [
+        r
+        for r in store.list_resources(status_dir="resources")
+        if r.editorial_status == EditorialStatus.CURATED
+    ]
+
+    # Known-repo previous snapshots (optional durable file)
+    snap_path = config.paths.automation / "known_repo_snapshots.json"
+    previous_snapshots: dict = {}
+    if snap_path.exists():
+        try:
+            previous_snapshots = json.loads(snap_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous_snapshots = {}
+
+    adapters: list[tuple[dict, object]] = []
+    gh_cfg = _source_cfg(src_cfg, "github_discovery")
     adapters.append(
-        GitHubDiscoveryAdapter(
-            queries=gh_cfg.get("queries"),
-            enabled=gh_cfg.get("enabled", True),
+        (
+            gh_cfg,
+            GitHubDiscoveryAdapter(
+                queries=gh_cfg.get("queries"),
+                enabled=gh_cfg.get("enabled", True),
+            ),
         )
     )
-    rss_cfg = src_cfg.get("rss_atom") or {}
+    kr_cfg = _source_cfg(src_cfg, "known_repo_watch")
+    known_adapter = KnownRepoWatchAdapter(
+        repos=kr_cfg.get("repos") or [],
+        curated_resources=curated,
+        previous_snapshots=previous_snapshots,
+        enabled=bool(kr_cfg) and kr_cfg.get("enabled", True),
+    )
+    adapters.append((kr_cfg, known_adapter))
+    rss_cfg = _source_cfg(src_cfg, "rss_atom")
     adapters.append(
-        RssAtomAdapter(
-            feeds=rss_cfg.get("feeds") or [],
-            enabled=rss_cfg.get("enabled", True),
+        (
+            rss_cfg,
+            RssAtomAdapter(
+                feeds=rss_cfg.get("feeds") or [],
+                enabled=rss_cfg.get("enabled", True),
+            ),
         )
     )
-    off_cfg = src_cfg.get("official_monitor") or {}
+    off_cfg = _source_cfg(src_cfg, "official_monitor")
     adapters.append(
-        OfficialMonitorAdapter(
-            pages=off_cfg.get("pages") or [],
-            enabled=off_cfg.get("enabled", True),
-            cache_dir=config.paths.cache / "http" / "official",
+        (
+            off_cfg,
+            OfficialMonitorAdapter(
+                pages=off_cfg.get("pages") or [],
+                enabled=off_cfg.get("enabled", True),
+                cache_dir=config.paths.cache / "http" / "official",
+            ),
+        )
+    )
+    aw_cfg = _source_cfg(src_cfg, "awesome_radar")
+    adapters.append(
+        (
+            aw_cfg,
+            AwesomeRadarAdapter(
+                lists=aw_cfg.get("lists") or [],
+                enabled=bool(aw_cfg) and aw_cfg.get("enabled", True),
+            ),
         )
     )
 
@@ -103,14 +158,40 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
     all_results: list[SourceResult] = []
     dispositions: list[Disposition] = []
     checkpoints = CheckpointStore(config.paths.cache / "checkpoints")
+    source_cps = SourceCheckpointStore(config.paths.automation / "source_checkpoints.json")
     seen_round: set[str] = set()
 
-    for adapter in adapters:
+    for src_meta, adapter in adapters:
+        source_id = getattr(adapter, "source_id", "unknown")
+        frequency = src_meta.get("frequency")
+        decision = plan_source(
+            now=started,
+            frequency=frequency,
+            last_successful_at=source_cps.last_successful_at(source_id),
+            mode=opts.mode,
+            force=opts.force,
+            dry_run=opts.dry_run,
+        )
+        if not decision.should_run:
+            all_results.append(
+                SourceResult(
+                    source_id=source_id,
+                    status="skipped",
+                    execution_status="skipped",
+                    coverage_status="unknown",
+                    error=f"not_due:{decision.reason}",
+                )
+            )
+            report.notes.append(f"source_skipped_not_due:{source_id}:{decision.reason}")
+            continue
+        if decision.status.value in {"forced", "backfill"}:
+            report.notes.append(f"source_plan:{source_id}:{decision.status.value}")
+
         try:
             resources, result = adapter.collect(ctx)
         except Exception as e:  # noqa: BLE001
             result = SourceResult(
-                source_id=getattr(adapter, "source_id", "unknown"),
+                source_id=source_id,
                 status="failed",
                 execution_status="failed",
                 coverage_status="unknown",
@@ -139,9 +220,9 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
                 continue
             seen_round.add(resource.id)
 
-            decision = store.get_decision(resource.id)
-            if decision and decision.decision == "rejected":
-                if decision.content_hash and decision.content_hash == resource.content_hash:
+            decision_rec = store.get_decision(resource.id)
+            if decision_rec and decision_rec.decision == "rejected":
+                if decision_rec.content_hash and decision_rec.content_hash == resource.content_hash:
                     result.duplicates += 1
                     dispositions.append(
                         Disposition(
@@ -152,7 +233,7 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
                     )
                     continue
                 report.notes.append(f"rejected_revisit_suggested:{resource.id}")
-            if decision and decision.decision == "merged":
+            if decision_rec and decision_rec.decision == "merged":
                 dispositions.append(
                     Disposition(
                         resource_id=resource.id,
@@ -232,6 +313,24 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
                 )
                 durable_saved = True
 
+        # Persist material events from known_repo_watch (never auto-curate)
+        if (
+            isinstance(adapter, KnownRepoWatchAdapter)
+            and opts.write_local
+            and not opts.dry_run
+            and adapter.material_events
+        ):
+            for evt in adapter.material_events:
+                store.save_event(evt)
+                durable_saved = True
+            if adapter.new_snapshots:
+                from jev_awesome.atomic_io import atomic_write_text
+
+                atomic_write_text(
+                    snap_path,
+                    json.dumps(adapter.new_snapshots, indent=2) + "\n",
+                )
+
         # Checkpoint: only if source shard succeeded enough AND durable (or no writes needed)
         cov = result.coverage_status or "unknown"
         # Failed shards must NOT advance
@@ -253,6 +352,13 @@ def run_collect(opts: CollectOptions, config: AppConfig | None = None) -> RunRep
                     cursor=cursor,
                     coverage_status=cov,
                     durable=True,
+                    dry_run=False,
+                    meta={"run_id": run_id},
+                )
+                source_cps.record_success(
+                    result.source_id,
+                    at=utc_now(),
+                    coverage_status=cov,
                     dry_run=False,
                     meta={"run_id": run_id},
                 )

@@ -110,7 +110,7 @@ def test_t26_idempotent_write_and_no_empty_spam(store, tmp_paths):
     assert p2.read_text(encoding="utf-8") == text1
 
     # Empty store week: do not create a new empty weekly; leave history
-    history = tmp_paths.updates / "weekly-2099-W01.md"
+    history = tmp_paths.updates / "2099-W01.md"
     history.write_text("# old\n", encoding="utf-8")
     empty_store = CatalogStore(tmp_paths)
     # Use a far future "now" whose previous week has no events and no file yet

@@ -116,6 +116,7 @@ def validate() -> None:
 )
 @click.option("--write-local", is_flag=True, help="Write local catalog files (still no remote).")
 @click.option("--max-pages", default=2, show_default=True)
+@click.option("--force", is_flag=True, help="Force sources due even if within frequency window.")
 @click.option(
     "--merge-from",
     type=click.Path(path_type=Path),
@@ -128,6 +129,7 @@ def collect(
     dry_run: bool,
     write_local: bool,
     max_pages: int,
+    force: bool,
     merge_from: Path | None,
 ) -> None:
     """Discover candidates. Never auto-curates."""
@@ -140,6 +142,7 @@ def collect(
         write_local=write_local,
         max_pages=max_pages,
         merge_from=merge_from,
+        force=force,
     )
     try:
         report = run_collect(opts)

@@ -99,7 +99,7 @@ def write_weekly(
     paths = paths or store.paths
     paths.updates.mkdir(parents=True, exist_ok=True)
     week_id, body, material = build_weekly(store, tz_name=tz_name, now=now)
-    out = paths.updates / f"weekly-{week_id}.md"
+    out = paths.updates / f"{week_id}.md"
     prev = out.read_text(encoding="utf-8") if out.exists() else None
     if not material:
         # Do not manufacture empty weeklies; never delete existing history
